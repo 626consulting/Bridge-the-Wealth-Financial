@@ -720,6 +720,15 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
 @media(max-width:600px){.page-header{min-height:145px!important;padding:25px 0!important}.page-header h1{font-size:2rem!important}.page-header p{font-size:.93rem}.page .hero{min-height:390px!important;background-size:100% 100%,auto 100%!important;background-position:center,right center!important;background-image:linear-gradient(90deg,rgba(6,31,45,.96) 0%,rgba(6,31,45,.91) 54%,rgba(6,31,45,.56) 100%),url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=900&q=80")!important}.page .hero h2{font-size:2.3rem!important}.page .hero .wrap{padding:50px 0 72px!important}.btw-scroll-cue{right:6%;bottom:10px;letter-spacing:.1em}.page .photo-stack>img,.page .split>img{max-height:265px!important}}
 @media(prefers-reduced-motion:reduce){.page.active .page-header h1,.page.active .page-header p,.page.active .page-header + .section h2,.page.active .hero .button-link.gold,.ribbon .btw-ribbon-dot,.btw-scroll-cue .btw-arrow,.page-header::before,.page-header::after{animation:none!important}}
 
+
+/* 2026-11-04 booking calendar update */
+.page[data-page="book"] .calendar{border:1px solid rgba(215,177,109,.56);border-radius:12px;padding:12px;background:#fbfaf6;box-shadow:0 12px 30px rgba(7,40,50,.07)}
+.page[data-page="book"] .calendar-head{margin-bottom:8px}
+.page[data-page="book"] .calendar-grid button:hover:not(:disabled){background:#d7b16d;color:#082b3b;transform:translateY(-2px)}
+.page[data-page="book"] .calendar-grid button.selected{background:#07594c;color:#fff;box-shadow:0 0 0 3px rgba(215,177,109,.35)}
+.page[data-page="book"] .form-card{border-top:4px solid #d7b16d}
+.page[data-page="book"] .form-card h3{margin-top:4px}
+@media(max-width:600px){.page[data-page="book"] .calendar{padding:8px}}
 </style>
 </head>
 
@@ -744,9 +753,8 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
     <li><a href="#education">Financial Education</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#gift">17-Day Gift</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#book" role="button">Book a Call</a></li>
+    <li><a href="#book" role="button">Book Now</a></li>
   </ul>
 </nav>
 
@@ -1097,32 +1105,12 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
   </div>
 </section>
 
-<!-- 17-DAY GIFT -->
-<section class="page" data-page="gift">
-  <div class="page-header">
-    <div class="wrap">
-      <h1>The 17-Day Gift.</h1>
-      <p>Learn more about Bridgette's featured program.</p>
-    </div>
-  </div>
-
-  <div class="section wrap split">
-    <img src="https://images.unsplash.com/photo-1627203030417-33b1129033d0?auto=format&fit=crop&w=900&q=85" alt="Family and friends together">
-    <div>
-      <h2>A thoughtful gift begins with understanding.</h2>
-      <p>Request approved details on the program's features, eligibility, costs, and conditions.</p>
-      <p class="notice">Program details require Bridgette's confirmation before public launch.</p>
-      <a href="#contact" class="button-link green">Request Program Details →</a>
-    </div>
-  </div>
-</section>
-
 <!-- BOOK -->
 <section class="page" data-page="book">
   <div class="page-header">
     <div class="wrap">
-      <h1>Book a Conversation.</h1>
-      <p>Choose a preferred date and time to request a consultation.</p>
+      <h1>Book Now.</h1>
+      <p>Select your preferred date on the calendar and send Bridgette a consultation request.</p>
     </div>
   </div>
 
@@ -1130,11 +1118,11 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
     <div>
       <h2>Let's talk about your next chapter.</h2>
       <p>Request a conversation about financial education, the Million Dollar Baby Plan, or family protection.</p>
-      <p class="notice">This is a demonstration calendar. It does not display real availability or confirm bookings.</p>
+      <p class="notice">Choose a date and preferred time in the calendar. This is an appointment request, not a confirmed booking. Bridgette will confirm availability with you.</p>
     </div>
 
     <div class="form-card">
-      <h3>Request a Consultation</h3>
+      <h3>Select a Date &amp; Request Your Consultation</h3>
 
       <div class="calendar">
         <div class="calendar-head">
@@ -1193,19 +1181,19 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
               <option>Million Dollar Baby Plan</option>
               <option>Financial Education</option>
               <option>Family Protection</option>
-              <option>17-Day Gift</option>
+              <option>General Financial Consultation</option>
             </select>
           </div>
 
           <div class="field full">
-            <button type="submit">Request an Appointment →</button>
+            <button type="submit">Request My Consultation →</button>
           </div>
         </div>
 
         <p class="form-status" aria-live="polite"></p>
       </form>
 
-      <p class="notice">Preview only. Form submissions are disabled until Bridgette approves the website and live scheduling is connected.</p>
+      <p class="notice">After sending your request, Bridgette will follow up to confirm availability. Please do not include Social Security numbers, account numbers, or other sensitive financial information. Form delivery requires one-time email activation.</p>
     </div>
   </div>
 </section>
@@ -1249,7 +1237,7 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
               <option>Million Dollar Baby Plan</option>
               <option>Financial Education</option>
               <option>Family Protection</option>
-              <option>17-Day Gift</option>
+              <option>General Financial Consultation</option>
             </select>
           </div>
 
@@ -1319,7 +1307,8 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
   const menuButton = document.getElementById("menu-button");
 
   function showPage() {
-    const requested = location.hash.slice(1) || "home";
+    const hash = location.hash.slice(1) || "home";
+    const requested = hash === "gift" ? "book" : hash;
     const exists = [...pages].some(page => page.dataset.page === requested);
     const current = exists ? requested : "home";
 
