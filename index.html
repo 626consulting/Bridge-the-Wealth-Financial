@@ -575,6 +575,52 @@ nav .brand-logo{display:block;width:clamp(180px,20vw,255px)!important;height:64p
 .hero .wrap{padding:78px 0}
 @media(max-width:850px){nav.container-fluid{min-height:75px}nav .brand-logo{width:180px!important;height:48px!important}.hero{min-height:500px;background-position:58% 40%;background-image:linear-gradient(90deg,rgba(6,31,46,.92),rgba(5,37,46,.68)),url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1100&q=80")}}
 @media(max-width:600px){.hero{min-height:470px}.photo-stack>img,.split>img{max-height:290px;aspect-ratio:4/3}.topic-grid img,.cards img{max-height:220px}}
+
+/* 2026-11-04: photo crop correction for GitHub Pages */
+img{max-width:100%;height:auto}
+.split>img,.photo-stack>img{
+  width:100%!important;
+  height:auto!important;
+  max-height:360px!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:12px;
+  background:#f6f2e9;
+}
+.photo-stack{max-width:590px;width:100%;margin-inline:auto}
+.photo-stack img.small{
+  width:min(36%,190px)!important;
+  height:125px!important;
+  max-height:125px!important;
+  aspect-ratio:4/3!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#f6f2e9;
+}
+.photo-card img{
+  width:100%!important;
+  height:auto!important;
+  max-height:235px!important;
+  aspect-ratio:3/2!important;
+  object-fit:cover!important;
+  object-position:center 27%!important;
+}
+.hero{min-height:485px!important;background-position:57% 30%!important}
+.hero .wrap{padding:66px 0!important}
+@media(max-width:850px){
+  .hero{min-height:450px!important;background-position:61% 31%!important}
+  .split>img,.photo-stack>img{max-height:330px!important}
+  .photo-card img{max-height:220px!important}
+}
+@media(max-width:600px){
+  .hero{min-height:425px!important;background-position:65% 31%!important}
+  .hero .wrap{padding:60px 0!important}
+  .split>img,.photo-stack>img{max-height:270px!important}
+  .photo-stack img.small{width:35%!important;height:105px!important;max-height:105px!important}
+  .photo-card img{aspect-ratio:4/3!important;max-height:195px!important;object-position:center 22%!important}
+}
+
 </style>
 </head>
 
