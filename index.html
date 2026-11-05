@@ -729,10 +729,118 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
 .page[data-page="book"] .form-card{border-top:4px solid #d7b16d}
 .page[data-page="book"] .form-card h3{margin-top:4px}
 @media(max-width:600px){.page[data-page="book"] .calendar{padding:8px}}
+
+/* 2026-11-04 fixed-photo parallax redesign */
+/* The photo belongs to a fixed viewport layer, not to scrolling sections. */
+body{background:#071f2c!important;}
+.btw-fixed-scene{
+ position:fixed;inset:0;z-index:0;pointer-events:none;
+ background-color:#0b3644;
+ background-image:linear-gradient(115deg,rgba(4,32,43,.45) 0%,rgba(4,41,50,.19) 46%,rgba(4,32,43,.58) 100%),
+ url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1900&q=85");
+ background-repeat:no-repeat;background-size:cover;
+ background-position:60% center;
+}
+nav.container-fluid{position:sticky;top:0;z-index:100;background:rgba(3,27,40,.96)!important;backdrop-filter:blur(16px);box-shadow:0 8px 26px rgba(4,26,33,.18);}
+main.container{position:relative;z-index:1;overflow:visible!important;background:transparent!important;}
+.page,.page.active{background:transparent!important;}
+.page .hero{
+ position:relative;isolation:isolate;
+ background:linear-gradient(100deg,rgba(3,24,37,.91) 0%,rgba(3,30,41,.86) 41%,rgba(4,39,44,.3) 100%)!important;
+ background-attachment:scroll!important;
+ background-size:cover!important;
+ background-position:center!important;
+ border-bottom:1px solid rgba(226,193,126,.35);
+ min-height:485px!important;
+}
+.page .hero .wrap{max-width:1160px!important;padding:72px 0 92px!important;}
+.page .hero h2{max-width:750px;color:#fff;text-shadow:0 6px 30px rgba(2,19,31,.34);font-size:clamp(2.45rem,5vw,4.65rem)!important;letter-spacing:-.025em;}
+.page .hero h2 em{color:#f0d49b!important;}
+.page .hero h3{color:#f4f1e8;}
+.page .hero .eyebrow{color:#ebc67d;}
+.page .ribbon{
+ background:linear-gradient(90deg,rgba(5,68,57,.96),rgba(7,78,63,.91),rgba(5,68,57,.96))!important;
+ border-top:1px solid rgba(232,201,136,.4);border-bottom:1px solid rgba(232,201,136,.5);
+ backdrop-filter:blur(9px);box-shadow:0 9px 28px rgba(1,28,36,.1);
+}
+.page .section.wrap{
+ background:rgba(252,249,242,.955)!important;
+ border:1px solid rgba(222,192,130,.66);
+ border-radius:24px;
+ box-shadow:0 24px 65px rgba(0,24,36,.22);
+ padding:clamp(30px,4.6vw,66px)!important;
+ margin-top:56px!important;margin-bottom:56px!important;
+ backdrop-filter:blur(12px);
+}
+.page .section.cream-bg{
+ background:rgba(247,244,235,.96)!important;
+ border-block:1px solid rgba(208,177,119,.42);
+ backdrop-filter:blur(8px);
+ padding-block:85px!important;
+}
+.page .section.dark-bg{
+ background:rgba(5,29,42,.86)!important;
+ border-block:1px solid rgba(212,173,104,.26);
+ backdrop-filter:blur(8px);
+ padding-block:90px!important;
+}
+.page .banner{
+ background:linear-gradient(106deg,rgba(6,57,55,.91),rgba(10,76,56,.8))!important;
+ border-block:1px solid rgba(221,179,101,.55);
+ box-shadow:0 12px 42px rgba(0,29,38,.17);
+ backdrop-filter:blur(5px);
+}
+.page .page-header{
+ background:linear-gradient(105deg,rgba(5,29,41,.94),rgba(5,53,57,.75),rgba(7,62,50,.75))!important;
+ background-attachment:scroll!important;
+}
+.page .photo-card{
+ overflow:hidden;border-radius:16px!important;
+ box-shadow:0 12px 35px rgba(10,47,51,.08);
+ border:1px solid rgba(193,172,127,.55);
+ transition:transform .3s,box-shadow .3s;
+}
+.page .photo-card:hover{transform:translateY(-7px);box-shadow:0 22px 38px rgba(4,43,52,.17);}
+.page .photo-card .content{background:#fffefa;}
+.page .step{background:rgba(255,254,249,.8);border:1px solid rgba(211,183,123,.5);border-top:3px solid #d5ad66;border-radius:14px;padding:25px 22px;box-shadow:0 10px 27px rgba(10,45,52,.06);}
+.page .photo-stack>img,.page .split>img{box-shadow:0 15px 36px rgba(5,31,47,.15);}
+.page .button-link.gold{background:#d8b572;color:#08283d;box-shadow:0 8px 26px rgba(5,35,40,.2);}
+.page .button-link.green{background:#07594c;color:#fff;}
+.page .button-link{border-radius:8px;}
+.page .section.wrap.faq details{border-radius:12px;}
+.page .subscribe{background:rgba(5,64,57,.94)!important;}
+footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!important;}
+/* A softly animated gold glow helps the fixed backdrop feel intentional. */
+.btw-fixed-scene::after{
+ content:"";position:absolute;right:-16vmin;top:-10vmin;width:56vmin;height:56vmin;
+ border-radius:50%;border:1px solid rgba(222,179,97,.22);
+ box-shadow:0 0 0 10vmin rgba(221,179,97,.025),0 0 0 20vmin rgba(221,179,97,.018);
+ animation:btwSceneBreathe 8s ease-in-out infinite alternate;
+}
+@keyframes btwSceneBreathe{from{transform:translate3d(0,0,0) scale(.98);opacity:.4}to{transform:translate3d(-15px,20px,0) scale(1.05);opacity:.95}}
+@media(max-width:1000px){
+ .btw-fixed-scene{background-position:64% center;}
+ .page .hero{min-height:455px!important;}
+ .page .section.wrap{margin-block:38px!important;padding:38px!important;}
+}
+@media(max-width:700px){
+ .btw-fixed-scene{background-position:66% center;background-image:linear-gradient(100deg,rgba(4,31,42,.68),rgba(4,32,44,.47)),url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1200&q=80");}
+ .page .hero{min-height:455px!important;background:linear-gradient(100deg,rgba(3,25,38,.91),rgba(4,36,42,.52))!important;}
+ .page .hero .wrap{padding:60px 0 78px!important;}
+ .page .hero h2{font-size:clamp(2.25rem,8.5vw,3.35rem)!important;}
+ .page .section.wrap{width:min(calc(100% - 26px),1160px);margin-block:23px!important;padding:27px 20px!important;border-radius:17px;}
+ .page .section.cream-bg,.page .section.dark-bg{padding-block:60px!important;}
+ .page .step{padding:21px 18px;}
+ .page .banner{padding-block:55px;}
+}
+/* Keep all static content accessible when the visitor requests less motion. */
+@media(prefers-reduced-motion:reduce){.btw-fixed-scene::after{animation:none!important;}}
+
 </style>
 </head>
 
 <body>
+<div class="btw-fixed-scene" aria-hidden="true"></div>
 
 <nav class="container-fluid">
   <ul>
