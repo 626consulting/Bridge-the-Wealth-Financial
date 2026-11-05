@@ -661,6 +661,65 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
  .btw-scroll-progress{transition:none!important;}
 }
 
+
+/* 2026-11-04: compact banners + clearly visible motion v2 */
+/* All inner-page headers now use a compact, branded banner rather than a giant cropped baby photograph. */
+.page-header{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:174px!important;padding:35px 0!important;
+  display:flex;align-items:center;
+  background-color:#062a39!important;
+  background-image:radial-gradient(ellipse at 88% 20%,rgba(217,180,98,.17),transparent 33%),linear-gradient(112deg,#061f2d 0%,#0a3c46 60%,#15503f 100%)!important;
+  background-size:cover!important;background-position:center!important;
+  border-bottom:3px solid #d5ae64;
+}
+.page-header::before{
+ content:"";position:absolute;z-index:-1;width:240px;height:240px;right:5%;top:-135px;
+ border:1px solid rgba(223,187,113,.32);border-radius:50%;
+ box-shadow:0 0 0 42px rgba(223,187,113,.035),0 0 0 90px rgba(223,187,113,.02);
+ animation:btwGoldOrb 6.5s ease-in-out infinite alternate;
+}
+.page-header::after{
+ content:"";position:absolute;bottom:0;left:0;width:100%;height:3px;
+ background:linear-gradient(90deg,#a27632,#e5c989,#b88c44,#e5c989);
+ background-size:200% 100%;animation:btwGoldRun 7s linear infinite;
+}
+.page-header .wrap{position:relative;z-index:1;width:100%;}
+.page-header h1{font-size:clamp(2rem,3.6vw,3rem)!important;line-height:1.13;margin:0 0 10px!important;max-width:850px;}
+.page-header p{font-size:1rem;line-height:1.5;margin:0;max-width:650px;}
+.page.active .page-header h1{animation:btwFloatUp .9s .04s cubic-bezier(.2,.7,.2,1) both!important;}
+.page.active .page-header p{animation:btwFloatUp .9s .2s cubic-bezier(.2,.7,.2,1) both!important;}
+/* Put the family image on the right side of the hero at natural scale, never blown up to fill the entire screen. */
+.page .hero{
+ min-height:410px!important;overflow:hidden;position:relative;
+ background-color:#061f2d!important;
+ background-image:linear-gradient(90deg,#061f2d 0%,rgba(6,31,45,.99) 30%,rgba(6,31,45,.8) 60%,rgba(6,31,45,.15) 100%),url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1300&q=82")!important;
+ background-size:100% 100%,auto 100%!important;
+ background-position:center,right center!important;
+ background-repeat:no-repeat!important;
+}
+.page .hero .wrap{padding:56px 0 74px!important;}
+.page .hero h2{font-size:clamp(2.25rem,4.3vw,3.9rem)!important;max-width:740px;}
+.btw-about-family{width:100%;max-width:505px;justify-self:center;}
+.btw-about-family img{display:block;width:100%;max-height:315px;object-fit:contain;border-radius:12px;background:#f2efe6;}
+.btw-image-caption{margin:8px 0 0;color:#607274;font-size:.76rem;line-height:1.5;}
+.page .photo-stack > img,.page .split > img{max-height:315px!important;object-fit:contain!important;}
+/* Readable movement on every visit, not only subtle hover animations. */
+@keyframes btwGoldOrb{from{transform:translateY(0) scale(.97);opacity:.55}to{transform:translateY(20px) scale(1.05);opacity:1}}
+@keyframes btwGoldRun{from{background-position:0% 50%}to{background-position:200% 50%}}
+@keyframes btwRibbonPulse{0%,100%{opacity:.65;transform:scale(.96)}50%{opacity:1;transform:scale(1.14)}}
+@keyframes btwArrowBounce{0%,100%{transform:translateY(0)}45%{transform:translateY(7px)}75%{transform:translateY(3px)}}
+@keyframes btwButtonGlow{0%,100%{box-shadow:0 0 0 rgba(215,177,109,0)}50%{box-shadow:0 0 19px rgba(215,177,109,.44)}}
+.page.active .hero .button-link.gold{animation:btwFloatUp .8s .42s both,btwButtonGlow 4s 2s infinite!important;}
+.ribbon .btw-ribbon-dot{display:inline-block;margin:0 7px;color:#e3c378;animation:btwRibbonPulse 3.5s ease-in-out infinite;}
+.ribbon .btw-ribbon-dot:nth-child(2){animation-delay:.7s}.ribbon .btw-ribbon-dot:nth-child(3){animation-delay:1.4s}
+.btw-scroll-cue{position:absolute;right:5%;bottom:18px;z-index:2;display:flex;gap:8px;align-items:center;font-size:.63rem;font-weight:700;letter-spacing:.16em;color:#e4cf9f;}
+.btw-scroll-cue .btw-arrow{display:inline-block;font-size:1.45rem;line-height:1;animation:btwArrowBounce 1.8s ease-in-out infinite;}
+.page.active .page-header + .section h2{animation:btwFloatUp .95s .25s both;}
+@media(max-width:850px){.page-header{min-height:155px!important;padding:31px 0!important}.page .hero{min-height:390px!important;background-position:center,right center!important}.page .hero .wrap{padding:48px 0 70px!important}.btw-about-family img{max-height:285px}}
+@media(max-width:600px){.page-header{min-height:145px!important;padding:25px 0!important}.page-header h1{font-size:2rem!important}.page-header p{font-size:.93rem}.page .hero{min-height:390px!important;background-size:100% 100%,auto 100%!important;background-position:center,right center!important;background-image:linear-gradient(90deg,rgba(6,31,45,.96) 0%,rgba(6,31,45,.91) 54%,rgba(6,31,45,.56) 100%),url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=900&q=80")!important}.page .hero h2{font-size:2.3rem!important}.page .hero .wrap{padding:50px 0 72px!important}.btw-scroll-cue{right:6%;bottom:10px;letter-spacing:.1em}.page .photo-stack>img,.page .split>img{max-height:265px!important}}
+@media(prefers-reduced-motion:reduce){.page.active .page-header h1,.page.active .page-header p,.page.active .page-header + .section h2,.page.active .hero .button-link.gold,.ribbon .btw-ribbon-dot,.btw-scroll-cue .btw-arrow,.page-header::before,.page-header::after{animation:none!important}}
+
 </style>
 </head>
 
@@ -720,10 +779,11 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
       <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
       <a href="#book" class="button-link outline">Request a Consultation →</a>
     </div>
+    <div class="btw-scroll-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span class="btw-arrow">↓</span></div>
   </div>
 
-  <div class="ribbon">
-    Learn today. Plan with purpose. Inspire generations.
+  <div class="ribbon" aria-label="Learn today. Plan with purpose. Inspire generations.">
+    <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Learn today. <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Plan with purpose. <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Inspire generations.
   </div>
 
   <div class="section wrap split">
@@ -753,8 +813,8 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
 
     <div class="photo-stack">
       <img
-        src="https://images.unsplash.com/photo-1680575527250-e91bdb3913e2?auto=format&fit=crop&w=1000&q=85"
-        alt="Parent and young child together">
+        src="https://src.nappy.co/photo/p6y_HcRPiLZyjEtvA6zhw"
+        alt="Black parents and children together outdoors">
       <img
         class="small"
         src="https://images.unsplash.com/photo-1549231567-950cb741e796?auto=format&fit=crop&w=500&q=85"
@@ -1000,7 +1060,7 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
   <div class="section wrap">
     <div class="cards">
       <article class="photo-card">
-        <img src="https://images.unsplash.com/photo-1680575527250-e91bdb3913e2?auto=format&fit=crop&w=850&q=85" alt="Parent with child">
+        <img src="https://src.nappy.co/photo/nKLWJe7CFDNItGPHlYK7m" alt="Black parents holding their newborn">
         <div class="content"><h3>Family Protection</h3><p>Life insurance education and preparedness.</p></div>
       </article>
 
@@ -1033,7 +1093,7 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
       <p class="notice">Bridgette's official biography, approved credentials, and actual headshot should be added before launch.</p>
       <a href="#contact" class="button-link green">Connect With Bridgette →</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1551934262-db2d7dd517f4?auto=format&fit=crop&w=850&q=85" alt="Illustrative portrait of a Black woman; not Bridgette">
+    <div class="btw-about-family"><img src="https://src.nappy.co/photo/nKLWJe7CFDNItGPHlYK7m" alt="Black parents caring for their newborn at home, illustrative family photo, not a portrait of Bridgette" loading="lazy"><p class="btw-image-caption">A family-focused approach. Bridgette's own portrait will be added when available.</p></div>
   </div>
 </section>
 
@@ -1240,7 +1300,7 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
     <small>
       <a href="#home">Home</a> •
       <a href="#contact">Contact</a> •
-      <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Lifestyle photography via Unsplash</a>
+      <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Lifestyle photography via Unsplash and Nappy</a>
     </small>
 
     <p class="notice">
@@ -1496,6 +1556,24 @@ nav ul.links a:not([role="button"]):hover {color:#f0d394;}
     window.addEventListener("resize", scheduleProgress);
     window.addEventListener("hashchange", scheduleProgress);
     drawProgress();
+  })();
+
+
+  // 2026-11-04: ensure above-the-fold reveal effects replay when visiting sections.
+  (() => {
+    function refreshPageMotion() {
+      const active=document.querySelector(".page.active");
+      if(!active)return;
+      window.requestAnimationFrame(()=>{
+        active.querySelectorAll(".btw-reveal").forEach(el=>{
+          const rect=el.getBoundingClientRect();
+          if(rect.top<window.innerHeight-10&&rect.bottom>0)el.classList.add("btw-visible");
+        });
+      });
+    }
+    window.addEventListener("hashchange",()=>window.requestAnimationFrame(refreshPageMotion));
+    window.addEventListener("pageshow",refreshPageMotion);
+    refreshPageMotion();
   })();
 
 </script>
