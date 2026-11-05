@@ -151,7 +151,7 @@
       color: white;
       background:
         linear-gradient(90deg, #061f2df9 0%, #061f2de0 46%, #061f2d54 100%),
-        url("https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1900&q=85")
+        url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1900&q=85")
         center / cover;
     }
 
@@ -291,7 +291,7 @@
       padding: 75px 0;
       background:
         linear-gradient(90deg, #07594cf2, #07594cc4),
-        url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=85")
+        url("https://images.unsplash.com/photo-1627203030417-33b1129033d0?auto=format&fit=crop&w=1600&q=85")
         center / cover;
     }
 
@@ -303,7 +303,7 @@
       color: white;
       background:
         linear-gradient(90deg, #082b3bf5, #082b3baa),
-        url("https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1600&q=85")
+        url("https://images.unsplash.com/photo-1680575527250-e91bdb3913e2?auto=format&fit=crop&w=1600&q=85")
         center / cover;
     }
 
@@ -563,7 +563,19 @@
       .photo-stack img.small { height: 125px; right: 0; }
       .field.full { grid-column: auto; }
     }
-  </style>
+  
+/* Bridgette's supplied logo, photography and proportional image frames */
+nav.container-fluid{min-height:90px;gap:18px}
+nav .brand{display:inline-flex;align-items:center;max-width:275px}
+nav .brand-logo{display:block;width:clamp(180px,20vw,255px)!important;height:64px!important;object-fit:contain!important;object-position:center!important;background:#fff9ed;border-radius:8px;padding:4px 7px}
+.photo-stack>img,.split>img,.topic-grid img,.cards img{display:block;width:100%;height:auto;max-height:350px;object-fit:cover;object-position:center center;border-radius:12px}
+.photo-stack>img{aspect-ratio:4/3;max-height:360px}.photo-stack img.small{width:38%!important;max-height:125px!important;aspect-ratio:4/3}
+.topic-grid img,.cards img{aspect-ratio:16/10;max-height:230px}
+.hero{min-height:535px;background-position:center 40%;background-image:linear-gradient(90deg,rgba(5,30,47,.96) 0%,rgba(5,36,51,.85) 46%,rgba(8,30,46,.34) 100%),url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1800&q=82")}
+.hero .wrap{padding:78px 0}
+@media(max-width:850px){nav.container-fluid{min-height:75px}nav .brand-logo{width:180px!important;height:48px!important}.hero{min-height:500px;background-position:58% 40%;background-image:linear-gradient(90deg,rgba(6,31,46,.92),rgba(5,37,46,.68)),url("https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=1100&q=80")}}
+@media(max-width:600px){.hero{min-height:470px}.photo-stack>img,.split>img{max-height:290px;aspect-ratio:4/3}.topic-grid img,.cards img{max-height:220px}}
+</style>
 </head>
 
 <body>
@@ -572,10 +584,7 @@
   <ul>
     <li>
       <strong>
-        <a href="#home" class="brand">
-          ✦ Bridge the Wealth
-          <small>Financial Services</small>
-        </a>
+        <a href="#home" class="brand" aria-label="Bridge the Wealth Financial Services home"><img class="brand-logo" src="data:image/webp;base64,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" alt="Bridge the Wealth Financial Services gold willow tree logo"></a>
       </strong>
     </li>
   </ul>
@@ -658,11 +667,11 @@
 
     <div class="photo-stack">
       <img
-        src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=85"
+        src="https://images.unsplash.com/photo-1680575527250-e91bdb3913e2?auto=format&fit=crop&w=1000&q=85"
         alt="Parent and young child together">
       <img
         class="small"
-        src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?auto=format&fit=crop&w=500&q=85"
+        src="https://images.unsplash.com/photo-1549231567-950cb741e796?auto=format&fit=crop&w=500&q=85"
         alt="Family moment with a child">
     </div>
   </div>
@@ -675,7 +684,7 @@
       <div class="cards">
         <article class="photo-card">
           <img
-            src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=850&q=85"
+            src="https://images.unsplash.com/photo-1551934262-db2d7dd517f4?auto=format&fit=crop&w=850&q=85"
             alt="Black woman smiling">
           <div class="content">
             <h3>Life Insurance 101</h3>
@@ -686,7 +695,7 @@
 
         <article class="photo-card">
           <img
-            src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=850&q=85"
+            src="https://images.unsplash.com/photo-1656910962409-3963e280c7d2?auto=format&fit=crop&w=850&q=85"
             alt="Graduates celebrating">
           <div class="content">
             <h3>Saving for Their Future</h3>
@@ -697,7 +706,7 @@
 
         <article class="photo-card">
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=85"
+            src="https://images.unsplash.com/photo-1627203030417-33b1129033d0?auto=format&fit=crop&w=850&q=85"
             alt="Family and friends gathered together">
           <div class="content">
             <h3>Generational Wealth</h3>
@@ -722,7 +731,7 @@
       </div>
 
       <img
-        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85"
+        src="https://images.unsplash.com/photo-1577897113176-6888367369bf?auto=format&fit=crop&w=1000&q=85"
         alt="People learning and discussing plans">
     </div>
   </div>
@@ -806,7 +815,7 @@
     </div>
 
     <img
-      src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?auto=format&fit=crop&w=900&q=85"
+      src="https://images.unsplash.com/photo-1549231567-950cb741e796?auto=format&fit=crop&w=900&q=85"
       alt="Parent holding a young child">
   </div>
 
@@ -905,12 +914,12 @@
   <div class="section wrap">
     <div class="cards">
       <article class="photo-card">
-        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=850&q=85" alt="Parent with child">
+        <img src="https://images.unsplash.com/photo-1680575527250-e91bdb3913e2?auto=format&fit=crop&w=850&q=85" alt="Parent with child">
         <div class="content"><h3>Family Protection</h3><p>Life insurance education and preparedness.</p></div>
       </article>
 
       <article class="photo-card">
-        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=850&q=85" alt="Graduates celebrating">
+        <img src="https://images.unsplash.com/photo-1656910962409-3963e280c7d2?auto=format&fit=crop&w=850&q=85" alt="Graduates celebrating">
         <div class="content"><h3>Children & Education</h3><p>Education milestones and savings habits.</p></div>
       </article>
 
@@ -938,7 +947,7 @@
       <p class="notice">Bridgette's official biography, approved credentials, and actual headshot should be added before launch.</p>
       <a href="#contact" class="button-link green">Connect With Bridgette →</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=850&q=85" alt="Illustrative portrait of a Black woman; not Bridgette">
+    <img src="https://images.unsplash.com/photo-1551934262-db2d7dd517f4?auto=format&fit=crop&w=850&q=85" alt="Illustrative portrait of a Black woman; not Bridgette">
   </div>
 </section>
 
@@ -952,7 +961,7 @@
   </div>
 
   <div class="section wrap split">
-    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85" alt="Family and friends together">
+    <img src="https://images.unsplash.com/photo-1627203030417-33b1129033d0?auto=format&fit=crop&w=900&q=85" alt="Family and friends together">
     <div>
       <h2>A thoughtful gift begins with understanding.</h2>
       <p>Request approved details on the program's features, eligibility, costs, and conditions.</p>
@@ -990,7 +999,7 @@
         <div id="calendar-days" class="calendar-grid"></div>
       </div>
 
-      <form class="preview-form">
+      <form class="preview-form" data-live action="https://formsubmit.co/support@bridgethewealthfinancialservices.com" method="POST"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="_subject" value="Bridge the Wealth Website Inquiry">
         <div class="form-grid">
           <div class="field">
             <label for="booking-date">Preferred date *</label>
@@ -999,7 +1008,7 @@
 
           <div class="field">
             <label for="booking-time">Preferred time *</label>
-            <select id="booking-time" required>
+            <select id="booking-time" name="time" required>
               <option value="">Choose time</option>
               <option>9:00 AM</option>
               <option>10:00 AM</option>
@@ -1013,7 +1022,7 @@
 
           <div class="field full">
             <label for="booking-zone">Time zone *</label>
-            <select id="booking-zone" required>
+            <select id="booking-zone" name="timezone" required>
               <option>Eastern Time</option>
               <option>Central Time</option>
               <option>Mountain Time</option>
@@ -1023,17 +1032,17 @@
 
           <div class="field">
             <label for="booking-name">Your name *</label>
-            <input id="booking-name" required>
+            <input id="booking-name" name="name" required>
           </div>
 
           <div class="field">
             <label for="booking-email">Email *</label>
-            <input id="booking-email" type="email" required>
+            <input id="booking-email" name="email" type="email" required>
           </div>
 
           <div class="field full">
             <label for="booking-topic">What would you like to discuss? *</label>
-            <select id="booking-topic" required>
+            <select id="booking-topic" name="topic" required>
               <option value="">Choose a topic</option>
               <option>Million Dollar Baby Plan</option>
               <option>Financial Education</option>
@@ -1075,21 +1084,21 @@
     <div class="form-card">
       <h3>Send a Message</h3>
 
-      <form class="preview-form">
+      <form class="preview-form" data-live action="https://formsubmit.co/support@bridgethewealthfinancialservices.com" method="POST"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="_subject" value="Bridge the Wealth Website Inquiry">
         <div class="form-grid">
           <div class="field">
             <label for="contact-name">Name *</label>
-            <input id="contact-name" required>
+            <input id="contact-name" name="name" required>
           </div>
 
           <div class="field">
             <label for="contact-email">Email *</label>
-            <input id="contact-email" type="email" required>
+            <input id="contact-email" name="email" type="email" required>
           </div>
 
           <div class="field full">
             <label for="contact-topic">Topic *</label>
-            <select id="contact-topic" required>
+            <select id="contact-topic" name="topic" required>
               <option value="">Select a topic</option>
               <option>Million Dollar Baby Plan</option>
               <option>Financial Education</option>
@@ -1100,7 +1109,7 @@
 
           <div class="field full">
             <label for="contact-message">Message *</label>
-            <textarea id="contact-message" required></textarea>
+            <textarea id="contact-message" name="message" required></textarea>
           </div>
 
           <div class="field full">
@@ -1150,7 +1159,7 @@
 
     <p class="notice">
       Design approval draft. Financial-program details and images require Bridgette's review.
-      Customer forms and live appointment booking are not yet active.
+      Contact and appointment inquiries use a third-party form provider and require email activation and testing before public launch. Appointment times are requests, not confirmed bookings.
     </p>
   </div>
 </footer>
@@ -1341,7 +1350,7 @@
   renderCalendar();
 
   // Approval preview: no customer information is sent
-  document.querySelectorAll(".preview-form").forEach(form => {
+  document.querySelectorAll(".preview-form:not([data-live])").forEach(form => {
     form.addEventListener("submit", event => {
       event.preventDefault();
 
