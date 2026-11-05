@@ -621,6 +621,46 @@ img{max-width:100%;height:auto}
   .photo-card img{aspect-ratio:4/3!important;max-height:195px!important;object-position:center 22%!important}
 }
 
+
+/* Bridge the Wealth motion enhancements — Nov 2026 */
+html { scroll-behavior: smooth; }
+.page.active { animation: btwPageEnter 0.38s ease-out both; }
+@keyframes btwPageEnter { from { opacity: 0.65; } to { opacity: 1; } }
+@keyframes btwFloatUp { from {opacity:0;transform:translate3d(0,24px,0)} to {opacity:1;transform:translate3d(0,0,0)} }
+.page.active .hero .eyebrow { animation: btwFloatUp .7s cubic-bezier(.2,.7,.2,1) both; }
+.page.active .hero hgroup { animation: btwFloatUp .82s .12s cubic-bezier(.2,.7,.2,1) both; }
+.page.active .hero .wrap > p:not(.eyebrow) { animation: btwFloatUp .8s .27s cubic-bezier(.2,.7,.2,1) both; }
+.page.active .hero .button-link { animation: btwFloatUp .72s .36s cubic-bezier(.2,.7,.2,1) both; }
+.page.active .hero .button-link + .button-link { animation-delay: .45s; }
+html.btw-motion-ready .btw-reveal {
+  opacity:0;transform:translate3d(0,22px,0);
+  transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1);
+  will-change:opacity,transform;
+}
+html.btw-motion-ready .btw-reveal.btw-visible { opacity:1;transform:translate3d(0,0,0);will-change:auto; }
+.page .photo-card, .page .photo-stack {transition:box-shadow .35s ease,transform .35s ease;}
+.page .photo-card:hover {box-shadow:0 18px 38px rgba(7,40,55,.14);transform:translateY(-5px);}
+.page .photo-card img {transition:transform .65s cubic-bezier(.2,.7,.2,1);}
+.page .photo-card:hover img {transform:scale(1.025);}
+.page .photo-stack > img {transition:filter .45s ease;}
+.page .photo-stack:hover > img {filter:saturate(1.07);}
+.button-link, nav ul.links a, .tabs button, .calendar button {
+  transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease,color .22s ease,border-color .22s ease;
+}
+.button-link:hover {transform:translateY(-3px);box-shadow:0 11px 26px rgba(4,35,48,.19);}
+.button-link:focus-visible,nav a:focus-visible,.tabs button:focus-visible {outline:3px solid #d7b16d;outline-offset:3px;}
+.tabs button:hover {transform:translateY(-2px);}
+nav ul.links a:not([role="button"]):hover {color:#f0d394;}
+.btw-scroll-progress {position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,#d7b16d,#f5dda6,#d7b16d);z-index:150;pointer-events:none;transition:width .1s linear;}
+@media (hover:none) { .page .photo-card:hover {transform:none;} .page .photo-card:hover img {transform:none;} }
+@media (prefers-reduced-motion:reduce) {
+ html {scroll-behavior:auto;}
+ .page.active,.page.active .hero .eyebrow,.page.active .hero hgroup,.page.active .hero .wrap>p:not(.eyebrow),.page.active .hero .button-link {animation:none!important;}
+ html.btw-motion-ready .btw-reveal {opacity:1!important;transform:none!important;transition:none!important;}
+ .page .photo-card,.page .photo-card img,.page .photo-stack>img,.button-link,.tabs button {transition:none!important;transform:none!important;}
+ .btw-scroll-progress{transition:none!important;}
+}
+
 </style>
 </head>
 
@@ -1408,6 +1448,56 @@ img{max-width:100%;height:auto}
       }
     });
   });
+
+  // Bridge the Wealth motion enhancements — Nov 2026
+  (() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const targets = document.querySelectorAll(
+      ".page .section h2, .page .section .photo-stack, .page .section .split > img, " +
+      ".page .photo-card, .page .step, .page .topic, .page .lesson, " +
+      ".page .calculator, .page .form-card, .page .faq details, .page .banner"
+    );
+    if (!reducedMotion.matches && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("btw-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -5% 0px" });
+      targets.forEach((element, index) => {
+        element.classList.add("btw-reveal");
+        // A small stagger makes groups of cards appear naturally.
+        if (element.matches(".photo-card, .step, .topic")) {
+          element.style.transitionDelay = ((index % 3) * 75) + "ms";
+        }
+        observer.observe(element);
+      });
+      document.documentElement.classList.add("btw-motion-ready");
+    }
+    const progress = document.createElement("div");
+    progress.className = "btw-scroll-progress";
+    progress.setAttribute("aria-hidden", "true");
+    document.body.appendChild(progress);
+    let scheduled = false;
+    const drawProgress = () => {
+      scheduled = false;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0) + "%";
+    };
+    const scheduleProgress = () => {
+      if (!scheduled) {
+        scheduled = true;
+        window.requestAnimationFrame(drawProgress);
+      }
+    };
+    window.addEventListener("scroll", scheduleProgress, { passive: true });
+    window.addEventListener("resize", scheduleProgress);
+    window.addEventListener("hashchange", scheduleProgress);
+    drawProgress();
+  })();
+
 </script>
 
 </body>
