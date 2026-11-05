@@ -1,1 +1,1360 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092b3b">
+  <meta name="description" content="Bridge the Wealth Financial Services: financial education, family protection and planning for future generations.">
+  <title>Bridge the Wealth Financial Services</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #092b3b;
+      --dark: #061f2d;
+      --green: #07594c;
+      --gold: #d7b16d;
+      --ivory: #faf7f0;
+      --cream: #eee8dd;
+      --muted: #657779;
+      --primary: var(--green);
+      --primary-hover: #06483e;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: #203942;
+      font: 15px/1.7 "DM Sans", sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      line-height: 1.17;
+      color: var(--navy);
+    }
+
+    p { line-height: 1.75; }
+    a { text-decoration: none; }
+    img { width: 100%; display: block; object-fit: cover; }
+
+    main.container {
+      width: 100%;
+      max-width: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 44px));
+      margin-inline: auto;
+    }
+
+    .page { display: none; }
+    .page.active { display: block; }
+    [hidden] { display: none !important; }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .17em;
+    }
+
+    .eyebrow.light { color: #f0cd8b; }
+
+    .button-link {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 6px 8px 6px 0;
+      text-align: center;
+    }
+
+    .gold { background: var(--gold); color: var(--navy); }
+    .green { background: var(--green); color: white; }
+    .outline { border: 1px solid white; color: white; }
+
+    nav.container-fluid {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 82px;
+      padding: 14px 4%;
+      max-width: none;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav li { padding: 0; }
+    nav a, nav strong { color: white; font-size: 12px; }
+    nav a:hover { color: var(--gold); }
+
+    nav a[role="button"] {
+      background: var(--gold);
+      border: 0;
+      border-radius: 4px;
+      color: var(--navy);
+      padding: 12px 17px;
+    }
+
+    .brand {
+      font: 500 19px "Playfair Display", serif;
+      color: white;
+    }
+
+    .brand small {
+      display: block;
+      font: 700 9px "DM Sans", sans-serif;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      border: 1px solid #ffffff70;
+      color: white;
+      padding: 9px 13px;
+      margin: 0;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, #061f2df9 0%, #061f2de0 46%, #061f2d54 100%),
+        url("https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1900&q=85")
+        center / cover;
+    }
+
+    .hero h2 {
+      font-size: clamp(44px, 6vw, 79px);
+      max-width: 850px;
+      color: white;
+      margin: 0 0 25px;
+    }
+
+    .hero h2 em {
+      color: #f3d598;
+      font-style: normal;
+    }
+
+    .hero h3 {
+      color: #f5f0e8;
+      font: 400 19px/1.6 "DM Sans", sans-serif;
+      max-width: 600px;
+    }
+
+    .hero p {
+      color: #dce9e4;
+      max-width: 600px;
+    }
+
+    .hero .wrap { padding: 80px 0; }
+
+    .ribbon {
+      background: var(--green);
+      color: white;
+      padding: 23px;
+      text-align: center;
+      font: 500 24px "Playfair Display", serif;
+    }
+
+    .section { padding: 85px 0; }
+
+    .section h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      margin: 0 0 21px;
+    }
+
+    .section p { color: var(--muted); }
+    .cream-bg { background: var(--cream); }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .split > img {
+      height: 405px;
+      border-radius: 7px;
+    }
+
+    .photo-stack { position: relative; }
+
+    .photo-stack > img {
+      height: 415px;
+      border-radius: 7px;
+    }
+
+    .photo-stack img.small {
+      position: absolute;
+      right: -13px;
+      bottom: -22px;
+      width: 40%;
+      height: 163px;
+      border: 8px solid var(--ivory);
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 25px 0;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .check-grid span::before {
+      content: "✦ ";
+      color: #bf9956;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 21px;
+    }
+
+    .photo-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid #dde4dd;
+      box-shadow: 0 12px 35px #062b2b12;
+    }
+
+    .photo-card img { height: 205px; }
+
+    .photo-card .content { padding: 25px; }
+    .photo-card h3 { font-size: 25px; margin: 0 0 11px; }
+    .photo-card p { font-size: 13px; }
+    .photo-card a { font-size: 12px; font-weight: 700; color: var(--green); }
+
+    .dark-bg {
+      background: var(--dark);
+      color: white;
+    }
+
+    .dark-bg h2, .dark-bg h3 { color: white; }
+    .dark-bg p { color: #d2e0da; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 27px;
+    }
+
+    .step {
+      border-top: 2px solid var(--gold);
+      padding-top: 20px;
+    }
+
+    .step strong {
+      font: 34px "Playfair Display", serif;
+      color: #c7a365;
+    }
+
+    .step h3 { font-size: 25px; }
+
+    .banner {
+      padding: 75px 0;
+      background:
+        linear-gradient(90deg, #07594cf2, #07594cc4),
+        url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=85")
+        center / cover;
+    }
+
+    .banner h2 { color: white; }
+    .banner p { color: #e8f2ed; }
+
+    .page-header {
+      padding: 80px 0;
+      color: white;
+      background:
+        linear-gradient(90deg, #082b3bf5, #082b3baa),
+        url("https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1600&q=85")
+        center / cover;
+    }
+
+    .page-header h1 {
+      color: white;
+      font-size: clamp(43px, 5vw, 64px);
+    }
+
+    .page-header p { color: #e5efe9; max-width: 650px; }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .topic {
+      padding: 24px;
+      background: white;
+      border: 1px solid #dce4df;
+      border-radius: 7px;
+    }
+
+    .topic h3 { font-size: 23px; margin: 0 0 8px; }
+    .topic p { font-size: 13px; margin: 0; }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 21px;
+    }
+
+    .tabs button {
+      margin: 0;
+      background: white;
+      color: var(--green);
+      border: 1px solid #cedbd4;
+      border-radius: 5px;
+      padding: 12px 16px;
+      font-size: 12px;
+    }
+
+    .tabs button[aria-selected="true"] {
+      background: var(--green);
+      color: white;
+    }
+
+    .lesson, .calculator, .form-card {
+      background: white;
+      padding: 30px;
+      border: 1px solid #dce4df;
+      border-radius: 8px;
+    }
+
+    .lesson h3 { font-size: 30px; }
+    .lesson p, .lesson li { font-size: 14px; }
+
+    .calculator input[type="range"] {
+      width: 100%;
+      accent-color: var(--green);
+    }
+
+    .calculator .result {
+      margin-top: 21px;
+      padding: 21px;
+      background: var(--green);
+      color: white;
+      border-radius: 6px;
+    }
+
+    .result strong {
+      display: block;
+      font: 37px "Playfair Display", serif;
+      color: #f6d898;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 43px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 12px; font-weight: 700; }
+
+    .field input, .field select, .field textarea {
+      width: 100%;
+      margin: 6px 0 0;
+      background: #fcfdfb;
+      font-size: 13px;
+    }
+
+    .field textarea { min-height: 115px; }
+
+    .field button {
+      margin: 0;
+      width: 100%;
+      background: var(--green);
+      border: 0;
+    }
+
+    .calendar {
+      padding: 15px;
+      margin: 20px 0;
+      background: #f6faf7;
+      border: 1px solid #dce4df;
+      border-radius: 7px;
+    }
+
+    .calendar-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calendar-head button {
+      margin: 0;
+      padding: 5px 12px;
+      background: white;
+      border: 1px solid #dce4df;
+      color: var(--navy);
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-top: 13px;
+    }
+
+    .calendar-grid span {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .calendar-grid button {
+      margin: 0;
+      padding: 5px 0;
+      min-height: 35px;
+      background: white;
+      color: var(--navy);
+      border: 0;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .calendar-grid button.selected {
+      color: white;
+      background: var(--green);
+    }
+
+    .calendar-grid button:disabled { opacity: .25; }
+
+    .notice {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .form-status {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .faq details {
+      background: white;
+      border: 1px solid #dce4df;
+      border-radius: 6px;
+      padding: 19px 24px;
+      margin-bottom: 11px;
+    }
+
+    .faq summary { font-weight: 700; }
+    .faq details p { font-size: 13px; }
+
+    .subscribe {
+      background: var(--green);
+      color: white;
+      padding: 58px 0;
+    }
+
+    .subscribe .container { max-width: 1160px; margin: auto; }
+
+    .subscribe article {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      border: 0;
+    }
+
+    .subscribe h2, .subscribe h3 { color: white; }
+
+    .subscribe form.grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 10px;
+    }
+
+    .subscribe input, .subscribe button { margin: 0; }
+    .subscribe button {
+      background: var(--gold);
+      border: 0;
+      color: var(--navy);
+    }
+
+    footer.container {
+      max-width: none;
+      padding: 50px 22px;
+      background: var(--dark);
+      color: #c9dcd2;
+    }
+
+    footer h3 { color: white; }
+    footer a { color: #d8e2dc; }
+    footer small { font-size: 11px; }
+
+    @media (max-width: 1030px) {
+      .menu-button { display: block; }
+
+      nav ul.links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        padding: 15px 25px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      nav ul.links.open { display: flex; }
+      nav ul.links a { display: block; padding: 9px; }
+    }
+
+    @media (max-width: 700px) {
+      .section { padding: 62px 0; }
+      .hero { min-height: 630px; }
+      .hero h2 { font-size: 44px; }
+      .hero h3 { font-size: 16px; }
+
+      .split, .cards, .steps, .topic-grid,
+      .booking-layout, .form-grid, .subscribe form.grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split { gap: 30px; }
+      .split > img, .photo-stack > img { height: 290px; }
+      .photo-stack img.small { height: 125px; right: 0; }
+      .field.full { grid-column: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="container-fluid">
+  <ul>
+    <li>
+      <strong>
+        <a href="#home" class="brand">
+          ✦ Bridge the Wealth
+          <small>Financial Services</small>
+        </a>
+      </strong>
+    </li>
+  </ul>
+
+  <button type="button" class="menu-button" id="menu-button" aria-expanded="false">
+    ☰ Menu
+  </button>
+
+  <ul class="links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#baby">Million Dollar Baby Plan</a></li>
+    <li><a href="#education">Financial Education</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gift">17-Day Gift</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#book" role="button">Book a Call</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+<div class="grid" style="display:block">
+
+<!-- HOME -->
+<section class="page active" data-page="home">
+
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow light">Financial Knowledge • Family Strength • Generational Possibility</p>
+
+      <hgroup>
+        <h2>
+          We're not just building wealth.
+          <em>We're building a generation that understands it.</em>
+        </h2>
+        <h3>
+          Helping Black families learn, protect what matters,
+          and plan for the next generation.
+        </h3>
+      </hgroup>
+
+      <p>
+        Financial education that makes sense, family-focused
+        conversations, and a thoughtful plan for tomorrow.
+      </p>
+
+      <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
+      <a href="#book" class="button-link outline">Request a Consultation →</a>
+    </div>
+  </div>
+
+  <div class="ribbon">
+    Learn today. Plan with purpose. Inspire generations.
+  </div>
+
+  <div class="section wrap split">
+    <div>
+      <p class="eyebrow">Our Signature Family Conversation</p>
+      <h2>The Million Dollar Baby Plan.</h2>
+      <p>
+        Their big dreams deserve a thoughtful beginning.
+        Explore protection, education goals, emergency savings,
+        first-home aspirations, and longer-term family planning.
+      </p>
+
+      <div class="check-grid">
+        <span>Financial protection</span>
+        <span>Education milestones</span>
+        <span>Emergency savings</span>
+        <span>Family legacy</span>
+      </div>
+
+      <a href="#baby" class="button-link green">Discover the Plan →</a>
+
+      <p class="notice">
+        The program name is aspirational and does not guarantee
+        a million-dollar outcome or any particular financial result.
+      </p>
+    </div>
+
+    <div class="photo-stack">
+      <img
+        src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=85"
+        alt="Parent and young child together">
+      <img
+        class="small"
+        src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?auto=format&fit=crop&w=500&q=85"
+        alt="Family moment with a child">
+    </div>
+  </div>
+
+  <div class="section cream-bg">
+    <div class="wrap">
+      <p class="eyebrow">Your Financial Confidence Classroom</p>
+      <h2>What we weren't taught, we can learn together.</h2>
+
+      <div class="cards">
+        <article class="photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=850&q=85"
+            alt="Black woman smiling">
+          <div class="content">
+            <h3>Life Insurance 101</h3>
+            <p>Learn what coverage does, common policy types, and important questions to ask.</p>
+            <a href="#education">Start Learning →</a>
+          </div>
+        </article>
+
+        <article class="photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=850&q=85"
+            alt="Graduates celebrating">
+          <div class="content">
+            <h3>Saving for Their Future</h3>
+            <p>Explore education goals, emergency funds, and consistent savings habits.</p>
+            <a href="#education">Explore Saving →</a>
+          </div>
+        </article>
+
+        <article class="photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=85"
+            alt="Family and friends gathered together">
+          <div class="content">
+            <h3>Generational Wealth</h3>
+            <p>Learn about financial knowledge, meaningful family goals, and legacy planning.</p>
+            <a href="#education">Learn About Legacy →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="section dark-bg">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow light">Education First</p>
+        <h2>Knowledge is one legacy we can start sharing today.</h2>
+        <p>
+          Everyone deserves financial explanations they can understand.
+          Build your confidence and bring your questions into the conversation.
+        </p>
+        <a href="#education" class="button-link gold">Visit the Education Center →</a>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85"
+        alt="People learning and discussing plans">
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <h2>Learn. Ask. Plan.</h2>
+    <div class="steps">
+      <div class="step">
+        <strong>01</strong>
+        <h3>Learn</h3>
+        <p>Understand the financial basics in everyday language.</p>
+      </div>
+      <div class="step">
+        <strong>02</strong>
+        <h3>Ask</h3>
+        <p>Bring your questions, priorities, and family goals.</p>
+      </div>
+      <div class="step">
+        <strong>03</strong>
+        <h3>Plan</h3>
+        <p>Explore next steps with care and clear information.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="wrap">
+      <h2>It's not just about money. It's about the next generation.</h2>
+      <p>Choose a preferred date and time to start a conversation with Bridgette.</p>
+      <a href="#book" class="button-link gold">Choose a Date & Time →</a>
+    </div>
+  </div>
+
+  <div class="section cream-bg">
+    <div class="wrap faq">
+      <h2>Questions are always welcome.</h2>
+
+      <details>
+        <summary>What is the Million Dollar Baby Plan?</summary>
+        <p>It's a family-focused conversation about protection, education, savings, home goals, and long-term planning. Financial outcomes are not guaranteed.</p>
+      </details>
+
+      <details>
+        <summary>Do I need financial knowledge before reaching out?</summary>
+        <p>No. Financial education is the starting point. You are welcome to ask questions.</p>
+      </details>
+
+      <details>
+        <summary>Can I book a consultation?</summary>
+        <p>You can request a preferred date and time. The appointment is not confirmed until Bridgette responds.</p>
+      </details>
+    </div>
+  </div>
+
+</section>
+
+<!-- MILLION DOLLAR BABY PLAN -->
+<section class="page" data-page="baby">
+
+  <div class="page-header">
+    <div class="wrap">
+      <p class="eyebrow light">Their Future Starts With a Conversation</p>
+      <h1>Million Dollar Baby Plan.</h1>
+      <p>Big dreams deserve financial education and a thoughtful plan.</p>
+    </div>
+  </div>
+
+  <div class="section wrap split">
+    <div>
+      <h2>Prepare for their future with intention.</h2>
+      <p>
+        The Million Dollar Baby Plan introduces important conversations
+        about family protection, education, emergency savings,
+        homeownership goals, and long-term priorities.
+      </p>
+      <p>
+        The name reflects an aspirational vision, not a guaranteed balance,
+        investment return, or other financial outcome.
+      </p>
+      <a href="#book" class="button-link green">Request a Baby Plan Consultation →</a>
+    </div>
+
+    <img
+      src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?auto=format&fit=crop&w=900&q=85"
+      alt="Parent holding a young child">
+  </div>
+
+  <div class="section cream-bg">
+    <div class="wrap topic-grid">
+      <div class="topic"><h3>Financial Protection</h3><p>Understand preparedness and family protection questions.</p></div>
+      <div class="topic"><h3>Education Goals</h3><p>Discuss school, training, and future milestones.</p></div>
+      <div class="topic"><h3>Emergency Savings</h3><p>Prepare for unexpected necessary expenses.</p></div>
+      <div class="topic"><h3>Homeownership</h3><p>Explore first-home aspirations and saving habits.</p></div>
+    </div>
+  </div>
+
+  <div class="section wrap split">
+    <div>
+      <h2>Try the Savings Habit Explorer.</h2>
+      <p>See how regular contributions add up over time. This illustration assumes no growth, fees, or withdrawals.</p>
+    </div>
+
+    <div class="calculator">
+      <h3>Simple Savings Explorer</h3>
+
+      <label for="monthly">Monthly contribution: <strong id="monthly-label">$200</strong></label>
+      <input id="monthly" type="range" min="25" max="1000" step="25" value="200">
+
+      <label for="years">Years: <strong id="years-label">18</strong></label>
+      <input id="years" type="range" min="1" max="25" value="18">
+
+      <div class="result">
+        Total contributions, no growth
+        <strong id="total">$43,200</strong>
+      </div>
+
+      <p class="notice">Educational calculation only, not financial advice or a forecast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="page" data-page="education">
+
+  <div class="page-header">
+    <div class="wrap">
+      <h1>Financial Confidence Classroom.</h1>
+      <p>Practical education for families who want to understand their choices.</p>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <h2>Choose a lesson.</h2>
+
+    <div class="tabs" role="tablist">
+      <button type="button" data-tab="insurance" aria-selected="true">Life Insurance</button>
+      <button type="button" data-tab="emergency" aria-selected="false">Emergency Savings</button>
+      <button type="button" data-tab="college" aria-selected="false">College Planning</button>
+      <button type="button" data-tab="legacy" aria-selected="false">Generational Wealth</button>
+    </div>
+
+    <article class="lesson" data-panel="insurance">
+      <h3>Life Insurance 101</h3>
+      <p>Life insurance generally pays a benefit to named beneficiaries after the insured person dies, subject to policy terms. Term insurance covers a specified period; permanent policies may include longer-term features and different costs.</p>
+      <p><strong>Question to ask:</strong> Who relies on your income or care?</p>
+    </article>
+
+    <article class="lesson" data-panel="emergency" hidden>
+      <h3>Emergency Savings</h3>
+      <p>An emergency fund is money set aside for unexpected necessary expenses. Start with an achievable target and consider keeping funds accessible.</p>
+      <p><strong>Question to ask:</strong> Which surprise expense would be most difficult for your family?</p>
+    </article>
+
+    <article class="lesson" data-panel="college" hidden>
+      <h3>College Planning</h3>
+      <p>Begin with a future education goal, timeframe, and realistic savings amount. Savings options may differ in fees, risks, restrictions, and tax treatment.</p>
+      <p><strong>Question to ask:</strong> What future opportunity do you want to help make possible?</p>
+    </article>
+
+    <article class="lesson" data-panel="legacy" hidden>
+      <h3>Generational Wealth</h3>
+      <p>Financial literacy, savings habits, family preparedness, and long-term planning can all contribute to building a legacy. Qualified legal and tax professionals can assist with specialized matters.</p>
+      <p><strong>Question to ask:</strong> What financial lesson would you like to pass down?</p>
+    </article>
+
+    <p class="notice">Educational information only, not individualized financial, investment, insurance, tax, or legal advice.</p>
+    <a href="#book" class="button-link green">Ask Bridgette a Question →</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="page" data-page="services">
+  <div class="page-header">
+    <div class="wrap">
+      <h1>Services & Family Goals.</h1>
+      <p>Explore conversations around your family's financial milestones.</p>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <div class="cards">
+      <article class="photo-card">
+        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=850&q=85" alt="Parent with child">
+        <div class="content"><h3>Family Protection</h3><p>Life insurance education and preparedness.</p></div>
+      </article>
+
+      <article class="photo-card">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=850&q=85" alt="Graduates celebrating">
+        <div class="content"><h3>Children & Education</h3><p>Education milestones and savings habits.</p></div>
+      </article>
+
+      <article class="photo-card">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=850&q=85" alt="Welcoming home">
+        <div class="content"><h3>Home & Legacy</h3><p>Homeownership, emergencies, and long-range goals.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" data-page="about">
+  <div class="page-header">
+    <div class="wrap">
+      <h1>Meet Bridgette.</h1>
+      <p>Financial education with families at the center.</p>
+    </div>
+  </div>
+
+  <div class="section wrap split">
+    <div>
+      <h2>Your story comes first.</h2>
+      <p>Bridge the Wealth Financial Services is focused on helping families feel more confident learning about protection, savings, and future financial goals.</p>
+      <p class="notice">Bridgette's official biography, approved credentials, and actual headshot should be added before launch.</p>
+      <a href="#contact" class="button-link green">Connect With Bridgette →</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=850&q=85" alt="Illustrative portrait of a Black woman; not Bridgette">
+  </div>
+</section>
+
+<!-- 17-DAY GIFT -->
+<section class="page" data-page="gift">
+  <div class="page-header">
+    <div class="wrap">
+      <h1>The 17-Day Gift.</h1>
+      <p>Learn more about Bridgette's featured program.</p>
+    </div>
+  </div>
+
+  <div class="section wrap split">
+    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85" alt="Family and friends together">
+    <div>
+      <h2>A thoughtful gift begins with understanding.</h2>
+      <p>Request approved details on the program's features, eligibility, costs, and conditions.</p>
+      <p class="notice">Program details require Bridgette's confirmation before public launch.</p>
+      <a href="#contact" class="button-link green">Request Program Details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="page" data-page="book">
+  <div class="page-header">
+    <div class="wrap">
+      <h1>Book a Conversation.</h1>
+      <p>Choose a preferred date and time to request a consultation.</p>
+    </div>
+  </div>
+
+  <div class="section wrap booking-layout">
+    <div>
+      <h2>Let's talk about your next chapter.</h2>
+      <p>Request a conversation about financial education, the Million Dollar Baby Plan, or family protection.</p>
+      <p class="notice">This is a demonstration calendar. It does not display real availability or confirm bookings.</p>
+    </div>
+
+    <div class="form-card">
+      <h3>Request a Consultation</h3>
+
+      <div class="calendar">
+        <div class="calendar-head">
+          <button type="button" id="previous-month">‹</button>
+          <strong id="calendar-title">Select a Month</strong>
+          <button type="button" id="next-month">›</button>
+        </div>
+        <div id="calendar-days" class="calendar-grid"></div>
+      </div>
+
+      <form class="preview-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="booking-date">Preferred date *</label>
+            <input id="booking-date" name="date" type="date" required>
+          </div>
+
+          <div class="field">
+            <label for="booking-time">Preferred time *</label>
+            <select id="booking-time" required>
+              <option value="">Choose time</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="booking-zone">Time zone *</label>
+            <select id="booking-zone" required>
+              <option>Eastern Time</option>
+              <option>Central Time</option>
+              <option>Mountain Time</option>
+              <option>Pacific Time</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="booking-name">Your name *</label>
+            <input id="booking-name" required>
+          </div>
+
+          <div class="field">
+            <label for="booking-email">Email *</label>
+            <input id="booking-email" type="email" required>
+          </div>
+
+          <div class="field full">
+            <label for="booking-topic">What would you like to discuss? *</label>
+            <select id="booking-topic" required>
+              <option value="">Choose a topic</option>
+              <option>Million Dollar Baby Plan</option>
+              <option>Financial Education</option>
+              <option>Family Protection</option>
+              <option>17-Day Gift</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <button type="submit">Request an Appointment →</button>
+          </div>
+        </div>
+
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+
+      <p class="notice">Preview only. Form submissions are disabled until Bridgette approves the website and live scheduling is connected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" data-page="contact">
+  <div class="page-header">
+    <div class="wrap">
+      <h1>Contact Bridgette.</h1>
+      <p>Your questions are always welcome.</p>
+    </div>
+  </div>
+
+  <div class="section wrap booking-layout">
+    <div>
+      <h2>Let's start with a conversation.</h2>
+      <p>Interested in financial education, protection, or the Million Dollar Baby Plan? Share a general question.</p>
+      <a href="#book" class="button-link green">Request a Consultation →</a>
+      <p class="notice">Please do not submit Social Security numbers, account numbers, passwords, or sensitive financial information.</p>
+    </div>
+
+    <div class="form-card">
+      <h3>Send a Message</h3>
+
+      <form class="preview-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="contact-name">Name *</label>
+            <input id="contact-name" required>
+          </div>
+
+          <div class="field">
+            <label for="contact-email">Email *</label>
+            <input id="contact-email" type="email" required>
+          </div>
+
+          <div class="field full">
+            <label for="contact-topic">Topic *</label>
+            <select id="contact-topic" required>
+              <option value="">Select a topic</option>
+              <option>Million Dollar Baby Plan</option>
+              <option>Financial Education</option>
+              <option>Family Protection</option>
+              <option>17-Day Gift</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="contact-message">Message *</label>
+            <textarea id="contact-message" required></textarea>
+          </div>
+
+          <div class="field full">
+            <button type="submit">Send My Message →</button>
+          </div>
+        </div>
+
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+
+      <p class="notice">Preview only. No messages are sent or stored. The live contact form will be connected after approval.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER INQUIRY -->
+<section aria-label="Subscribe example" class="subscribe">
+  <div class="wrap">
+    <article>
+      <hgroup>
+        <h2>Let's talk about your family's future.</h2>
+        <h3>Financial education. Meaningful conversations. Generational possibility.</h3>
+      </hgroup>
+
+      <form class="grid preview-form">
+        <input type="text" id="firstname" name="firstname" placeholder="First name" aria-label="First name" required>
+        <input type="email" id="email" name="email" placeholder="Email address" aria-label="Email address" required>
+        <button type="submit">Let's Connect →</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </article>
+  </div>
+</section>
+
+<footer class="container">
+  <div class="wrap">
+    <h3>Bridge the Wealth Financial Services</h3>
+    <p>We're not just building wealth. We're building a generation that understands it.</p>
+
+    <small>
+      <a href="#home">Home</a> •
+      <a href="#contact">Contact</a> •
+      <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Lifestyle photography via Unsplash</a>
+    </small>
+
+    <p class="notice">
+      Design approval draft. Financial-program details and images require Bridgette's review.
+      Customer forms and live appointment booking are not yet active.
+    </p>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  // Page navigation
+  const pages = document.querySelectorAll("[data-page]");
+  const navLinks = document.getElementById("nav-links");
+  const menuButton = document.getElementById("menu-button");
+
+  function showPage() {
+    const requested = location.hash.slice(1) || "home";
+    const exists = [...pages].some(page => page.dataset.page === requested);
+    const current = exists ? requested : "home";
+
+    pages.forEach(page => {
+      page.classList.toggle("active", page.dataset.page === current);
+    });
+
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    window.scrollTo(0, 0);
+  }
+
+  menuButton.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(open));
+  });
+
+  window.addEventListener("hashchange", showPage);
+  showPage();
+
+  // Financial education lessons
+  document.querySelectorAll("[data-tab]").forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.tab;
+
+      document.querySelectorAll("[data-tab]").forEach(tab => {
+        tab.setAttribute("aria-selected", String(tab === button));
+      });
+
+      document.querySelectorAll("[data-panel]").forEach(panel => {
+        panel.hidden = panel.dataset.panel !== selected;
+      });
+    });
+  });
+
+  // Savings explorer
+  const monthly = document.getElementById("monthly");
+  const years = document.getElementById("years");
+
+  function updateSavings() {
+    const amount = Number(monthly.value);
+    const time = Number(years.value);
+
+    document.getElementById("monthly-label").textContent =
+      "$" + amount.toLocaleString();
+
+    document.getElementById("years-label").textContent = time;
+
+    document.getElementById("total").textContent =
+      "$" + (amount * time * 12).toLocaleString();
+  }
+
+  monthly.addEventListener("input", updateSavings);
+  years.addEventListener("input", updateSavings);
+  updateSavings();
+
+  // Preferred appointment date calendar
+  const bookingDate = document.getElementById("booking-date");
+  const calendarDays = document.getElementById("calendar-days");
+  const calendarTitle = document.getElementById("calendar-title");
+  const previousMonth = document.getElementById("previous-month");
+  const nextMonth = document.getElementById("next-month");
+
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const maximum = new Date(today);
+  maximum.setDate(maximum.getDate() + 90);
+
+  let displayedMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+  function toDateString(date) {
+    return date.getFullYear() + "-" +
+      String(date.getMonth() + 1).padStart(2, "0") + "-" +
+      String(date.getDate()).padStart(2, "0");
+  }
+
+  bookingDate.min = toDateString(today);
+  bookingDate.max = toDateString(maximum);
+
+  function renderCalendar() {
+    calendarTitle.textContent = displayedMonth.toLocaleDateString(
+      "en-US", { month: "long", year: "numeric" }
+    );
+
+    previousMonth.disabled =
+      displayedMonth.getFullYear() === today.getFullYear() &&
+      displayedMonth.getMonth() === today.getMonth();
+
+    nextMonth.disabled =
+      displayedMonth.getFullYear() === maximum.getFullYear() &&
+      displayedMonth.getMonth() === maximum.getMonth();
+
+    calendarDays.replaceChildren();
+
+    ["S", "M", "T", "W", "T", "F", "S"].forEach(day => {
+      const label = document.createElement("span");
+      label.textContent = day;
+      calendarDays.appendChild(label);
+    });
+
+    const firstDay = new Date(
+      displayedMonth.getFullYear(),
+      displayedMonth.getMonth(),
+      1
+    );
+
+    for (let i = 0; i < firstDay.getDay(); i++) {
+      calendarDays.appendChild(document.createElement("span"));
+    }
+
+    const daysInMonth = new Date(
+      displayedMonth.getFullYear(),
+      displayedMonth.getMonth() + 1,
+      0
+    ).getDate();
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(
+        displayedMonth.getFullYear(),
+        displayedMonth.getMonth(),
+        day
+      );
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = day;
+      button.disabled = date < today || date > maximum;
+
+      if (bookingDate.value === toDateString(date)) {
+        button.classList.add("selected");
+      }
+
+      button.addEventListener("click", () => {
+        bookingDate.value = toDateString(date);
+        renderCalendar();
+      });
+
+      calendarDays.appendChild(button);
+    }
+  }
+
+  previousMonth.addEventListener("click", () => {
+    displayedMonth = new Date(
+      displayedMonth.getFullYear(),
+      displayedMonth.getMonth() - 1,
+      1
+    );
+    renderCalendar();
+  });
+
+  nextMonth.addEventListener("click", () => {
+    displayedMonth = new Date(
+      displayedMonth.getFullYear(),
+      displayedMonth.getMonth() + 1,
+      1
+    );
+    renderCalendar();
+  });
+
+  bookingDate.addEventListener("change", () => {
+    const chosen = new Date(bookingDate.value + "T12:00:00");
+
+    if (!Number.isNaN(chosen.getTime())) {
+      displayedMonth = new Date(
+        chosen.getFullYear(),
+        chosen.getMonth(),
+        1
+      );
+    }
+
+    renderCalendar();
+  });
+
+  renderCalendar();
+
+  // Approval preview: no customer information is sent
+  document.querySelectorAll(".preview-form").forEach(form => {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const status = form.querySelector(".form-status");
+      if (status) {
+        status.textContent =
+          "This is a design preview. Nothing was sent. " +
+          "Live forms will be connected after Bridgette approves the website.";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
