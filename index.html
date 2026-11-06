@@ -984,11 +984,22 @@ footer.container.site-footer{
 
 /* Ensure the Knowledge/Legacy image reads as a natural modern family photo. */
 .page[data-page="home"] .section.dark-bg .split>img{
-  width:100%;height:auto!important;aspect-ratio:4/3;
-  max-height:350px!important;object-fit:cover!important;object-position:center!important;
-  border-radius:16px;box-shadow:0 15px 35px rgba(0,0,0,.14);
+  width:100%!important;
+  height:340px!important;
+  max-height:340px!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f2eee5;
+  border-radius:16px;
+  box-shadow:0 15px 35px rgba(0,0,0,.14);
 }
-@media(max-width:700px){.page[data-page="home"] .section.dark-bg .split>img{max-height:300px!important;}}
+@media(max-width:700px){
+  .page[data-page="home"] .section.dark-bg .split>img{
+    height:280px!important;
+    max-height:280px!important;
+  }
+}
 
 
 /* Google appointment booking experience */
@@ -1210,7 +1221,7 @@ footer.container.site-footer{
   <div class="banner">
     <div class="wrap">
       <h2>It's not just about money. It's about the next generation.</h2>
-      <p>Choose a time from Bridgette's live Google booking calendar to start a conversation.</p>
+      <p>Choose an available appointment time to start a conversation with Bridgette.</p>
       <a href="#book" class="button-link gold">Choose a Date & Time →</a>
     </div>
   </div>
@@ -1231,7 +1242,7 @@ footer.container.site-footer{
 
       <details>
         <summary>Can I book a consultation?</summary>
-        <p>Yes. Select Book Now to see available appointments in Bridgette's Google Calendar booking page. Once you complete a booking, Google adds it directly to the calendar and sends a confirmation.</p>
+        <p>Yes. Select Book Now to see available appointment times, choose a time that works for you, and receive a confirmation when your booking is complete.</p>
       </details>
     </div>
   </div>
@@ -1448,13 +1459,13 @@ footer.container.site-footer{
   </div>
 </section>
 
-<!-- BOOK: Live Google Calendar appointment schedule -->
+<!-- BOOK: Live appointment scheduling -->
 <section class="page" data-page="book">
   <div class="page-header">
     <div class="wrap">
       <p class="eyebrow light">Choose a time that works for you</p>
       <h1>Book a Consultation.</h1>
-      <p>Schedule directly with Bridgette using her live Google Calendar appointment page.</p>
+      <p>Choose an available time and book your consultation with Bridgette.</p>
     </div>
   </div>
   <div class="section wrap booking-live">
@@ -1462,20 +1473,20 @@ footer.container.site-footer{
       <p class="eyebrow">Simple, secure scheduling</p>
       <h2>Let's plan your next chapter.</h2>
       <p>Talk with Bridgette about financial education, family protection, or the Million Dollar Baby Plan.</p>
-      <p>Her Google booking page shows the appointment times available under her schedule settings, so you can choose a time without sending a separate date request.</p>
-      <a href="https://calendar.app.google/ANevdmuSBuEbP3qY8" class="button-link green book-google-button" target="_blank" rel="noopener noreferrer" aria-label="Open Bridgette's Google Calendar booking page in a new tab">View Available Times &amp; Book Now <span aria-hidden="true">↗</span></a>
-      <p class="booking-assist">The booking page opens in a new tab. Your appointment is added to Bridgette's Google Calendar after you complete the booking.</p>
+      <p>See currently available appointments and choose the time that works best for you.</p>
+      <a href="https://calendar.app.google/ANevdmuSBuEbP3qY8" class="button-link green book-google-button" target="_blank" rel="noopener noreferrer" aria-label="Open Bridgette's appointment booking page in a new tab">View Available Times &amp; Book Now <span aria-hidden="true">↗</span></a>
+      <p class="booking-assist">The scheduling page opens in a new tab. You'll receive confirmation after completing your booking.</p>
       <p><a href="#contact" class="booking-question-link">Have a question before booking? Send Bridgette a message.</a></p>
     </div>
     <div class="booking-live-card" aria-label="What to expect when booking">
       <div class="booking-live-icon" aria-hidden="true">✦</div>
       <h3>How scheduling works</h3>
       <ol class="booking-steps">
-        <li><strong>Check availability.</strong> Google shows the times Bridgette has made bookable.</li>
-        <li><strong>Select a time.</strong> Choose an opening and enter your details on the Google booking page.</li>
-        <li><strong>Get confirmation.</strong> Google creates the calendar event and sends a booking confirmation.</li>
+        <li><strong>Check availability.</strong> View Bridgette's available appointment times.</li>
+        <li><strong>Select a time.</strong> Choose an opening and enter your contact details.</li>
+        <li><strong>Get confirmation.</strong> Your appointment is scheduled and a confirmation is sent.</li>
       </ol>
-      <p class="booking-privacy">Busy times are excluded when Bridgette has enabled calendar conflict checking. Booking availability is managed in her Google Calendar settings.</p>
+      <p class="booking-privacy">Unavailable times won't appear when calendar conflict checking is enabled. Appointments are subject to the schedule's current availability.</p>
     </div>
   </div>
 </section>
@@ -1624,7 +1635,7 @@ footer.container.site-footer{
     </div>
     <div class="footer-bottom">
       <p class="footer-copyright">© 2026 Bridge the Wealth Financial Services</p>
-      <p class="footer-disclaimer">Educational information only; no coverage or financial results are guaranteed. Appointments are scheduled through Google Calendar; general inquiries use the contact forms. Do not share sensitive financial or medical information through website forms.</p>
+      <p class="footer-disclaimer">Educational information only; no coverage or financial results are guaranteed. Appointments are booked online; general inquiries use the contact forms. Do not share sensitive financial or medical information through website forms.</p>
     </div>
   </div>
 </footer>
@@ -1696,7 +1707,7 @@ footer.container.site-footer{
   years.addEventListener("input", updateSavings);
   updateSavings();
 
-  // Appointments are now booked on Bridgette's Google Calendar booking page.
+  // Appointments are booked through Bridgette's hosted scheduling page.
   // The old local date picker and request form were removed to avoid accepting unavailable slots.
 
   // Handle all website inquiries without leaving the site.
