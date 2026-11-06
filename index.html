@@ -1289,18 +1289,18 @@ footer.container.site-footer{
 
 /* Million Dollar Baby Plan: unified program, diagram, and educational growth calculation */
 #baby-benefits{scroll-margin-top:132px;}
-.page[data-page="baby"] .iul-explorer{border-top:4px solid var(--gold);}
-.page[data-page="baby"] .iul-explorer label{display:block;margin:18px 0 7px;font-size:.85rem;font-weight:700;line-height:1.5;color:var(--navy);}
-.page[data-page="baby"] .iul-explorer label strong{display:inline-block;float:right;color:var(--green);}
-.page[data-page="baby"] .iul-explorer input[type="range"]{display:block;width:100%;accent-color:var(--green);margin:0 0 15px;}
-.page[data-page="baby"] .iul-explorer-intro{font-size:.83rem;color:#456168;line-height:1.55;}
-.page[data-page="baby"] .iul-results{display:grid;gap:8px;margin-top:22px;}
-.page[data-page="baby"] .iul-metric{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.23);}
-.page[data-page="baby"] .iul-metric:last-child{border-bottom:0;}
-.page[data-page="baby"] .iul-metric span{display:block;font-size:.78rem;color:#e1efe7;line-height:1.5;}
-.page[data-page="baby"] .iul-metric strong{font-size:clamp(1.55rem,2.3vw,2.1rem);margin-top:3px;line-height:1.25;}
-.page[data-page="baby"] .iul-disclosure{font-size:.77rem;line-height:1.65;margin-top:16px;}
-@media(max-width:700px){.page[data-page="baby"] .iul-explorer label strong{float:none;}}
+.page[data-page="iul"] .iul-explorer{border-top:4px solid var(--gold);}
+.page[data-page="iul"] .iul-explorer label{display:block;margin:18px 0 7px;font-size:.85rem;font-weight:700;line-height:1.5;color:var(--navy);}
+.page[data-page="iul"] .iul-explorer label strong{display:inline-block;float:right;color:var(--green);}
+.page[data-page="iul"] .iul-explorer input[type="range"]{display:block;width:100%;accent-color:var(--green);margin:0 0 15px;}
+.page[data-page="iul"] .iul-explorer-intro{font-size:.83rem;color:#456168;line-height:1.55;}
+.page[data-page="iul"] .iul-results{display:grid;gap:8px;margin-top:22px;}
+.page[data-page="iul"] .iul-metric{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.23);}
+.page[data-page="iul"] .iul-metric:last-child{border-bottom:0;}
+.page[data-page="iul"] .iul-metric span{display:block;font-size:.78rem;color:#e1efe7;line-height:1.5;}
+.page[data-page="iul"] .iul-metric strong{font-size:clamp(1.55rem,2.3vw,2.1rem);margin-top:3px;line-height:1.25;}
+.page[data-page="iul"] .iul-disclosure{font-size:.77rem;line-height:1.65;margin-top:16px;}
+@media(max-width:700px){.page[data-page="iul"] .iul-explorer label strong{float:none;}}
 
 </style>
 </head>
@@ -1325,6 +1325,7 @@ footer.container.site-footer{
 
   <ul class="links" id="nav-links">
     <li><a href="#home">Home</a></li>
+    <li><a href="#iul">IUL Growth Explorer</a></li>
     <li><a href="#baby">Million Dollar Baby Plan</a></li>
     <li><a href="#education">Financial Education</a></li>
     <li><a href="#services">Services</a></li>
@@ -1526,6 +1527,50 @@ footer.container.site-footer{
 
 </section>
 
+<!-- IUL GROWTH EXPLORER -->
+<section class="page" data-page="iul">
+  <div class="page-header">
+    <div class="wrap">
+      <p class="eyebrow light">Financial Education • Explore the Possibilities</p>
+      <h1>IUL Growth Explorer</h1>
+      <p>Understand hypothetical growth and ask informed questions about indexed universal life insurance.</p>
+    </div>
+  </div>
+
+  <div class="section wrap split" id="iul-growth-explorer">
+    <div>
+      <p class="eyebrow">Learn about possible growth — without guarantees</p>
+      <h2>IUL Growth Explorer</h2>
+      <p>Explore how regular contributions might accumulate under a simple, hypothetical compound-growth assumption. This is <strong>not</strong> an indexed universal life (IUL) insurance illustration or an estimate of policy cash value.</p>
+      <p>IUL premiums also pay for insurance coverage and policy charges. Actual credited interest depends on policy terms, including participation rates, caps, floors, and crediting methods, rather than a steady fixed return.</p>
+    </div>
+    <div class="calculator iul-explorer">
+      <h3>Explore a Hypothetical Scenario</h3>
+      <p class="iul-explorer-intro">Educational scenario only, before policy costs.</p>
+      <label for="monthly">Monthly amount <strong id="monthly-label">$200</strong></label>
+      <input id="monthly" type="range" min="50" max="1000" step="25" value="200">
+      <label for="years">Years <strong id="years-label">18</strong></label>
+      <input id="years" type="range" min="1" max="30" step="1" value="18">
+      <label for="rate">Assumed annual growth rate, compounded monthly <strong id="rate-label">6.00%</strong></label>
+      <input id="rate" type="range" min="0" max="8" step="0.25" value="6">
+      <div class="result iul-results" aria-live="polite" aria-atomic="true">
+        <div class="iul-metric"><span>Hypothetical total contributions</span><strong id="total-paid">$43,200</strong></div>
+        <div class="iul-metric"><span>Hypothetical accumulated amount before costs</span><strong id="future-value">—</strong></div>
+        <div class="iul-metric"><span>Hypothetical growth before costs</span><strong id="growth-amount">—</strong></div>
+      </div>
+      <p class="notice iul-disclosure"><strong>Important:</strong> IUL is life insurance, not a savings or investment account. This simple calculation is <strong>not a policy illustration, quote, guarantee, or projection of IUL cash value</strong>. It excludes cost of insurance, policy fees, surrender charges, interest crediting restrictions, loans, withdrawals, and tax effects. Actual policy values may be lower, including zero. Ask Bridgette for an insurer-approved policy illustration.</p>
+    </div>
+  </div>
+
+  <div class="section wrap">
+    <p class="eyebrow">Understanding IUL</p>
+    <h2>An educational estimate is not a policy illustration.</h2>
+    <p>IUL premiums cover insurance protection and policy charges. Credited interest depends on the policy's particular caps, floors, participation rates, and index-crediting method. Only an insurer-issued illustration can show guaranteed and non-guaranteed policy values for a specific proposed contract.</p>
+    <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
+    <a href="#book" class="button-link green">Book a Consultation →</a>
+  </div>
+</section>
+
 <!-- MILLION DOLLAR BABY PLAN -->
 <section class="page" data-page="baby">
 
@@ -1584,33 +1629,10 @@ footer.container.site-footer{
       <div class="gift-stage gift-finish"><span class="gift-step-number">04</span><h3>Building for the Next Generation</h3><p>Use informed decisions to strengthen a family's long-term financial plan.</p></div>
     </div>
     <p class="gift-disclosure">Illustration only. A policy may not offer cash value, living benefits, or favorable tax treatment. Benefits, fees, premiums, tax implications, loans, withdrawals, and eligibility depend on the specific contract and circumstances. Loans or withdrawals may reduce cash value and the death benefit, and may create tax consequences.</p>
-    <div class="gift-actions"><a href="#book" class="button-link green">Book a Consultation →</a><a href="#contact" class="button-link gold">Ask a Question →</a></div>
+    <div class="gift-actions"><a href="#iul" class="button-link gold">Try the IUL Growth Explorer →</a><a href="#book" class="button-link green">Book a Consultation →</a><a href="#contact" class="button-link gold">Ask a Question →</a></div>
   </div>
 
-  <div class="section wrap split" id="iul-growth-explorer">
-    <div>
-      <p class="eyebrow">Learn about possible growth — without guarantees</p>
-      <h2>Hypothetical IUL Growth Explorer.</h2>
-      <p>Explore how regular contributions might accumulate under a simple, hypothetical compound-growth assumption. This is <strong>not</strong> an indexed universal life (IUL) insurance illustration or an estimate of policy cash value.</p>
-      <p>IUL premiums also pay for insurance coverage and policy charges. Actual credited interest depends on policy terms, including participation rates, caps, floors, and crediting methods, rather than a steady fixed return.</p>
-    </div>
-    <div class="calculator iul-explorer">
-      <h3>Hypothetical Growth Calculator</h3>
-      <p class="iul-explorer-intro">Educational scenario only, before policy costs.</p>
-      <label for="monthly">Monthly amount <strong id="monthly-label">$200</strong></label>
-      <input id="monthly" type="range" min="50" max="1000" step="25" value="200">
-      <label for="years">Years <strong id="years-label">18</strong></label>
-      <input id="years" type="range" min="1" max="30" step="1" value="18">
-      <label for="rate">Assumed annual growth rate, compounded monthly <strong id="rate-label">6.00%</strong></label>
-      <input id="rate" type="range" min="0" max="8" step="0.25" value="6">
-      <div class="result iul-results" aria-live="polite" aria-atomic="true">
-        <div class="iul-metric"><span>Hypothetical total contributions</span><strong id="total-paid">$43,200</strong></div>
-        <div class="iul-metric"><span>Hypothetical accumulated amount before costs</span><strong id="future-value">—</strong></div>
-        <div class="iul-metric"><span>Hypothetical growth before costs</span><strong id="growth-amount">—</strong></div>
-      </div>
-      <p class="notice iul-disclosure"><strong>Important:</strong> IUL is life insurance, not a savings or investment account. This simple calculation is <strong>not a policy illustration, quote, guarantee, or projection of IUL cash value</strong>. It excludes cost of insurance, policy fees, surrender charges, interest crediting restrictions, loans, withdrawals, and tax effects. Actual policy values may be lower, including zero. Ask Bridgette for an insurer-approved policy illustration.</p>
-    </div>
-  </div>
+
 </section>
 
 
@@ -1898,6 +1920,7 @@ footer.container.site-footer{
     <p class="footer-message">Financial education and protection conversations for your family's future.</p>
     <div class="footer-links" aria-label="Quick links">
       <a href="#home">Home</a>
+      <a href="#iul">IUL Growth Explorer</a>
       <a href="#about">About Us</a>
       <a href="#baby">Million Dollar Baby Plan</a>
       <a href="#book">Book Now</a>
