@@ -1002,14 +1002,14 @@ footer.container.site-footer{
 }
 
 
-/* Google appointment booking experience */
+/* Bridge the Wealth appointment booking experience */
 .page[data-page="book"] .booking-live{
   display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
   gap:clamp(22px,4vw,56px);align-items:center;
 }
 .page[data-page="book"] .booking-live-intro h2{margin:8px 0 18px;}
 .page[data-page="book"] .booking-live-intro p{max-width:600px;}
-.page[data-page="book"] .book-google-button{
+.page[data-page="book"] .book-appointment-button{
   display:inline-flex;gap:16px;align-items:center;justify-content:center;
   padding:17px 27px;line-height:1.35;margin-top:14px;
   box-shadow:0 12px 25px rgba(5,70,62,.17);
@@ -1027,7 +1027,7 @@ footer.container.site-footer{
 .page[data-page="book"] .booking-steps li{font-size:.91rem;line-height:1.65;margin:12px 0;}
 .page[data-page="book"] .booking-privacy{font-size:.79rem;color:#526568;line-height:1.65;margin:0;padding-top:16px;border-top:1px solid #dfd1b5;}
 @media(max-width:790px){.page[data-page="book"] .booking-live{grid-template-columns:1fr;}}
-@media(max-width:540px){.page[data-page="book"] .book-google-button{display:flex;width:100%;}.page[data-page="book"] .booking-live-card{padding:22px;}}
+@media(max-width:540px){.page[data-page="book"] .book-appointment-button{display:flex;width:100%;}.page[data-page="book"] .booking-live-card{padding:22px;}}
 
 </style>
 </head>
@@ -1474,19 +1474,19 @@ footer.container.site-footer{
       <h2>Let's plan your next chapter.</h2>
       <p>Talk with Bridgette about financial education, family protection, or the Million Dollar Baby Plan.</p>
       <p>See currently available appointments and choose the time that works best for you.</p>
-      <a href="https://calendar.app.google/ANevdmuSBuEbP3qY8" class="button-link green book-google-button" target="_blank" rel="noopener noreferrer" aria-label="Open Bridgette's appointment booking page in a new tab">View Available Times &amp; Book Now <span aria-hidden="true">↗</span></a>
-      <p class="booking-assist">The scheduling page opens in a new tab. You'll receive confirmation after completing your booking.</p>
+      <a href="https://calendar.app.google/ANevdmuSBuEbP3qY8" class="button-link green book-appointment-button" target="_blank" rel="noopener noreferrer" aria-label="View available appointments in a new tab">View Available Times &amp; Book Now <span aria-hidden="true">↗</span></a>
+      <p class="booking-assist">Choose a time and complete your reservation. A confirmation will follow.</p>
       <p><a href="#contact" class="booking-question-link">Have a question before booking? Send Bridgette a message.</a></p>
     </div>
     <div class="booking-live-card" aria-label="What to expect when booking">
       <div class="booking-live-icon" aria-hidden="true">✦</div>
-      <h3>How scheduling works</h3>
+      <h3>Booking Made Easy</h3>
       <ol class="booking-steps">
         <li><strong>Check availability.</strong> View Bridgette's available appointment times.</li>
         <li><strong>Select a time.</strong> Choose an opening and enter your contact details.</li>
         <li><strong>Get confirmation.</strong> Your appointment is scheduled and a confirmation is sent.</li>
       </ol>
-      <p class="booking-privacy">Unavailable times won't appear when calendar conflict checking is enabled. Appointments are subject to the schedule's current availability.</p>
+      <p class="booking-privacy">Select from the appointment times shown as available. You will receive a confirmation after booking.</p>
     </div>
   </div>
 </section>
