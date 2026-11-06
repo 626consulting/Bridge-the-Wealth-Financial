@@ -1079,6 +1079,48 @@ footer.container.site-footer{
   flex:1 1 auto;
 }
 
+
+/* Desktop-only scale refinement: mobile/tablet layouts remain unchanged.
+   Pico increases the root font size at large viewports, which made
+   the site appear browser-zoomed even at normal 100% zoom. */
+@media (min-width: 1040px) {
+  :root { font-size: 16px!important; }
+  .wrap { width:min(1220px,calc(100% - 76px)); }
+  nav.container-fluid {
+    min-height:112px!important;
+    padding:8px clamp(22px,3vw,42px)!important;
+  }
+  nav.container-fluid .brand { max-width:110px!important; }
+  nav.container-fluid .brand-logo { width:102px!important;height:102px!important; }
+  nav ul.links { gap:clamp(9px,1.3vw,18px); }
+  .page .hero { min-height:425px!important; }
+  .page .hero .wrap { padding:56px 0 66px!important;max-width:1220px!important; }
+  .page .hero h2 {
+    font-size:clamp(2.45rem,3.8vw,3.7rem)!important;
+    max-width:760px;
+    line-height:1.17;
+  }
+  .section { padding:68px 0; }
+  .section h2 { font-size:clamp(2rem,2.9vw,2.6rem); }
+  .page .section.wrap {
+    padding:clamp(30px,3.5vw,50px)!important;
+    margin-top:42px!important;
+    margin-bottom:42px!important;
+  }
+  .page .section.cream-bg {padding-block:70px!important;}
+  .page .section.dark-bg {padding-block:72px!important;}
+  .page .split{gap:clamp(32px,4vw,56px);}
+  .page .banner{padding-block:58px;}
+  .page-header{min-height:150px!important;padding:30px 0!important;}
+  .page-header h1{font-size:clamp(2rem,2.8vw,2.55rem)!important;}
+  .page .photo-card img{max-height:210px!important;}
+  .page .photo-card .content{padding:21px;}
+  .page .photo-card h3{font-size:22px;}
+  .page .step{padding:22px 20px;}
+  .page[data-page="home"] .section.dark-bg .split>img{max-width:515px!important;}
+  .partners-section{padding-top:50px;padding-bottom:44px;}
+}
+
 </style>
 </head>
 
