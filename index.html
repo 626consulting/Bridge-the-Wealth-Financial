@@ -1029,6 +1029,51 @@ footer.container.site-footer{
 @media(max-width:790px){.page[data-page="book"] .booking-live{grid-template-columns:1fr;}}
 @media(max-width:540px){.page[data-page="book"] .book-appointment-button{display:flex;width:100%;}.page[data-page="book"] .booking-live-card{padding:22px;}}
 
+
+/* Contact consent: keep the checkbox compact, recognizable, and easy to tap. */
+.page[data-page="contact"] .consent-field{
+  display:block;
+  padding:5px 0 1px;
+}
+.page[data-page="contact"] .consent-label{
+  display:inline-flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:12px;
+  width:auto;
+  max-width:100%;
+  font-size:13px;
+  line-height:1.5;
+  font-weight:600;
+  color:#273c40;
+  cursor:pointer;
+  user-select:none;
+}
+.page[data-page="contact"] .consent-label input[type="checkbox"]{
+  display:inline-block!important;
+  flex:0 0 20px;
+  width:20px!important;
+  min-width:20px;
+  max-width:20px;
+  height:20px!important;
+  min-height:20px;
+  padding:0!important;
+  margin:1px 0 0!important;
+  border:1.5px solid #54756d;
+  border-radius:4px;
+  background:#fff;
+  box-shadow:none;
+  accent-color:#07594c;
+  cursor:pointer;
+}
+.page[data-page="contact"] .consent-label input[type="checkbox"]:focus-visible{
+  outline:3px solid #d7b16d;
+  outline-offset:3px;
+}
+.page[data-page="contact"] .consent-label span{
+  flex:1 1 auto;
+}
+
 </style>
 </head>
 
@@ -1547,8 +1592,11 @@ footer.container.site-footer{
             <label for="contact-phone">Phone (optional)</label>
             <input id="contact-phone" name="phone" type="tel" autocomplete="tel">
           </div>
-          <div class="field full">
-            <label><input type="checkbox" name="contact_consent" value="yes" required> I agree to be contacted about my inquiry.</label>
+          <div class="field full consent-field">
+            <label for="contact-consent" class="consent-label">
+              <input id="contact-consent" type="checkbox" name="contact_consent" value="yes" required>
+              <span>I agree to be contacted about my inquiry. <span aria-hidden="true">*</span></span>
+            </label>
           </div>
           <div class="field full">
             <button type="submit">Send My Message →</button>
