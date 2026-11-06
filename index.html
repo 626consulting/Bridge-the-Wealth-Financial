@@ -1432,6 +1432,31 @@ footer.container.site-footer{
  .page[data-page="home"] .home-action-links{justify-content:flex-start!important;margin:0 auto 0 0!important;}
  .page[data-page="home"] .home-actions .btw-scroll-cue{right:0!important;}
 }
+
+/* Detailed Services page: warm, spacious, responsive category cards. */
+.page[data-page="services"] .btw-services-intro{text-align:center;max-width:900px;margin:auto;padding-bottom:42px;}
+.page[data-page="services"] .btw-services-intro h2{font-size:clamp(1.95rem,3.4vw,2.8rem);margin:0 auto 16px;max-width:720px;}
+.page[data-page="services"] .btw-services-intro p{max-width:780px;margin:0 auto 14px;}
+.page[data-page="services"] .btw-service-band{background:#f2eee5;}
+.page[data-page="services"] .btw-service-band-alt{background:#faf8f3;}
+.page[data-page="services"] .btw-service-band>.section{padding-top:68px;padding-bottom:75px;}
+.page[data-page="services"] .btw-service-heading{text-align:center;max-width:780px;margin:0 auto 30px;}
+.page[data-page="services"] .btw-service-heading h2{font-size:clamp(2rem,3.4vw,2.85rem);margin-bottom:13px;}
+.page[data-page="services"] .btw-service-heading p{margin:0 auto;max-width:700px;}
+.page[data-page="services"] .btw-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.page[data-page="services"] .btw-service-card{background:#fff;border:1px solid #e0dfd7;border-top:4px solid #c6a366;box-shadow:0 10px 28px rgba(5,30,40,.07);border-radius:12px;padding:27px 25px;height:100%;}
+.page[data-page="services"] .btw-service-number{display:block;font:bold 13px "DM Sans",sans-serif;letter-spacing:.15em;color:#a17d3f;margin:0 0 17px;}
+.page[data-page="services"] .btw-service-card h3{font-size:clamp(1.3rem,1.95vw,1.62rem);line-height:1.3;margin:0 0 13px;}
+.page[data-page="services"] .btw-service-card p{color:#536769;font-size:.92rem;line-height:1.72;margin:0;}
+.page[data-page="services"] .btw-service-grid-single{grid-template-columns:minmax(0,1fr);}
+.page[data-page="services"] .btw-service-grid-single .btw-service-card{max-width:780px;margin:auto;width:100%;}
+.page[data-page="services"] .btw-service-cta{text-align:center;}
+.page[data-page="services"] .btw-service-cta h2{margin-bottom:12px;}
+.page[data-page="services"] .btw-service-cta>p{max-width:800px;margin:0 auto 18px;}
+.page[data-page="services"] .btw-service-disclosure{font-size:.77rem!important;color:#647574;line-height:1.65!important;margin-top:27px!important;}
+@media(max-width:980px){.page[data-page="services"] .btw-service-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:680px){.page[data-page="services"] .btw-service-grid{grid-template-columns:1fr;}.page[data-page="services"] .btw-service-card{padding:24px 20px;}}
+
 </style>
 </head>
 
@@ -1819,28 +1844,93 @@ footer.container.site-footer{
 <section class="page" data-page="services">
   <div class="page-header">
     <div class="wrap">
-      <h1>Services & Family Goals.</h1>
-      <p>Explore conversations around your family's financial milestones.</p>
+      <p class="eyebrow light">Guidance for Every Season of Life</p>
+      <h1>Our Financial Services</h1>
+      <p>Explore retirement strategies, family protection, and long-term wealth and legacy planning.</p>
+    </div>
+  </div>
+  <div class="section wrap btw-services-intro">
+    <p class="eyebrow">Your Future. Your Goals.</p>
+    <h2>Thoughtful guidance starts with a conversation.</h2>
+    <p>Whether you're preparing for retirement, protecting loved ones, or exploring real estate, Bridgette can help you understand your options and build a plan around your goals.</p>
+  </div>
+
+  <div class="btw-service-band">
+    <div class="section wrap">
+      <div class="btw-service-heading">
+        <p class="eyebrow">Financial Confidence &amp; Planning</p>
+        <h2>Wealth &amp; Retirement</h2>
+        <p>Build greater financial confidence for the years ahead.</p>
+      </div>
+      <div class="btw-service-grid">
+        <article class="btw-service-card">
+          <span class="btw-service-number" aria-hidden="true">01</span>
+          <h3>Tax-Efficient Retirement Planning</h3>
+          <p>Explore strategies that may help manage taxes on retirement income, depending on your situation and applicable laws.</p>
+        </article>
+        <article class="btw-service-card">
+          <span class="btw-service-number" aria-hidden="true">02</span>
+          <h3>Roth IRAs &amp; 401(k) Rollovers</h3>
+          <p>Don't leave old retirement accounts on autopilot. Review your rollover choices, account costs, investment options, and possible tax consequences. Roth conversions are generally taxable.</p>
+        </article>
+        <article class="btw-service-card">
+          <span class="btw-service-number" aria-hidden="true">03</span>
+          <h3>Fixed Indexed Annuities</h3>
+          <p>Explore how fixed indexed annuities may offer protection from direct index-market losses to credited value and options for lifetime income, subject to contract terms, caps, charges, and insurer guarantees.</p>
+        </article>
+      </div>
     </div>
   </div>
 
-  <div class="section wrap">
-    <div class="cards">
-      <article class="photo-card">
-        <img src="https://images.unsplash.com/photo-1596510914965-9ae08acae566?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Parents enjoying time outdoors with their young child" loading="lazy" decoding="async">
-        <div class="content"><h3>Family Protection</h3><p>Life insurance education and preparedness.</p></div>
-      </article>
-
-      <article class="photo-card">
-        <img src="https://images.unsplash.com/photo-1656910962409-3963e280c7d2?auto=format&fit=crop&w=850&q=85" alt="Graduates celebrating">
-        <div class="content"><h3>Children & Education</h3><p>Education milestones and savings habits.</p></div>
-      </article>
-
-      <article class="photo-card">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=850&q=85" alt="Welcoming home">
-        <div class="content"><h3>Home & Legacy</h3><p>Homeownership, emergencies, and long-range goals.</p></div>
-      </article>
+  <div class="btw-service-band btw-service-band-alt">
+    <div class="section wrap">
+      <div class="btw-service-heading">
+        <p class="eyebrow">Financial Confidence &amp; Planning</p>
+        <h2>Protection &amp; Legacy</h2>
+        <p>Plan for the people and priorities that matter most.</p>
+      </div>
+      <div class="btw-service-grid">
+        <article class="btw-service-card">
+          <span class="btw-service-number" aria-hidden="true">04</span>
+          <h3>Life Insurance Solutions</h3>
+          <p>Explore life insurance options for income protection, support for loved ones, and potential living benefits or cash-value features where available. Benefits and tax treatment depend on policy terms.</p>
+        </article>
+        <article class="btw-service-card">
+          <span class="btw-service-number" aria-hidden="true">05</span>
+          <h3>Wills, Living Trusts &amp; Estate Planning</h3>
+          <p>Consider how wills, trusts, and estate-planning decisions may help reflect your wishes and protect beneficiaries. Appropriate legal and tax professionals should advise on and prepare documents.</p>
+        </article>
+        <article class="btw-service-card">
+          <span class="btw-service-number" aria-hidden="true">06</span>
+          <h3>Million Dollar Kids Trust Funds</h3>
+          <p>Help children and grandchildren start thinking about their futures through long-term financial education, funding strategies, and trust-related planning. Financial results are never guaranteed.</p>
+        </article>
+      </div>
     </div>
+  </div>
+
+  <div class="btw-service-band">
+    <div class="section wrap">
+      <div class="btw-service-heading">
+        <p class="eyebrow">Financial Confidence &amp; Planning</p>
+        <h2>Strategic Growth</h2>
+        <p>Explore new possibilities with a clear view of the risks.</p>
+      </div>
+      <div class="btw-service-grid btw-service-grid-single">
+        <article class="btw-service-card">
+          <span class="btw-service-number" aria-hidden="true">07</span>
+          <h3>Real Estate Strategies</h3>
+          <p>Learn how property ownership, income, financing, expenses, and tax considerations can fit into an overall financial plan. Market risk and tax/legal advice matter.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="section wrap btw-service-cta">
+    <h2>Let's plan for what comes next.</h2>
+    <p>Bring your questions. We'll start with what matters most to you.</p>
+    <a href="#book" class="button-link green">Book a Consultation →</a>
+    <a href="#contact" class="button-link gold">Ask a Question →</a>
+    <p class="btw-service-disclosure">Educational information only, not individualized insurance, investment, legal, or tax advice. Product and service availability depends on licensing and eligibility. Tax results and financial outcomes are not guaranteed. Insurance and annuity features depend on the contract and the issuing insurer's claims-paying ability. Consult qualified legal and tax professionals where appropriate.</p>
   </div>
 </section>
 
