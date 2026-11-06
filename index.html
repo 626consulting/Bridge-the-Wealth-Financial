@@ -405,6 +405,11 @@
 
     .field textarea { min-height: 115px; }
 
+    /* Make form success and provider error responses readable on every page. */
+    .form-status { display:block; line-height:1.5; overflow-wrap:anywhere; margin-top:12px; }
+    .subscribe .form-status { color:#fff; grid-column:1 / -1; margin-top:6px; }
+
+
     .field button {
       margin: 0;
       width: 100%;
@@ -1399,7 +1404,7 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
         <input type="hidden" name="from_name" value="Bridge the Wealth Website">
         <input type="hidden" name="topic" value="General Website Inquiry">
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-        <input type="text" id="firstname" name="firstname" placeholder="First name" aria-label="First name" required>
+        <input type="text" id="firstname" name="name" autocomplete="given-name" placeholder="First name" aria-label="First name" required>
         <input type="email" id="email" name="email" placeholder="Email address" aria-label="Email address" required>
         <button type="submit">Let's Connect →</button>
         <p class="form-status" aria-live="polite"></p>
@@ -1638,14 +1643,22 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify(data)
         });
-        const result = await response.json();
-        if (!response.ok || !result.success) {
-          throw new Error(result.message || "Form submission failed");
+        const responseText = await response.text();
+        let result = {};
+        try { result = JSON.parse(responseText); } catch (_) {}
+        if (!response.ok || result.success !== true) {
+          const apiError = result.message || (result.body && result.body.message) ||
+            ("Web3Forms rejected the request (HTTP " + response.status + ").");
+          throw new Error(apiError);
         }
         if (status) status.textContent = "Thank you! Your message was sent. Bridgette will follow up with you.";
         form.reset();
       } catch (error) {
-        if (status) status.textContent = "We couldn't send your message right now. Please try again or email support@bridgethewealthfinancialservices.com.";
+        const message = error && error.message ? error.message : "Unknown submission error";
+        const detail = /failed to fetch|networkerror|load failed/i.test(message)
+          ? "The connection to Web3Forms was blocked or unavailable. This may be a website-domain restriction or a network issue."
+          : message;
+        if (status) status.textContent = "Message not sent: " + detail + " Please email support@bridgethewealthfinancialservices.com if this continues.";
         console.error("Bridge the Wealth form delivery failed:", error);
       } finally {
         if (submitButton) {
