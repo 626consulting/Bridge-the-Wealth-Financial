@@ -1302,6 +1302,116 @@ footer.container.site-footer{
 .page[data-page="iul"] .iul-disclosure{font-size:.77rem;line-height:1.65;margin-top:16px;}
 @media(max-width:700px){.page[data-page="iul"] .iul-explorer label strong{float:none;}}
 
+
+/* Shared page-header alignment — homepage hero and each navigation tab. */
+.page .page-header .wrap{
+  text-align:center!important;
+}
+.page .page-header .wrap h1,
+.page .page-header .wrap p{
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+}
+.page .hero .wrap{
+  text-align:center!important;
+}
+.page .hero .wrap hgroup,
+.page .hero .wrap hgroup h2,
+.page .hero .wrap hgroup h3,
+.page .hero .wrap>p,
+.page .hero .wrap>.eyebrow,
+.page .hero .wrap>.hero-tagline{
+  text-align:center!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.page .hero .wrap hgroup h2{max-width:820px;}
+.page .hero .wrap hgroup h3{max-width:680px;}
+.page .hero .wrap>p:not(.eyebrow):not(.hero-tagline){max-width:660px;}
+/* On desktops, main actions remain centered while Scroll to Explore stays at right. */
+@media(min-width:801px){
+ .page[data-page="home"] .home-actions{
+   position:relative;
+   display:flex!important;
+   justify-content:center!important;
+   align-items:center!important;
+   min-height:47px;
+ }
+ .page[data-page="home"] .home-action-links{
+   display:flex!important;
+   flex-wrap:wrap;
+   justify-content:center!important;
+   max-width:calc(100% - 210px);
+   margin:0 auto!important;
+ }
+ .page[data-page="home"] .home-actions .btw-scroll-cue{
+   position:absolute!important;
+   right:0!important;
+   top:50%;
+   transform:translateY(-50%);
+   margin:0!important;
+ }
+}
+@media(min-width:801px) and (max-width:1090px){
+ .page[data-page="home"] .home-action-links{
+   max-width:calc(100% - 180px);
+ }
+ .page[data-page="home"] .home-actions .btw-scroll-cue{
+   font-size:11px;
+   letter-spacing:.07em;
+ }
+}
+/* Real carrier marks — uniform visual bounds; fallback text if the source image is blocked. */
+.partners-section .partner-wordmark.partner-logo{
+  flex:0 0 174px!important;
+  width:174px!important;
+  min-width:174px!important;
+  height:94px;
+  padding:8px;
+  align-items:center!important;
+  justify-content:center!important;
+  filter:none!important;
+  white-space:normal;
+}
+.partners-section .partner-logo img{
+  display:block;
+  width:100%!important;
+  height:78px!important;
+  max-height:78px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:grayscale(1);
+  opacity:.9;
+  border-radius:0!important;
+}
+.partners-section .partner-logo:hover img{
+  filter:grayscale(0);
+  opacity:1;
+}
+.partners-section .partner-logo .partner-fallback{
+  display:none;
+  color:#4c5557;
+  font:700 14px/1.35 "DM Sans",sans-serif;
+  letter-spacing:0;
+  text-transform:none;
+  white-space:normal;
+  text-align:center;
+  overflow-wrap:anywhere;
+}
+@media(max-width:700px){
+  .partners-section .partner-wordmark.partner-logo{
+    flex-basis:145px!important;
+    width:145px!important;
+    min-width:145px!important;
+    height:78px;
+  }
+  .partners-section .partner-logo img{
+    height:62px!important;
+    max-height:62px!important;
+  }
+}
+
 </style>
 </head>
 
@@ -1552,7 +1662,7 @@ footer.container.site-footer{
       <label for="years">Years <strong id="years-label">18</strong></label>
       <input id="years" type="range" min="1" max="30" step="1" value="18">
       <label for="rate">Assumed annual growth rate, compounded monthly <strong id="rate-label">6.00%</strong></label>
-      <input id="rate" type="range" min="0" max="8" step="0.25" value="6">
+      <input id="rate" type="range" min="0" max="13" step="0.25" value="6">
       <div class="result iul-results" aria-live="polite" aria-atomic="true">
         <div class="iul-metric"><span>Hypothetical total contributions</span><strong id="total-paid">$43,200</strong></div>
         <div class="iul-metric"><span>Hypothetical accumulated amount before costs</span><strong id="future-value">—</strong></div>
@@ -1890,20 +2000,136 @@ footer.container.site-footer{
     <div class="partners-marquee" aria-label="Scrolling list of partner organizations">
       <div class="partners-track">
         <div class="partners-grid" role="list">
-<div class="partner-wordmark partner-foresters" aria-label="Foresters Financial"><span>Foresters</span><small>Financial</small></div>
-<div class="partner-wordmark partner-corebridge" aria-label="Corebridge Financial"><span>corebridge<span class="partner-dots" aria-hidden="true">∴</span></span><small>financial</small></div>
-<div class="partner-wordmark partner-bmi" aria-label="BMI"><span>BMI</span></div>
-<div class="partner-wordmark partner-american" aria-label="American National"><span>AMERICAN</span><small>NATIONAL</small></div>
-<div class="partner-wordmark partner-ethos" aria-label="Ethos"><span>ETHOS</span></div>
-<div class="partner-wordmark partner-national" aria-label="National Life Group"><span>◢</span><div><span>National Life</span><small>Group</small></div></div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Ethos">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Ethos_Logo-Bridging-the-Gap-Financial-Services-qk5inrwlxn2t7srwt9l22shghdut4ed25qm2wxcl7g.png" alt="Ethos logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://res.cloudinary.com/getethos/image/upload/w_1200%2Ch_1200%2Cc_fit/v1565983195/00_CMS/Ethos_Life_Insurance_y3fyg1.png">
+            <span class="partner-fallback" aria-hidden="true">Ethos</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="National Life Group">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/NLG-logo-bridging-the-Gap-Financial-qk5inqyrqt1iw6t9yr6fiapzvzzfwp9btlylfndzdo.png" alt="National Life Group logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://www.nationallife.com/-/media/Images/NationalLife/public/home-page/home-feature/NLG-logo.png">
+            <span class="partner-fallback" aria-hidden="true">National Life Group</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="GFI">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/GFI-logo-Bridging-the-Gap-financial-services-partner-qk5inqyrqt1iw6t9yr6fiapzvzzfwp9btlylfndzdo.png" alt="GFI logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">GFI</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Transamerica">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/transamerica-gray-q2ocz4olylhrdy9xt1dtj9x8kkp89lynani67e7z30.png" alt="Transamerica logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Transamerica</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Allianz">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/allianz-gray-q2ocysgphr1170rose3o4v08ukdghjm4wz0uysq3bw.png" alt="Allianz logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Allianz</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Prudential">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/prudential-gray-q2ocz3qrrrgh2cbayiz6ys5rz6tv1wuwyiuoq49d98.png" alt="Prudential logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Prudential</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Nationwide">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/nationwide-gray-q2ocz2sxkxf6qqco40kkeaebdsyhu7r6me778uarfg.png" alt="Nationwide logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Nationwide</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Athene">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/athene-gray-q2ocytejol2bimqbmwiapcrpfy8tp8pv93ocg2op5o.png" alt="Athene logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Athene</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Everest Funeral Concierge">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/everest-funeral-concierge-gray-q2ocz0x979cm3ifeezrb9ave717retjpy4w8aadjrw.png" alt="Everest Funeral Concierge logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Everest Funeral Concierge</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Pacific Life">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/pacific-life-gray-q2ocz2sxkxf6qqco40kkeaebdsyhu7r6me778uarfg.png" alt="Pacific Life logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Pacific Life</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="LSPN Pro">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Bridging-the-gap-financial-services-lspn-pro-logo-qlsn65g1iqt654oslfsswe47x478xvrin35t4qnot8.png" alt="LSPN Pro logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">LSPN Pro</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Mutual of Omaha">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/mutual-of-omaha-qm33cctyzj2ghzvommqjgkaqaqe8s4dous38xxhu1o.png" alt="Mutual of Omaha logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Mutual of Omaha</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Foresters Financial">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Forester-Financial-logo-bridgeing-the-gap-financial-services-qm33cctyzj2ghzvommqjgkaqaqe8s4dous38xxhu1o.png" alt="Foresters Financial logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://images.seeklogo.com/logo-png/53/1/foresters-financial-logo-png_seeklogo-530929.png?v=1958514176591123208">
+            <span class="partner-fallback" aria-hidden="true">Foresters Financial</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Corebridge Financial">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Corebridge-Financial-Logo-qm33cbw4sp166dx1s4bww2j9pcivkf9yinfrgnj87w.png" alt="Corebridge Financial logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Corebridge Financial</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="BMI">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/BMI-internacional-logo-BTGFS-qm33cayaluzvuryexlxabkrt3ynicq686is9zdkme4.png" alt="BMI logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://www.bmicos.com/wp-content/uploads/2020/10/579101_368339333259196_455318177_n-1.png">
+            <span class="partner-fallback" aria-hidden="true">BMI</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="American National">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/AmericanNational_Logo_Stacked_2color-qm33cayaluzvuryexlxabkrt3ynicq686is9zdkme4.png" alt="American National logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://www.americannational.com/content/dam/anico/brand/logos/AN_Logo_Stacked_2color.svg">
+            <span class="partner-fallback" aria-hidden="true">American National</span>
+          </div>
         </div>
         <div class="partners-grid" aria-hidden="true">
-<div class="partner-wordmark partner-foresters"><span>Foresters</span><small>Financial</small></div>
-<div class="partner-wordmark partner-corebridge"><span>corebridge<span class="partner-dots" aria-hidden="true">∴</span></span><small>financial</small></div>
-<div class="partner-wordmark partner-bmi"><span>BMI</span></div>
-<div class="partner-wordmark partner-american"><span>AMERICAN</span><small>NATIONAL</small></div>
-<div class="partner-wordmark partner-ethos"><span>ETHOS</span></div>
-<div class="partner-wordmark partner-national"><span>◢</span><div><span>National Life</span><small>Group</small></div></div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Ethos">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Ethos_Logo-Bridging-the-Gap-Financial-Services-qk5inrwlxn2t7srwt9l22shghdut4ed25qm2wxcl7g.png" alt="Ethos logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://res.cloudinary.com/getethos/image/upload/w_1200%2Ch_1200%2Cc_fit/v1565983195/00_CMS/Ethos_Life_Insurance_y3fyg1.png">
+            <span class="partner-fallback" aria-hidden="true">Ethos</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="National Life Group">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/NLG-logo-bridging-the-Gap-Financial-qk5inqyrqt1iw6t9yr6fiapzvzzfwp9btlylfndzdo.png" alt="National Life Group logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://www.nationallife.com/-/media/Images/NationalLife/public/home-page/home-feature/NLG-logo.png">
+            <span class="partner-fallback" aria-hidden="true">National Life Group</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="GFI">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/GFI-logo-Bridging-the-Gap-financial-services-partner-qk5inqyrqt1iw6t9yr6fiapzvzzfwp9btlylfndzdo.png" alt="GFI logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">GFI</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Transamerica">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/transamerica-gray-q2ocz4olylhrdy9xt1dtj9x8kkp89lynani67e7z30.png" alt="Transamerica logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Transamerica</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Allianz">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/allianz-gray-q2ocysgphr1170rose3o4v08ukdghjm4wz0uysq3bw.png" alt="Allianz logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Allianz</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Prudential">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/prudential-gray-q2ocz3qrrrgh2cbayiz6ys5rz6tv1wuwyiuoq49d98.png" alt="Prudential logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Prudential</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Nationwide">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/nationwide-gray-q2ocz2sxkxf6qqco40kkeaebdsyhu7r6me778uarfg.png" alt="Nationwide logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Nationwide</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Athene">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/athene-gray-q2ocytejol2bimqbmwiapcrpfy8tp8pv93ocg2op5o.png" alt="Athene logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Athene</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Everest Funeral Concierge">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/everest-funeral-concierge-gray-q2ocz0x979cm3ifeezrb9ave717retjpy4w8aadjrw.png" alt="Everest Funeral Concierge logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Everest Funeral Concierge</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Pacific Life">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/pacific-life-gray-q2ocz2sxkxf6qqco40kkeaebdsyhu7r6me778uarfg.png" alt="Pacific Life logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Pacific Life</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="LSPN Pro">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Bridging-the-gap-financial-services-lspn-pro-logo-qlsn65g1iqt654oslfsswe47x478xvrin35t4qnot8.png" alt="LSPN Pro logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">LSPN Pro</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Mutual of Omaha">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/mutual-of-omaha-qm33cctyzj2ghzvommqjgkaqaqe8s4dous38xxhu1o.png" alt="Mutual of Omaha logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Mutual of Omaha</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Foresters Financial">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Forester-Financial-logo-bridgeing-the-gap-financial-services-qm33cctyzj2ghzvommqjgkaqaqe8s4dous38xxhu1o.png" alt="Foresters Financial logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://images.seeklogo.com/logo-png/53/1/foresters-financial-logo-png_seeklogo-530929.png?v=1958514176591123208">
+            <span class="partner-fallback" aria-hidden="true">Foresters Financial</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="Corebridge Financial">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/Corebridge-Financial-Logo-qm33cbw4sp166dx1s4bww2j9pcivkf9yinfrgnj87w.png" alt="Corebridge Financial logo" loading="eager" decoding="async" referrerpolicy="no-referrer">
+            <span class="partner-fallback" aria-hidden="true">Corebridge Financial</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="BMI">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/BMI-internacional-logo-BTGFS-qm33cayaluzvuryexlxabkrt3ynicq686is9zdkme4.png" alt="BMI logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://www.bmicos.com/wp-content/uploads/2020/10/579101_368339333259196_455318177_n-1.png">
+            <span class="partner-fallback" aria-hidden="true">BMI</span>
+          </div>
+          <div class="partner-wordmark partner-logo" role="listitem" aria-label="American National">
+            <img src="https://btgfs.com/wp-content/uploads/elementor/thumbs/AmericanNational_Logo_Stacked_2color-qm33cayaluzvuryexlxabkrt3ynicq686is9zdkme4.png" alt="American National logo" loading="eager" decoding="async" referrerpolicy="no-referrer" data-backup-src="https://www.americannational.com/content/dam/anico/brand/logos/AN_Logo_Stacked_2color.svg">
+            <span class="partner-fallback" aria-hidden="true">American National</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1936,6 +2162,23 @@ footer.container.site-footer{
 </main>
 
 <script>
+
+  // Third-party carrier artwork can be blocked by its source host. Retry the
+  // verified alternate file if provided, then keep a readable brand name.
+  document.querySelectorAll(".partners-section .partner-logo img").forEach(img => {
+    img.addEventListener("error", () => {
+      const backup = img.dataset.backupSrc;
+      if (backup && !img.dataset.backupTried) {
+        img.dataset.backupTried = "true";
+        img.src = backup;
+        return;
+      }
+      img.style.display = "none";
+      const fallback = img.nextElementSibling;
+      if (fallback) fallback.style.display = "block";
+    });
+  });
+
   // Page navigation
   const pages = document.querySelectorAll("[data-page]");
   const navLinks = document.getElementById("nav-links");
