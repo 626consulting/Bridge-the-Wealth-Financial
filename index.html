@@ -1121,6 +1121,77 @@ footer.container.site-footer{
   .partners-section{padding-top:50px;padding-bottom:44px;}
 }
 
+
+/* Clear, actionable scroll prompt on homepage — desktop first, mobile remains tidy. */
+#home-explore {scroll-margin-top:128px;}
+.page[data-page="home"] .btw-scroll-cue{
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  width:auto;
+  min-width:0;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:12px 19px;
+  margin:0;
+  background:rgba(4,38,49,.94);
+  color:#ffdf9b;
+  border:1.5px solid #e4bb6f;
+  border-radius:999px;
+  box-shadow:0 9px 25px rgba(0,14,24,.35),0 0 0 3px rgba(226,185,106,.08);
+  font:700 13px/1.3 "DM Sans",sans-serif;
+  letter-spacing:.14em;
+  text-align:center;
+  cursor:pointer;
+  transition:background-color .2s,border-color .2s,box-shadow .2s,opacity .25s,visibility .25s;
+}
+.page[data-page="home"] .btw-scroll-cue:hover{
+  background:#07594c;
+  color:#fff4cf;
+  border-color:#f4d49b;
+  box-shadow:0 12px 30px rgba(0,16,26,.4);
+}
+.page[data-page="home"] .btw-scroll-cue:focus-visible{
+  outline:3px solid #fff0bb;
+  outline-offset:4px;
+}
+.page[data-page="home"] .btw-scroll-cue .btw-arrow{
+  font-size:22px;
+  line-height:1;
+}
+.page[data-page="home"] .btw-scroll-cue.is-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+@media(min-width:801px){
+  .page[data-page="home"] .btw-scroll-cue{
+    position:fixed!important;
+    right:clamp(18px,3vw,42px)!important;
+    bottom:25px!important;
+    z-index:95;
+  }
+}
+@media(max-width:800px){
+  .page[data-page="home"] .btw-scroll-cue{
+    position:relative!important;
+    right:auto!important;
+    bottom:auto!important;
+    display:flex;
+    margin:0 auto 22px;
+    padding:10px 16px;
+    font-size:11px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .page[data-page="home"] .btw-scroll-cue,
+  .page[data-page="home"] .btw-scroll-cue .btw-arrow{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
 </style>
 </head>
 
@@ -1184,14 +1255,14 @@ footer.container.site-footer{
       <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
       <a href="#book" class="button-link outline">Book a Consultation →</a>
     </div>
-    <div class="btw-scroll-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span class="btw-arrow">↓</span></div>
+    <button class="btw-scroll-cue" type="button" data-scroll-to-explore aria-label="Scroll to explore more about Bridge the Wealth"><span>SCROLL TO EXPLORE</span><span class="btw-arrow" aria-hidden="true">↓</span></button>
   </div>
 
   <div class="ribbon" aria-label="Learn today. Plan with purpose. Inspire generations.">
     <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Learn today. <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Plan with purpose. <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Inspire generations.
   </div>
 
-  <div class="section wrap split">
+  <div class="section wrap split" id="home-explore">
     <div>
       <p class="eyebrow">Our Signature Family Conversation</p>
       <h2>The Million Dollar Baby Plan.</h2>
@@ -1766,6 +1837,24 @@ footer.container.site-footer{
 
   window.addEventListener("hashchange", showPage);
   showPage();
+
+
+  // Homepage scroll prompt: visible on arrival and clickable without changing the page route.
+  const homeScrollCue = document.querySelector("[data-scroll-to-explore]");
+  const homeExploreTarget = document.getElementById("home-explore");
+  if (homeScrollCue && homeExploreTarget) {
+    const refreshHomeScrollCue = () => {
+      const homeVisible = document.querySelector('.page[data-page="home"]')?.classList.contains("active");
+      homeScrollCue.classList.toggle("is-hidden", !homeVisible || window.scrollY > 165);
+    };
+    homeScrollCue.addEventListener("click", () => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      homeExploreTarget.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    });
+    window.addEventListener("scroll", refreshHomeScrollCue, { passive: true });
+    window.addEventListener("hashchange", refreshHomeScrollCue);
+    refreshHomeScrollCue();
+  }
 
   // Financial education lessons
   document.querySelectorAll("[data-tab]").forEach(button => {
