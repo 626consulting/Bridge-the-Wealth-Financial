@@ -1457,6 +1457,22 @@ footer.container.site-footer{
 @media(max-width:980px){.page[data-page="services"] .btw-service-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:680px){.page[data-page="services"] .btw-service-grid{grid-template-columns:1fr;}.page[data-page="services"] .btw-service-card{padding:24px 20px;}}
 
+
+/* Bridgette Reed's full first-person story on the About page. */
+.page[data-page="about"] .btw-story-opening{align-items:center;gap:clamp(30px,5vw,65px);}
+.page[data-page="about"] .btw-story-opening h2{font-size:clamp(1.85rem,3.3vw,2.8rem);margin:0 0 18px;}
+.page[data-page="about"] .btw-story-opening p{line-height:1.8;}
+.page[data-page="about"] .btw-story-band{background:#f2eee5;}
+.page[data-page="about"] .btw-story-text{max-width:1050px;}
+.page[data-page="about"] .btw-story-text h2{font-size:clamp(2rem,3.5vw,3rem);margin:0 0 22px;}
+.page[data-page="about"] .btw-story-text>p{max-width:940px;line-height:1.82;font-size:clamp(.96rem,1.2vw,1.05rem);margin:0 0 17px;}
+.page[data-page="about"] .btw-story-principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:28px 0 33px;}
+.page[data-page="about"] .btw-story-principles article{background:#fff;border:1px solid #e3ddcf;border-left:4px solid var(--gold);padding:23px 23px 20px;border-radius:9px;box-shadow:0 8px 28px rgba(7,40,55,.045);}
+.page[data-page="about"] .btw-story-principles h3{font-size:clamp(1.4rem,2vw,1.8rem);margin:0 0 9px;}
+.page[data-page="about"] .btw-story-principles p{color:#53696d;line-height:1.7;margin:0;font-size:.94rem;}
+.page[data-page="about"] .btw-story-text .btw-story-welcome{font-family:"Playfair Display",Georgia,serif;color:var(--green);font-size:clamp(1.4rem,2vw,1.85rem);margin-top:24px;}
+@media(max-width:650px){.page[data-page="about"] .btw-story-principles{grid-template-columns:1fr;}.page[data-page="about"] .btw-story-principles article{padding:20px;}}
+
 </style>
 </head>
 
@@ -1688,7 +1704,7 @@ footer.container.site-footer{
     <div class="wrap">
       <p class="eyebrow light">Financial Education • Explore the Possibilities</p>
       <h1>IUL Growth Explorer</h1>
-      <p>Understand hypothetical growth and ask informed questions about indexed universal life insurance.</p>
+      <p>Explore potential growth scenarios and learn what affects indexed universal life insurance policy values.</p>
     </div>
   </div>
 
@@ -1696,12 +1712,12 @@ footer.container.site-footer{
     <div>
       <p class="eyebrow">Learn about possible growth — without guarantees</p>
       <h2>IUL Growth Explorer</h2>
-      <p>Explore how regular contributions might accumulate under a simple, hypothetical compound-growth assumption. This is <strong>not</strong> an indexed universal life (IUL) insurance illustration or an estimate of policy cash value.</p>
+      <p>Explore the potential effect of regular monthly amounts under an assumed compound-growth rate. This simplified educational scenario is <strong>not</strong> an indexed universal life (IUL) policy illustration or an estimate of actual policy cash value.</p>
       <p>IUL premiums also pay for insurance coverage and policy charges. Actual credited interest depends on policy terms, including participation rates, caps, floors, and crediting methods, rather than a steady fixed return.</p>
     </div>
     <div class="calculator iul-explorer">
-      <h3>Explore a Hypothetical Scenario</h3>
-      <p class="iul-explorer-intro">Educational scenario only, before policy costs.</p>
+      <h3>Explore Potential Growth</h3>
+      <p class="iul-explorer-intro">Illustrative mathematical scenario only, before policy costs; not a forecast or guarantee.</p>
       <label for="monthly">Monthly amount <strong id="monthly-label">$200</strong></label>
       <input id="monthly" type="range" min="50" max="1000" step="25" value="200">
       <label for="years">Years <strong id="years-label">18</strong></label>
@@ -1709,11 +1725,11 @@ footer.container.site-footer{
       <label for="rate">Assumed annual growth rate, compounded monthly <strong id="rate-label">6.00%</strong></label>
       <input id="rate" type="range" min="0" max="13" step="0.25" value="6">
       <div class="result iul-results" aria-live="polite" aria-atomic="true">
-        <div class="iul-metric"><span>Hypothetical total contributions</span><strong id="total-paid">$43,200</strong></div>
-        <div class="iul-metric"><span>Hypothetical accumulated amount before costs</span><strong id="future-value">—</strong></div>
-        <div class="iul-metric"><span>Hypothetical growth before costs</span><strong id="growth-amount">—</strong></div>
+        <div class="iul-metric"><span>Total amounts contributed in this example</span><strong id="total-paid">$43,200</strong></div>
+        <div class="iul-metric"><span>Potential illustrated accumulation before costs</span><strong id="future-value">—</strong></div>
+        <div class="iul-metric"><span>Potential illustrated growth before costs</span><strong id="growth-amount">—</strong></div>
       </div>
-      <p class="notice iul-disclosure"><strong>Important:</strong> IUL is life insurance, not a savings or investment account. This simple calculation is <strong>not a policy illustration, quote, guarantee, or projection of IUL cash value</strong>. It excludes cost of insurance, policy fees, surrender charges, interest crediting restrictions, loans, withdrawals, and tax effects. Actual policy values may be lower, including zero. Ask Bridgette for an insurer-approved policy illustration.</p>
+      <p class="notice iul-disclosure"><strong>Important:</strong> IUL is life insurance, not a savings or investment account. This simple calculation is <strong>not a policy illustration, quote, guarantee, or projection of IUL cash value</strong>. It excludes cost of insurance, policy fees, surrender charges, interest crediting restrictions, loans, withdrawals, and tax effects. The selectable rates, including 13%, do not represent expected or typical IUL crediting rates. Actual policy values may be lower, including zero. Ask Bridgette for an insurer-approved policy illustration.</p>
     </div>
   </div>
 
@@ -1939,20 +1955,59 @@ footer.container.site-footer{
   <div class="page-header">
     <div class="wrap">
       <p class="eyebrow light">Meet Bridgette Reed</p>
-      <h1>Anchored in Healing. Built for Wealth.</h1>
-      <p>Rooted in stability. Building for generations.</p>
+      <h1>About Bridgette Reed</h1>
+      <p>Anchored in Healing. Built for Wealth.</p>
     </div>
   </div>
-  <div class="section wrap split">
+
+  <div class="section wrap split btw-story-opening">
     <div>
-      <p class="eyebrow">Our guiding philosophy</p>
-      <h2>Why the Willow Tree Guides Everything We Do</h2>
-      <p>Many financial plans resemble oak trees—rigid and vulnerable when life's storms arrive. Our approach follows the willow: deeply rooted, adaptable, and designed to shelter what matters most.</p>
-      <p>Bridgette Reed brings a family-centered perspective to conversations about financial education, protection, and building for the future.</p>
-      <a href="#contact" class="button-link green">Connect With Bridgette →</a>
+      <p class="eyebrow">Welcome to My Story</p>
+      <h2>Building bridges from healing to financial possibility.</h2>
+      <p>I'm Bridgette Reed, a Licensed Marriage and Family Therapist (LMFT), Mental Health Educator, and founder. If you are here at Bridge the Wealth Financial Services, it's because you know that financial growth isn't just about spreadsheets—it is deeply tied to mindset, resilience, and the inner tools we use to navigate life's pivots.</p>
+      <p>My entire career and mission stem from a single belief: <strong>we behold capability in people until they can fully see and step into it for themselves.</strong> Every brand I have built is a bridge to help you cross over from where you were to where you are destined to be.</p>
     </div>
-    <div class="btw-about-family"><img src="https://images.unsplash.com/photo-1647616927583-1d44a79a38a5?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Family portrait with parents and child, illustrating Bridgette's family-centered approach" loading="lazy" decoding="async"><p class="btw-image-caption">Family-centered conversations, rooted in care and long-term stability.</p></div>
+    <div class="btw-about-family">
+      <img src="https://images.unsplash.com/photo-1647616927583-1d44a79a38a5?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Family portrait representing a family-centered approach to healing and financial planning" loading="lazy" decoding="async">
+      <p class="btw-image-caption">Grounded in healing, purpose, and generational possibility.</p>
+    </div>
   </div>
+
+  <div class="btw-story-band">
+    <div class="section wrap btw-story-text">
+      <p class="eyebrow">Where It Began</p>
+      <h2>My Journey &amp; The Foundations</h2>
+      <p>My root calling has always been in human healing, self-advocacy, and emotional structural strength. Through <strong>Bridge the Journey</strong>, I dedicated my life to clinical mental health and family therapy—guiding individuals, couples, and families through trauma, anxiety, relationship disillusionment, and life shifts.</p>
+      <p>In the therapy room, I saw firsthand how emotional well-being and life stability go hand-in-hand. When we heal our nervous system, ground our values, and step into self-monitoring, we build the courage required to take on bigger dreams.</p>
+    </div>
+  </div>
+
+  <div class="section wrap btw-story-text">
+    <p class="eyebrow">Building the Next Generation</p>
+    <h2>The Evolution: Empowering the Next Generation</h2>
+    <p>As my clinical work expanded, I recognized that true generational transformation starts early by bridging the gap between "knowing" what to do and having the cognitive execution to "do it."</p>
+    <p>That led to the creation of <strong>The Teeny Tiny Collective (TTTC)</strong> and the <strong>Inner Advocate</strong> framework. Through TTTC, we guide young leaders and architects through executive functioning, cognitive shifting, digital boundaries, and self-advocacy.</p>
+    <p>We teach them that big, intimidating projects or life goals are conquered the "teeny tiny" way—one intentional, grounded step at a time. We build the foundation (courage), open the doors and windows (seeking support and flexible thinking), and construct the roof (persistence) so that nothing can shake their future.</p>
+  </div>
+
+  <div class="btw-story-band">
+    <div class="section wrap btw-story-text">
+      <p class="eyebrow">The Next Bridge</p>
+      <h2>Why Bridge the Wealth Financial Services?</h2>
+      <p>Everything I have built—from clinical therapy at Bridge the Journey to youth leadership and executive functioning at The Teeny Tiny Collective—led me directly to Bridge the Wealth Financial Services.</p>
+      <p><strong>Wealth isn't created in a vacuum.</strong> True financial freedom requires:</p>
+      <div class="btw-story-principles">
+        <article><h3>The Compass</h3><p>Aligning your money moves with your core values and long-term vision.</p></article>
+        <article><h3>The Shield</h3><p>Setting strong boundaries, managing risks, and filtering out impulse or digital noise.</p></article>
+        <article><h3>The Pivot</h3><p>Knowing how to adapt your financial strategies when life shifts unexpectedly.</p></article>
+        <article><h3>Task Initiation</h3><p>Having the courage to push the "start button" on building legacy, protection, and assets today.</p></article>
+      </div>
+      <p>Whether I am guiding a client through emotional healing, coaching a young leader to find their voice, or helping you build and protect your financial legacy, my mission remains the same: to provide you with the professional tools, strategic framework, and unwavering belief so you can become the true architect of your life and wealth.</p>
+      <p class="btw-story-welcome"><strong>Welcome—I'm honored to walk this journey with you.</strong></p>
+      <a href="#book" class="button-link green">Schedule a Conversation →</a>
+    </div>
+  </div>
+
   <div class="section wrap willow-section">
     <p class="eyebrow">A message from Bridgette</p>
     <blockquote class="willow-quote">
