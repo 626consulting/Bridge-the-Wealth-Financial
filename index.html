@@ -1167,10 +1167,10 @@ footer.container.site-footer{
 }
 @media(min-width:801px){
   .page[data-page="home"] .btw-scroll-cue{
-    position:fixed!important;
-    right:clamp(18px,3vw,42px)!important;
-    bottom:9px!important;
-    z-index:95;
+    position:static!important;
+    right:auto!important;
+    bottom:auto!important;
+    z-index:2;
   }
 }
 @media(max-width:800px){
@@ -1239,6 +1239,53 @@ footer.container.site-footer{
   }
 }
 
+
+/* Homepage desktop: stop hero right after CTAs; scroll action sits to their right. */
+@media (min-width:801px) {
+  .page[data-page="home"] .hero {
+    height:auto!important;
+    min-height:0!important;
+  }
+  .page[data-page="home"] .hero .wrap {
+    padding-bottom:clamp(14px,2.2vh,23px)!important;
+  }
+  .page[data-page="home"] .home-actions {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px 22px;
+    flex-wrap:wrap;
+    width:100%;
+    margin-top:13px;
+  }
+  .page[data-page="home"] .home-action-links{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .page[data-page="home"] .home-action-links .button-link{
+    margin:0!important;
+  }
+  .page[data-page="home"] .home-actions .btw-scroll-cue{
+    margin:0 0 0 auto!important;
+    flex:none;
+    padding:10px 15px;
+  }
+}
+@media (min-width:801px) and (max-width:1050px) {
+  .page[data-page="home"] .home-action-links{max-width:65%;}
+  .page[data-page="home"] .home-actions .btw-scroll-cue{font-size:11px;padding:10px 12px;}
+}
+@media (max-width:800px) {
+  .page[data-page="home"] .home-actions {display:block;}
+  .page[data-page="home"] .home-action-links {display:contents;}
+  .page[data-page="home"] .home-actions .btw-scroll-cue {
+    margin:8px auto 0!important;
+    position:relative!important;
+  }
+}
+
 </style>
 </head>
 
@@ -1299,10 +1346,14 @@ footer.container.site-footer{
         conversations, and a thoughtful plan for tomorrow.
       </p>
 
-      <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
-      <a href="#book" class="button-link outline">Book a Consultation →</a>
+      <div class="home-actions">
+        <div class="home-action-links">
+          <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
+          <a href="#book" class="button-link outline">Book a Consultation →</a>
+        </div>
+        <button class="btw-scroll-cue" type="button" data-scroll-to-explore aria-label="Scroll to explore more about Bridge the Wealth"><span>SCROLL TO EXPLORE</span><span class="btw-arrow" aria-hidden="true">↓</span></button>
+      </div>
     </div>
-    <button class="btw-scroll-cue" type="button" data-scroll-to-explore aria-label="Scroll to explore more about Bridge the Wealth"><span>SCROLL TO EXPLORE</span><span class="btw-arrow" aria-hidden="true">↓</span></button>
   </div>
 
   <div class="ribbon" aria-label="Learn today. Plan with purpose. Inspire generations.">
