@@ -2177,6 +2177,10 @@ footer.container.site-footer{
       const fallback = img.nextElementSibling;
       if (fallback) fallback.style.display = "block";
     });
+    // Handle images that failed before the document's bottom script ran.
+    if (img.complete && img.naturalWidth === 0) {
+      img.dispatchEvent(new Event("error"));
+    }
   });
 
   // Page navigation
