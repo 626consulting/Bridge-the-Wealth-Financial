@@ -931,6 +931,57 @@ footer.container.site-footer{
 @media(max-width:1030px){nav.container-fluid{min-height:112px!important;}nav.container-fluid .brand-logo{width:98px!important;height:98px!important;}nav.container-fluid .brand{max-width:104px!important;}}
 @media(max-width:620px){nav.container-fluid{min-height:102px!important;padding:8px 16px!important;}nav.container-fluid .brand-logo{width:85px!important;height:85px!important;}nav.container-fluid .brand{max-width:90px!important;}footer.container.site-footer{padding:37px 18px 22px!important;}.site-footer .footer-logo{width:132px!important;height:132px!important;}.site-footer .footer-links{gap:12px 17px;}.site-footer .footer-message{font-size:.86rem;}}
 
+
+/* Family image refresh and seamless, accessible partner carousel */
+.page[data-page="about"] .btw-about-family{
+  width:100%;max-width:560px;justify-self:center;
+}
+.page[data-page="about"] .btw-about-family img{
+  display:block;width:100%;height:auto!important;aspect-ratio:4/3;
+  max-height:370px!important;object-fit:cover!important;object-position:center!important;
+  border-radius:15px;background:transparent!important;
+  box-shadow:0 13px 32px rgba(5,31,47,.13);
+}
+.page[data-page="services"] .photo-card img{
+  width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center;
+}
+.partners-section .partners-marquee{
+  overflow:hidden;width:100%;position:relative;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.partners-section .partners-track{
+  display:flex;align-items:center;width:max-content;
+  animation:btw-partners-scroll 30s linear infinite;
+  will-change:transform;
+}
+.partners-section .partners-grid{
+  display:flex!important;grid-template-columns:none!important;align-items:center;
+  width:max-content;flex:none;gap:clamp(28px,4vw,64px)!important;
+  padding-right:clamp(28px,4vw,64px);margin:0;
+}
+.partners-section .partner-wordmark{
+  flex:0 0 178px;width:178px;min-width:178px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+}
+.partners-section .partner-foresters,.partners-section .partner-corebridge{text-align:center;align-items:center;}
+.partners-section .partner-corebridge small{align-self:center;}
+.partners-section .partners-marquee:hover .partners-track,
+.partners-section .partners-marquee:focus-within .partners-track{animation-play-state:paused;}
+@keyframes btw-partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:700px){
+  .partners-section .partner-wordmark{flex-basis:155px;width:155px;min-width:155px;}
+  .partners-section .partners-track{animation-duration:25s;}
+  .partners-section .partners-marquee{
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .partners-section .partners-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
+  .partners-section .partners-track{animation:none!important;will-change:auto;}
+}
+
 </style>
 </head>
 
@@ -1309,7 +1360,7 @@ footer.container.site-footer{
   <div class="section wrap">
     <div class="cards">
       <article class="photo-card">
-        <img src="https://src.nappy.co/photo/nKLWJe7CFDNItGPHlYK7m" alt="Black parents holding their newborn">
+        <img src="https://images.unsplash.com/photo-1596510914965-9ae08acae566?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Parents enjoying time outdoors with their young child" loading="lazy" decoding="async">
         <div class="content"><h3>Family Protection</h3><p>Life insurance education and preparedness.</p></div>
       </article>
 
@@ -1343,7 +1394,7 @@ footer.container.site-footer{
       <p>Bridgette Reed brings a family-centered perspective to conversations about financial education, protection, and building for the future.</p>
       <a href="#contact" class="button-link green">Connect With Bridgette →</a>
     </div>
-    <div class="btw-about-family"><img src="https://src.nappy.co/photo/nKLWJe7CFDNItGPHlYK7m" alt="Illustrative family photograph; not a portrait of Bridgette" loading="lazy"><p class="btw-image-caption">Family-centered conversations, rooted in care and long-term stability.</p></div>
+    <div class="btw-about-family"><img src="https://images.unsplash.com/photo-1647616927583-1d44a79a38a5?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Family portrait with parents and child, illustrating Bridgette's family-centered approach" loading="lazy" decoding="async"><p class="btw-image-caption">Family-centered conversations, rooted in care and long-term stability.</p></div>
   </div>
   <div class="section wrap willow-section">
     <p class="eyebrow">A message from Bridgette</p>
@@ -1561,13 +1612,25 @@ footer.container.site-footer{
   <div class="wrap">
     <p class="partners-kicker">Strength &amp; Credibility</p>
     <h2 id="partners-heading">A Few of Our Partners</h2>
-    <div class="partners-grid" aria-label="Partner organizations">
-      <div class="partner-wordmark partner-foresters" aria-label="Foresters Financial"><span>Foresters</span><small>Financial</small></div>
-      <div class="partner-wordmark partner-corebridge" aria-label="Corebridge Financial"><span>corebridge<span class="partner-dots" aria-hidden="true">∴</span></span><small>financial</small></div>
-      <div class="partner-wordmark partner-bmi" aria-label="BMI"><span>BMI</span></div>
-      <div class="partner-wordmark partner-american" aria-label="American National"><span>AMERICAN</span><small>NATIONAL</small></div>
-      <div class="partner-wordmark partner-ethos" aria-label="Ethos"><span>ETHOS</span></div>
-      <div class="partner-wordmark partner-national" aria-label="National Life Group"><span>◢</span><div><span>National Life</span><small>Group</small></div></div>
+    <div class="partners-marquee" aria-label="Scrolling list of partner organizations">
+      <div class="partners-track">
+        <div class="partners-grid" role="list">
+<div class="partner-wordmark partner-foresters" aria-label="Foresters Financial"><span>Foresters</span><small>Financial</small></div>
+<div class="partner-wordmark partner-corebridge" aria-label="Corebridge Financial"><span>corebridge<span class="partner-dots" aria-hidden="true">∴</span></span><small>financial</small></div>
+<div class="partner-wordmark partner-bmi" aria-label="BMI"><span>BMI</span></div>
+<div class="partner-wordmark partner-american" aria-label="American National"><span>AMERICAN</span><small>NATIONAL</small></div>
+<div class="partner-wordmark partner-ethos" aria-label="Ethos"><span>ETHOS</span></div>
+<div class="partner-wordmark partner-national" aria-label="National Life Group"><span>◢</span><div><span>National Life</span><small>Group</small></div></div>
+        </div>
+        <div class="partners-grid" aria-hidden="true">
+<div class="partner-wordmark partner-foresters"><span>Foresters</span><small>Financial</small></div>
+<div class="partner-wordmark partner-corebridge"><span>corebridge<span class="partner-dots" aria-hidden="true">∴</span></span><small>financial</small></div>
+<div class="partner-wordmark partner-bmi"><span>BMI</span></div>
+<div class="partner-wordmark partner-american"><span>AMERICAN</span><small>NATIONAL</small></div>
+<div class="partner-wordmark partner-ethos"><span>ETHOS</span></div>
+<div class="partner-wordmark partner-national"><span>◢</span><div><span>National Life</span><small>Group</small></div></div>
+        </div>
+      </div>
     </div>
     <p class="partners-fineprint">Carrier availability, product access, and applicable services may vary.</p>
   </div>
