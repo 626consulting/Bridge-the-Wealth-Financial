@@ -982,25 +982,30 @@ footer.container.site-footer{
   .partners-section .partners-track{animation:none!important;will-change:auto;}
 }
 
-/* Ensure the Knowledge/Legacy image reads as a natural modern family photo. */
+/* Knowledge Is a Legacy: uncropped, natural-width family photo (Pexels). */
 .page[data-page="home"] .section.dark-bg .split>img{
+  display:block;
   width:100%!important;
-  height:340px!important;
-  max-height:340px!important;
+  max-width:570px!important;
+  height:auto!important;
+  max-height:none!important;
   aspect-ratio:auto!important;
   object-fit:contain!important;
   object-position:center center!important;
-  background:#f2eee5;
-  border-radius:16px;
+  align-self:center;
+  background:transparent!important;
+  padding:0!important;
+  border-radius:14px;
   box-shadow:0 15px 35px rgba(0,0,0,.14);
 }
 @media(max-width:700px){
   .page[data-page="home"] .section.dark-bg .split>img{
-    height:280px!important;
-    max-height:280px!important;
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:20px auto 0;
   }
 }
-
 
 /* Bridge the Wealth appointment booking experience */
 .page[data-page="book"] .booking-live{
@@ -1236,8 +1241,9 @@ footer.container.site-footer{
       </div>
 
       <img
-        src="https://images.unsplash.com/photo-1763013259158-8a8370542ddb?auto=format&amp;fit=crop&amp;w=1200&amp;q=84"
-        alt="A family reading a book together and learning at home"
+        src="https://images.pexels.com/photos/8120828/pexels-photo-8120828.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+        alt="A family sharing a book together in natural light"
+        width="6764" height="4512"
         loading="lazy" decoding="async">
     </div>
   </div>
