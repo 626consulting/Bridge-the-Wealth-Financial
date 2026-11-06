@@ -982,6 +982,14 @@ footer.container.site-footer{
   .partners-section .partners-track{animation:none!important;will-change:auto;}
 }
 
+/* Ensure the Knowledge/Legacy image reads as a natural modern family photo. */
+.page[data-page="home"] .section.dark-bg .split>img{
+  width:100%;height:auto!important;aspect-ratio:4/3;
+  max-height:350px!important;object-fit:cover!important;object-position:center!important;
+  border-radius:16px;box-shadow:0 15px 35px rgba(0,0,0,.14);
+}
+@media(max-width:700px){.page[data-page="home"] .section.dark-bg .split>img{max-height:300px!important;}}
+
 </style>
 </head>
 
@@ -1144,8 +1152,9 @@ footer.container.site-footer{
       </div>
 
       <img
-        src="https://images.unsplash.com/photo-1577897113176-6888367369bf?auto=format&fit=crop&w=1000&q=85"
-        alt="People learning and discussing plans">
+        src="https://images.unsplash.com/photo-1763013259158-8a8370542ddb?auto=format&amp;fit=crop&amp;w=1200&amp;q=84"
+        alt="A family reading a book together and learning at home"
+        loading="lazy" decoding="async">
     </div>
   </div>
 
