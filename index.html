@@ -1241,7 +1241,11 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
         <div id="calendar-days" class="calendar-grid"></div>
       </div>
 
-      <form class="preview-form" data-live action="https://formsubmit.co/support@bridgethewealthfinancialservices.com" method="POST"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="_subject" value="Bridge the Wealth Website Inquiry">
+      <form class="web3forms-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="09252574-bba9-40a6-b73d-762ccb94ab31">
+        <input type="hidden" name="subject" value="Bridge the Wealth - Consultation Request">
+        <input type="hidden" name="from_name" value="Bridge the Wealth Website">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <div class="form-grid">
           <div class="field">
             <label for="booking-date">Preferred date *</label>
@@ -1301,7 +1305,7 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
         <p class="form-status" aria-live="polite"></p>
       </form>
 
-      <p class="notice">After sending your request, Bridgette will follow up to confirm availability. Please do not include Social Security numbers, account numbers, or other sensitive financial information. Form delivery requires one-time email activation.</p>
+      <p class="notice">This is an appointment request, not a confirmed booking. Bridgette will contact you to confirm availability. Please do not include Social Security numbers, account numbers, or sensitive financial or medical information.</p>
     </div>
   </div>
 </section>
@@ -1326,7 +1330,11 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
     <div class="form-card">
       <h3>Send a Message</h3>
 
-      <form class="preview-form" data-live action="https://formsubmit.co/support@bridgethewealthfinancialservices.com" method="POST"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="_subject" value="Bridge the Wealth Website Inquiry">
+      <form class="web3forms-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="09252574-bba9-40a6-b73d-762ccb94ab31">
+        <input type="hidden" name="subject" value="Bridge the Wealth - Website Inquiry">
+        <input type="hidden" name="from_name" value="Bridge the Wealth Website">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <div class="form-grid">
           <div class="field">
             <label for="contact-name">Name *</label>
@@ -1355,6 +1363,13 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
           </div>
 
           <div class="field full">
+            <label for="contact-phone">Phone (optional)</label>
+            <input id="contact-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field full">
+            <label><input type="checkbox" name="contact_consent" value="yes" required> I agree to be contacted about my inquiry.</label>
+          </div>
+          <div class="field full">
             <button type="submit">Send My Message →</button>
           </div>
         </div>
@@ -1362,7 +1377,7 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
         <p class="form-status" aria-live="polite"></p>
       </form>
 
-      <p class="notice">Preview only. No messages are sent or stored. The live contact form will be connected after approval.</p>
+      <p class="notice">Your message is delivered through a third-party form service to Bridgette's business inbox. Please share only general questions and contact details. Do not include private financial or medical information.</p>
     </div>
   </div>
 </section>
@@ -1378,7 +1393,12 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
         <h3>Financial education. Meaningful conversations. Generational possibility.</h3>
       </hgroup>
 
-      <form class="grid preview-form">
+      <form class="grid web3forms-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="09252574-bba9-40a6-b73d-762ccb94ab31">
+        <input type="hidden" name="subject" value="Bridge the Wealth - Footer Inquiry">
+        <input type="hidden" name="from_name" value="Bridge the Wealth Website">
+        <input type="hidden" name="topic" value="General Website Inquiry">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <input type="text" id="firstname" name="firstname" placeholder="First name" aria-label="First name" required>
         <input type="email" id="email" name="email" placeholder="Email address" aria-label="Email address" required>
         <button type="submit">Let's Connect →</button>
@@ -1401,7 +1421,7 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
 
     <p class="notice">
       Design approval draft. Financial-program details and images require Bridgette's review.
-      Contact and appointment inquiries use a third-party form provider and require email activation and testing before public launch. Appointment times are requests, not confirmed bookings.
+      Contact and appointment requests are sent using Web3Forms to the business email. Delivery must be verified with a test submission. Appointment times are requests, not confirmed bookings.
     </p>
   </div>
 </footer>
@@ -1592,16 +1612,46 @@ footer.container{position:relative;z-index:2;background:rgba(3,27,39,.97)!import
 
   renderCalendar();
 
-  // Approval preview: no customer information is sent
-  document.querySelectorAll(".preview-form:not([data-live])").forEach(form => {
-    form.addEventListener("submit", event => {
+  // Handle all website inquiries without leaving the site.
+  // Web3Forms expects client-side JSON. No private API token is stored here.
+  document.querySelectorAll("form.web3forms-form").forEach(form => {
+    form.addEventListener("submit", async event => {
       event.preventDefault();
+      if (!form.reportValidity()) return;
 
       const status = form.querySelector(".form-status");
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalLabel = submitButton ? submitButton.textContent : "";
       if (status) {
-        status.textContent =
-          "This is a design preview. Nothing was sent. " +
-          "Live forms will be connected after Bridgette approves the website.";
+        status.textContent = "Sending your message...";
+        status.setAttribute("role", "status");
+      }
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      try {
+        const data = Object.fromEntries(new FormData(form).entries());
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Form submission failed");
+        }
+        if (status) status.textContent = "Thank you! Your message was sent. Bridgette will follow up with you.";
+        form.reset();
+      } catch (error) {
+        if (status) status.textContent = "We couldn't send your message right now. Please try again or email support@bridgethewealthfinancialservices.com.";
+        console.error("Bridge the Wealth form delivery failed:", error);
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalLabel;
+        }
       }
     });
   });
