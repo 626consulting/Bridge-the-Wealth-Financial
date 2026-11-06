@@ -1474,18 +1474,45 @@ footer.container.site-footer{
 @media(max-width:650px){.page[data-page="about"] .btw-story-principles{grid-template-columns:1fr;}.page[data-page="about"] .btw-story-principles article{padding:20px;}}
 
 
-/* Bridgette's own family images for her About page. */
-.page[data-page="about"] .btw-story-opening .btw-about-family{width:100%;max-width:470px;margin:0 auto;}
-.page[data-page="about"] .btw-story-opening .btw-about-family img{
- width:100%;height:auto;max-height:520px;object-fit:contain;
- object-position:center;border-radius:14px;background:#f4efe7;
- box-shadow:0 12px 32px rgba(5,31,41,.12);
+/* About Us: show the complete original portraits, never center-crop. 
+   Override the older 4:3 cover rule above which used !important. */
+.page[data-page="about"] .btw-story-opening .btw-about-family{
+  width:100%;max-width:390px!important;margin:0 auto;justify-self:center;
 }
-.page[data-page="about"] .btw-about-babies{max-width:850px;margin:32px auto 2px;}
+.page[data-page="about"] .btw-story-opening .btw-about-family img{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:14px;
+  background:transparent!important;
+  box-shadow:0 12px 32px rgba(5,31,41,.12);
+}
+.page[data-page="about"] .btw-story-opening .btw-image-caption{text-align:center;}
+.page[data-page="about"] .btw-about-babies{
+  width:100%;max-width:680px!important;margin:32px auto 2px;
+}
 .page[data-page="about"] .btw-about-babies img{
- display:block;width:100%;height:auto;max-height:none;object-fit:contain;
- object-position:center;border-radius:14px;
- box-shadow:0 12px 32px rgba(5,31,41,.12);
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:14px;
+  box-shadow:0 12px 32px rgba(5,31,41,.12);
+}
+@media(max-width:700px){
+ .page[data-page="about"] .btw-story-opening .btw-about-family{max-width:340px!important;}
+ .page[data-page="about"] .btw-about-babies{max-width:100%!important;}
 }
 
 </style>
