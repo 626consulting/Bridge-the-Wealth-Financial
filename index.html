@@ -952,7 +952,7 @@ footer.container.site-footer{
 }
 .partners-section .partners-track{
   display:flex;align-items:center;width:max-content;
-  animation:btw-partners-scroll 130s linear infinite;
+  animation:btw-partners-scroll 330s linear infinite;
   will-change:transform;
 }
 .partners-section .partners-grid{
@@ -971,7 +971,7 @@ footer.container.site-footer{
 @keyframes btw-partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:700px){
   .partners-section .partner-wordmark{flex-basis:155px;width:155px;min-width:155px;}
-  .partners-section .partners-track{animation-duration:110s;}
+  .partners-section .partners-track{animation-duration:250s;}
   .partners-section .partners-marquee{
     -webkit-mask-image:linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
     mask-image:linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
@@ -1364,10 +1364,10 @@ footer.container.site-footer{
 }
 /* Prominent carrier logos: preserve full marks without cropping. */
 .partners-section .partner-wordmark.partner-logo{
-  flex:0 0 250px!important;
-  width:250px!important;
-  min-width:250px!important;
-  height:152px!important;
+  flex:0 0 340px!important;
+  width:340px!important;
+  min-width:340px!important;
+  height:208px!important;
   padding:8px 12px!important;
   align-items:center!important;
   justify-content:center!important;
@@ -1377,8 +1377,8 @@ footer.container.site-footer{
 .partners-section .partner-logo img{
   display:block;
   width:100%!important;
-  height:132px!important;
-  max-height:132px!important;
+  height:190px!important;
+  max-height:190px!important;
   object-fit:contain!important;
   object-position:center!important;
   filter:grayscale(1);
@@ -1392,7 +1392,7 @@ footer.container.site-footer{
 .partners-section .partner-logo .partner-fallback{
   display:none;
   color:#4c5557;
-  font:700 20px/1.35 "DM Sans",sans-serif;
+  font:700 26px/1.35 "DM Sans",sans-serif;
   letter-spacing:0;
   text-transform:none;
   white-space:normal;
@@ -1401,21 +1401,37 @@ footer.container.site-footer{
 }
 @media(max-width:700px){
   .partners-section .partner-wordmark.partner-logo{
-    flex:0 0 190px!important;
-    width:190px!important;
-    min-width:190px!important;
-    height:118px!important;
+    flex:0 0 255px!important;
+    width:255px!important;
+    min-width:255px!important;
+    height:165px!important;
     padding:6px 8px!important;
   }
   .partners-section .partner-logo img{
-    height:104px!important;
-    max-height:104px!important;
+    height:151px!important;
+    max-height:151px!important;
   }
   .partners-section .partner-logo .partner-fallback{
     font-size:16px;
   }
 }
 
+
+/* Left-aligned homepage hero; interior page headers retain centered titles. */
+.page[data-page="home"] .hero .wrap,
+.page[data-page="home"] .hero .wrap hgroup,
+.page[data-page="home"] .hero .wrap hgroup h2,
+.page[data-page="home"] .hero .wrap hgroup h3,
+.page[data-page="home"] .hero .wrap>p,
+.page[data-page="home"] .hero .wrap>.eyebrow,
+.page[data-page="home"] .hero .wrap>.hero-tagline{
+  text-align:left!important;margin-left:0!important;margin-right:auto!important;
+}
+@media(min-width:801px){
+ .page[data-page="home"] .home-actions{justify-content:flex-start!important;}
+ .page[data-page="home"] .home-action-links{justify-content:flex-start!important;margin:0 auto 0 0!important;}
+ .page[data-page="home"] .home-actions .btw-scroll-cue{right:0!important;}
+}
 </style>
 </head>
 
