@@ -1286,6 +1286,22 @@ footer.container.site-footer{
   }
 }
 
+
+/* Million Dollar Baby Plan: unified program, diagram, and educational growth calculation */
+#baby-benefits{scroll-margin-top:132px;}
+.page[data-page="baby"] .iul-explorer{border-top:4px solid var(--gold);}
+.page[data-page="baby"] .iul-explorer label{display:block;margin:18px 0 7px;font-size:.85rem;font-weight:700;line-height:1.5;color:var(--navy);}
+.page[data-page="baby"] .iul-explorer label strong{display:inline-block;float:right;color:var(--green);}
+.page[data-page="baby"] .iul-explorer input[type="range"]{display:block;width:100%;accent-color:var(--green);margin:0 0 15px;}
+.page[data-page="baby"] .iul-explorer-intro{font-size:.83rem;color:#456168;line-height:1.55;}
+.page[data-page="baby"] .iul-results{display:grid;gap:8px;margin-top:22px;}
+.page[data-page="baby"] .iul-metric{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.23);}
+.page[data-page="baby"] .iul-metric:last-child{border-bottom:0;}
+.page[data-page="baby"] .iul-metric span{display:block;font-size:.78rem;color:#e1efe7;line-height:1.5;}
+.page[data-page="baby"] .iul-metric strong{font-size:clamp(1.55rem,2.3vw,2.1rem);margin-top:3px;line-height:1.25;}
+.page[data-page="baby"] .iul-disclosure{font-size:.77rem;line-height:1.65;margin-top:16px;}
+@media(max-width:700px){.page[data-page="baby"] .iul-explorer label strong{float:none;}}
+
 </style>
 </head>
 
@@ -1310,7 +1326,6 @@ footer.container.site-footer{
   <ul class="links" id="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#baby">Million Dollar Baby Plan</a></li>
-    <li><a href="#gift">17-Day Gift</a></li>
     <li><a href="#education">Financial Education</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
@@ -1378,7 +1393,7 @@ footer.container.site-footer{
       </div>
 
       <a href="#baby" class="button-link green">Discover the Plan →</a>
-      <a href="#gift" class="button-link gold">Explore the 17-Day Gift →</a>
+
 
       <p class="notice">
         The program name is aspirational and does not guarantee
@@ -1535,7 +1550,7 @@ footer.container.site-footer{
         investment return, or other financial outcome.
       </p>
       <a href="#book" class="button-link green">Book a Baby Plan Consultation →</a>
-      <a href="#gift" class="button-link gold">Explore the 17-Day Gift →</a>
+
     </div>
 
     <img
@@ -1552,46 +1567,10 @@ footer.container.site-footer{
     </div>
   </div>
 
-  <div class="section wrap split">
-    <div>
-      <h2>Try the Savings Habit Explorer.</h2>
-      <p>See how regular contributions add up over time. This illustration assumes no growth, fees, or withdrawals.</p>
-    </div>
-
-    <div class="calculator">
-      <h3>Simple Savings Explorer</h3>
-
-      <label for="monthly">Monthly contribution: <strong id="monthly-label">$200</strong></label>
-      <input id="monthly" type="range" min="25" max="1000" step="25" value="200">
-
-      <label for="years">Years: <strong id="years-label">18</strong></label>
-      <input id="years" type="range" min="1" max="25" value="18">
-
-      <div class="result">
-        Total contributions, no growth
-        <strong id="total">$43,200</strong>
-      </div>
-
-      <p class="notice">Educational calculation only, not financial advice or a forecast.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- 17-DAY GIFT -->
-<section class="page" data-page="gift">
-  <div class="page-header">
-    <div class="wrap">
-      <p class="eyebrow light">Protection can begin with a conversation</p>
-      <h1>The 17-Day Gift.</h1>
-      <p>Explore how early planning may help create a foundation for a child's future.</p>
-    </div>
-  </div>
-  <div class="section wrap">
-    <p class="eyebrow">The vision</p>
-    <h2>Plant the roots. Make room to grow.</h2>
-    <p>The 17-Day Gift introduces families to the idea of starting age-appropriate financial protection early, learning what a policy can and cannot provide, and choosing a plan around real household goals.</p>
-    <p>The path below is an educational illustration, not a promised policy result or a recommendation for any one product.</p>
+  <div class="section wrap" id="baby-benefits">
+    <p class="eyebrow">Million Dollar Baby Plan — Understanding the Possibilities</p>
+    <h2>From early protection to long-term goals.</h2>
+    <p>This diagram illustrates some features that may be available through an eligible insurance policy. Actual coverage, living benefits, policy value, and tax treatment depend on the individual contract.</p>
     <div class="gift-diagram" aria-label="Illustration: A newborn policy may support tax-advantaged growth, with possible living benefits protection and access to policy value, leading to planning for the next generation. All features depend on policy terms.">
       <div class="gift-stage gift-top"><span class="gift-step-number">01</span><h3>Newborn Policy Initiated</h3><p>Explore eligible protection options for a child.</p></div>
       <div class="gift-connector" aria-hidden="true"></div>
@@ -1605,9 +1584,35 @@ footer.container.site-footer{
       <div class="gift-stage gift-finish"><span class="gift-step-number">04</span><h3>Building for the Next Generation</h3><p>Use informed decisions to strengthen a family's long-term financial plan.</p></div>
     </div>
     <p class="gift-disclosure">Illustration only. A policy may not offer cash value, living benefits, or favorable tax treatment. Benefits, fees, premiums, tax implications, loans, withdrawals, and eligibility depend on the specific contract and circumstances. Loans or withdrawals may reduce cash value and the death benefit, and may create tax consequences.</p>
-    <div class="gift-actions"><a href="#book" class="button-link green">Book a 17-Day Gift Consultation →</a><a href="#contact" class="button-link gold">Ask a Question →</a></div>
+    <div class="gift-actions"><a href="#book" class="button-link green">Book a Consultation →</a><a href="#contact" class="button-link gold">Ask a Question →</a></div>
+  </div>
+
+  <div class="section wrap split" id="iul-growth-explorer">
+    <div>
+      <p class="eyebrow">Learn about possible growth — without guarantees</p>
+      <h2>Hypothetical IUL Growth Explorer.</h2>
+      <p>Explore how regular contributions might accumulate under a simple, hypothetical compound-growth assumption. This is <strong>not</strong> an indexed universal life (IUL) insurance illustration or an estimate of policy cash value.</p>
+      <p>IUL premiums also pay for insurance coverage and policy charges. Actual credited interest depends on policy terms, including participation rates, caps, floors, and crediting methods, rather than a steady fixed return.</p>
+    </div>
+    <div class="calculator iul-explorer">
+      <h3>Hypothetical Growth Calculator</h3>
+      <p class="iul-explorer-intro">Educational scenario only, before policy costs.</p>
+      <label for="monthly">Monthly amount <strong id="monthly-label">$200</strong></label>
+      <input id="monthly" type="range" min="50" max="1000" step="25" value="200">
+      <label for="years">Years <strong id="years-label">18</strong></label>
+      <input id="years" type="range" min="1" max="30" step="1" value="18">
+      <label for="rate">Assumed annual growth rate, compounded monthly <strong id="rate-label">6.00%</strong></label>
+      <input id="rate" type="range" min="0" max="8" step="0.25" value="6">
+      <div class="result iul-results" aria-live="polite" aria-atomic="true">
+        <div class="iul-metric"><span>Hypothetical total contributions</span><strong id="total-paid">$43,200</strong></div>
+        <div class="iul-metric"><span>Hypothetical accumulated amount before costs</span><strong id="future-value">—</strong></div>
+        <div class="iul-metric"><span>Hypothetical growth before costs</span><strong id="growth-amount">—</strong></div>
+      </div>
+      <p class="notice iul-disclosure"><strong>Important:</strong> IUL is life insurance, not a savings or investment account. This simple calculation is <strong>not a policy illustration, quote, guarantee, or projection of IUL cash value</strong>. It excludes cost of insurance, policy fees, surrender charges, interest crediting restrictions, loans, withdrawals, and tax effects. Actual policy values may be lower, including zero. Ask Bridgette for an insurer-approved policy illustration.</p>
+    </div>
   </div>
 </section>
+
 
 <!-- EDUCATION -->
 <section class="page" data-page="education">
@@ -1715,9 +1720,9 @@ footer.container.site-footer{
     <div class="willow-pillars">
       <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">✦</span><h3>The Roots | Grounded Stability</h3><p>Deep roots represent emotional peace and structural financial safety. We focus on strong foundations, including conversations about living benefits and asset protection, so families can prepare for life's unexpected changes.</p></article>
       <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">❧</span><h3>The Branches | Adaptability &amp; Freedom</h3><p>Willows bend with the wind rather than breaking. We value flexible approaches built around each family's priorities, circumstances, and possibilities across borders.</p></article>
-      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">✧</span><h3>The Canopy | Sheltering the Future</h3><p>A willow shelters what grows beneath it. We help families explore how early protection and education—including the 17-Day Gift—may strengthen the next generation's foundation.</p></article>
+      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">✧</span><h3>The Canopy | Sheltering the Future</h3><p>A willow shelters what grows beneath it. We help families explore how early protection and education—including the Million Dollar Baby Plan—may strengthen the next generation's foundation.</p></article>
     </div>
-    <a href="#gift" class="button-link gold">Discover the 17-Day Gift →</a>
+    <a href="#baby" class="button-link gold">Discover the Million Dollar Baby Plan →</a>
   </div>
 </section>
 
@@ -1894,7 +1899,7 @@ footer.container.site-footer{
     <div class="footer-links" aria-label="Quick links">
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
-      <a href="#gift">17-Day Gift</a>
+      <a href="#baby">Million Dollar Baby Plan</a>
       <a href="#book">Book Now</a>
       <a href="#contact">Contact</a>
     </div>
@@ -1969,26 +1974,29 @@ footer.container.site-footer{
     });
   });
 
-  // Savings explorer
+  // Simplified compound-growth thought experiment; never an IUL policy illustration.
   const monthly = document.getElementById("monthly");
   const years = document.getElementById("years");
-
-  function updateSavings() {
+  const rate = document.getElementById("rate");
+  const growthCurrency = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  function updateIULGrowth() {
+    if (!monthly || !years || !rate) return;
     const amount = Number(monthly.value);
-    const time = Number(years.value);
-
-    document.getElementById("monthly-label").textContent =
-      "$" + amount.toLocaleString();
-
-    document.getElementById("years-label").textContent = time;
-
-    document.getElementById("total").textContent =
-      "$" + (amount * time * 12).toLocaleString();
+    const yearCount = Number(years.value);
+    const annualAssumption = Number(rate.value);
+    const months = yearCount * 12;
+    const r = annualAssumption / 1200;
+    const contributions = amount * months;
+    const accumulated = r === 0 ? contributions : amount * ((Math.pow(1 + r, months) - 1) / r);
+    document.getElementById("monthly-label").textContent = growthCurrency.format(amount);
+    document.getElementById("years-label").textContent = String(yearCount);
+    document.getElementById("rate-label").textContent = annualAssumption.toFixed(2) + "%";
+    document.getElementById("total-paid").textContent = growthCurrency.format(contributions);
+    document.getElementById("future-value").textContent = growthCurrency.format(accumulated);
+    document.getElementById("growth-amount").textContent = growthCurrency.format(accumulated - contributions);
   }
-
-  monthly.addEventListener("input", updateSavings);
-  years.addEventListener("input", updateSavings);
-  updateSavings();
+  [monthly, years, rate].forEach(el => el?.addEventListener("input", updateIULGrowth));
+  updateIULGrowth();
 
   // Appointments are booked through Bridgette's hosted scheduling page.
   // The old local date picker and request form were removed to avoid accepting unavailable slots.
