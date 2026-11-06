@@ -990,6 +990,34 @@ footer.container.site-footer{
 }
 @media(max-width:700px){.page[data-page="home"] .section.dark-bg .split>img{max-height:300px!important;}}
 
+
+/* Google appointment booking experience */
+.page[data-page="book"] .booking-live{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:clamp(22px,4vw,56px);align-items:center;
+}
+.page[data-page="book"] .booking-live-intro h2{margin:8px 0 18px;}
+.page[data-page="book"] .booking-live-intro p{max-width:600px;}
+.page[data-page="book"] .book-google-button{
+  display:inline-flex;gap:16px;align-items:center;justify-content:center;
+  padding:17px 27px;line-height:1.35;margin-top:14px;
+  box-shadow:0 12px 25px rgba(5,70,62,.17);
+}
+.page[data-page="book"] .booking-assist{font-size:.79rem;color:#546b6d;max-width:470px;margin:10px 0 19px;}
+.page[data-page="book"] .booking-question-link{font-size:.91rem;text-decoration:underline;color:#07594c;font-weight:700;}
+.page[data-page="book"] .booking-live-card{
+  background:#f8f4e9;padding:clamp(24px,3vw,42px);
+  border:1px solid #d6c497;border-top:5px solid #d7b16d;border-radius:18px;
+  box-shadow:0 16px 36px rgba(7,42,46,.1);
+}
+.page[data-page="book"] .booking-live-card h3{margin:6px 0 20px;color:#092b3b;}
+.page[data-page="book"] .booking-live-icon{font-size:1.9rem;color:#a1792b;}
+.page[data-page="book"] .booking-steps{padding-left:23px;margin:0 0 22px;}
+.page[data-page="book"] .booking-steps li{font-size:.91rem;line-height:1.65;margin:12px 0;}
+.page[data-page="book"] .booking-privacy{font-size:.79rem;color:#526568;line-height:1.65;margin:0;padding-top:16px;border-top:1px solid #dfd1b5;}
+@media(max-width:790px){.page[data-page="book"] .booking-live{grid-template-columns:1fr;}}
+@media(max-width:540px){.page[data-page="book"] .book-google-button{display:flex;width:100%;}.page[data-page="book"] .booking-live-card{padding:22px;}}
+
 </style>
 </head>
 
@@ -1040,7 +1068,7 @@ footer.container.site-footer{
           <em>We're building a generation that understands it.</em>
         </h2>
         <h3>
-          Helping Black families learn, protect what matters,
+          Helping families learn, protect what matters,
           and plan for the next generation.
         </h3>
       </hgroup>
@@ -1182,7 +1210,7 @@ footer.container.site-footer{
   <div class="banner">
     <div class="wrap">
       <h2>It's not just about money. It's about the next generation.</h2>
-      <p>Choose a preferred date and time to start a conversation with Bridgette.</p>
+      <p>Choose a time from Bridgette's live Google booking calendar to start a conversation.</p>
       <a href="#book" class="button-link gold">Choose a Date & Time →</a>
     </div>
   </div>
@@ -1203,7 +1231,7 @@ footer.container.site-footer{
 
       <details>
         <summary>Can I book a consultation?</summary>
-        <p>You can request a preferred date and time. The appointment is not confirmed until Bridgette responds.</p>
+        <p>Yes. Select Book Now to see available appointments in Bridgette's Google Calendar booking page. Once you complete a booking, Google adds it directly to the calendar and sends a confirmation.</p>
       </details>
     </div>
   </div>
@@ -1420,99 +1448,34 @@ footer.container.site-footer{
   </div>
 </section>
 
-<!-- BOOK -->
+<!-- BOOK: Live Google Calendar appointment schedule -->
 <section class="page" data-page="book">
   <div class="page-header">
     <div class="wrap">
-      <h1>Book Now.</h1>
-      <p>Select your preferred date on the calendar and send Bridgette a consultation request.</p>
+      <p class="eyebrow light">Choose a time that works for you</p>
+      <h1>Book a Consultation.</h1>
+      <p>Schedule directly with Bridgette using her live Google Calendar appointment page.</p>
     </div>
   </div>
-
-  <div class="section wrap booking-layout">
-    <div>
-      <h2>Let's talk about your next chapter.</h2>
-      <p>Request a conversation about financial education, the Million Dollar Baby Plan, or family protection.</p>
-      <p class="notice">Choose a preferred date and time. This request does not check live availability or confirm a booking; Bridgette will reply to arrange the appointment.</p>
+  <div class="section wrap booking-live">
+    <div class="booking-live-intro">
+      <p class="eyebrow">Simple, secure scheduling</p>
+      <h2>Let's plan your next chapter.</h2>
+      <p>Talk with Bridgette about financial education, family protection, or the Million Dollar Baby Plan.</p>
+      <p>Her Google booking page shows the appointment times available under her schedule settings, so you can choose a time without sending a separate date request.</p>
+      <a href="https://calendar.app.google/ANevdmuSBuEbP3qY8" class="button-link green book-google-button" target="_blank" rel="noopener noreferrer" aria-label="Open Bridgette's Google Calendar booking page in a new tab">View Available Times &amp; Book Now <span aria-hidden="true">↗</span></a>
+      <p class="booking-assist">The booking page opens in a new tab. Your appointment is added to Bridgette's Google Calendar after you complete the booking.</p>
+      <p><a href="#contact" class="booking-question-link">Have a question before booking? Send Bridgette a message.</a></p>
     </div>
-
-    <div class="form-card">
-      <h3>Select a Date &amp; Request Your Consultation</h3>
-
-      <div class="calendar">
-        <div class="calendar-head">
-          <button type="button" id="previous-month">‹</button>
-          <strong id="calendar-title">Select a Month</strong>
-          <button type="button" id="next-month">›</button>
-        </div>
-        <div id="calendar-days" class="calendar-grid"></div>
-      </div>
-
-      <form class="web3forms-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="09252574-bba9-40a6-b73d-762ccb94ab31">
-        <input type="hidden" name="subject" value="Bridge the Wealth - Consultation Request">
-        <input type="hidden" name="from_name" value="Bridge the Wealth Website">
-        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-        <div class="form-grid">
-          <div class="field">
-            <label for="booking-date">Preferred date *</label>
-            <input id="booking-date" name="date" type="date" required>
-          </div>
-
-          <div class="field">
-            <label for="booking-time">Preferred time *</label>
-            <select id="booking-time" name="time" required>
-              <option value="">Choose time</option>
-              <option>9:00 AM</option>
-              <option>10:00 AM</option>
-              <option>11:00 AM</option>
-              <option>1:00 PM</option>
-              <option>2:00 PM</option>
-              <option>3:00 PM</option>
-              <option>4:00 PM</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label for="booking-zone">Time zone *</label>
-            <select id="booking-zone" name="timezone" required>
-              <option>Eastern Time</option>
-              <option>Central Time</option>
-              <option>Mountain Time</option>
-              <option>Pacific Time</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="booking-name">Your name *</label>
-            <input id="booking-name" name="name" required>
-          </div>
-
-          <div class="field">
-            <label for="booking-email">Email *</label>
-            <input id="booking-email" name="email" type="email" required>
-          </div>
-
-          <div class="field full">
-            <label for="booking-topic">What would you like to discuss? *</label>
-            <select id="booking-topic" name="topic" required>
-              <option value="">Choose a topic</option>
-              <option>Million Dollar Baby Plan</option>
-              <option>Financial Education</option>
-              <option>Family Protection</option>
-              <option>General Financial Consultation</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <button type="submit">Request My Consultation →</button>
-          </div>
-        </div>
-
-        <p class="form-status" aria-live="polite"></p>
-      </form>
-
-      <p class="notice">This is an appointment request, not a confirmed booking. Bridgette will contact you to confirm availability. Please do not include Social Security numbers, account numbers, or sensitive financial or medical information.</p>
+    <div class="booking-live-card" aria-label="What to expect when booking">
+      <div class="booking-live-icon" aria-hidden="true">✦</div>
+      <h3>How scheduling works</h3>
+      <ol class="booking-steps">
+        <li><strong>Check availability.</strong> Google shows the times Bridgette has made bookable.</li>
+        <li><strong>Select a time.</strong> Choose an opening and enter your details on the Google booking page.</li>
+        <li><strong>Get confirmation.</strong> Google creates the calendar event and sends a booking confirmation.</li>
+      </ol>
+      <p class="booking-privacy">Busy times are excluded when Bridgette has enabled calendar conflict checking. Booking availability is managed in her Google Calendar settings.</p>
     </div>
   </div>
 </section>
@@ -1661,7 +1624,7 @@ footer.container.site-footer{
     </div>
     <div class="footer-bottom">
       <p class="footer-copyright">© 2026 Bridge the Wealth Financial Services</p>
-      <p class="footer-disclaimer">Educational information only; no coverage or financial results are guaranteed. Consultation requests require confirmation. Do not share sensitive financial or medical information through website forms.</p>
+      <p class="footer-disclaimer">Educational information only; no coverage or financial results are guaranteed. Appointments are scheduled through Google Calendar; general inquiries use the contact forms. Do not share sensitive financial or medical information through website forms.</p>
     </div>
   </div>
 </footer>
@@ -1733,124 +1696,8 @@ footer.container.site-footer{
   years.addEventListener("input", updateSavings);
   updateSavings();
 
-  // Preferred appointment date calendar
-  const bookingDate = document.getElementById("booking-date");
-  const calendarDays = document.getElementById("calendar-days");
-  const calendarTitle = document.getElementById("calendar-title");
-  const previousMonth = document.getElementById("previous-month");
-  const nextMonth = document.getElementById("next-month");
-
-  const now = new Date();
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const maximum = new Date(today);
-  maximum.setDate(maximum.getDate() + 90);
-
-  let displayedMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-
-  function toDateString(date) {
-    return date.getFullYear() + "-" +
-      String(date.getMonth() + 1).padStart(2, "0") + "-" +
-      String(date.getDate()).padStart(2, "0");
-  }
-
-  bookingDate.min = toDateString(today);
-  bookingDate.max = toDateString(maximum);
-
-  function renderCalendar() {
-    calendarTitle.textContent = displayedMonth.toLocaleDateString(
-      "en-US", { month: "long", year: "numeric" }
-    );
-
-    previousMonth.disabled =
-      displayedMonth.getFullYear() === today.getFullYear() &&
-      displayedMonth.getMonth() === today.getMonth();
-
-    nextMonth.disabled =
-      displayedMonth.getFullYear() === maximum.getFullYear() &&
-      displayedMonth.getMonth() === maximum.getMonth();
-
-    calendarDays.replaceChildren();
-
-    ["S", "M", "T", "W", "T", "F", "S"].forEach(day => {
-      const label = document.createElement("span");
-      label.textContent = day;
-      calendarDays.appendChild(label);
-    });
-
-    const firstDay = new Date(
-      displayedMonth.getFullYear(),
-      displayedMonth.getMonth(),
-      1
-    );
-
-    for (let i = 0; i < firstDay.getDay(); i++) {
-      calendarDays.appendChild(document.createElement("span"));
-    }
-
-    const daysInMonth = new Date(
-      displayedMonth.getFullYear(),
-      displayedMonth.getMonth() + 1,
-      0
-    ).getDate();
-
-    for (let day = 1; day <= daysInMonth; day++) {
-      const date = new Date(
-        displayedMonth.getFullYear(),
-        displayedMonth.getMonth(),
-        day
-      );
-
-      const button = document.createElement("button");
-      button.type = "button";
-      button.textContent = day;
-      button.disabled = date < today || date > maximum;
-
-      if (bookingDate.value === toDateString(date)) {
-        button.classList.add("selected");
-      }
-
-      button.addEventListener("click", () => {
-        bookingDate.value = toDateString(date);
-        renderCalendar();
-      });
-
-      calendarDays.appendChild(button);
-    }
-  }
-
-  previousMonth.addEventListener("click", () => {
-    displayedMonth = new Date(
-      displayedMonth.getFullYear(),
-      displayedMonth.getMonth() - 1,
-      1
-    );
-    renderCalendar();
-  });
-
-  nextMonth.addEventListener("click", () => {
-    displayedMonth = new Date(
-      displayedMonth.getFullYear(),
-      displayedMonth.getMonth() + 1,
-      1
-    );
-    renderCalendar();
-  });
-
-  bookingDate.addEventListener("change", () => {
-    const chosen = new Date(bookingDate.value + "T12:00:00");
-
-    if (!Number.isNaN(chosen.getTime())) {
-      displayedMonth = new Date(
-        chosen.getFullYear(),
-        chosen.getMonth(),
-        1
-      );
-    }
-
-    renderCalendar();
-  });
-
-  renderCalendar();
+  // Appointments are now booked on Bridgette's Google Calendar booking page.
+  // The old local date picker and request form were removed to avoid accepting unavailable slots.
 
   // Handle all website inquiries without leaving the site.
   // Web3Forms expects client-side JSON. No private API token is stored here.
