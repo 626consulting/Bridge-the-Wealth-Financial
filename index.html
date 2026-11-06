@@ -901,6 +901,36 @@ footer .footer-signature{font-size:.86rem;}
 @media(max-width:600px){.brand-tagline{max-width:190px;font-size:8px;}.gift-branches{gap:9px;}.gift-stage{padding:16px 11px;}.gift-stage h3{font-size:1.05rem;}.gift-stage p{font-size:.78rem;}.gift-fork,.gift-merge{width:calc(50% + 4px);}.partners-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}.partners-section{padding:46px 12px;}.partners-section h2{margin-bottom:24px;}.willow-quote{padding:22px 18px;}}
 @media(prefers-reduced-motion:reduce){.gift-stage,.willow-pillar{animation:none!important;transition:none!important;}}
 
+
+/* November 2026: square Willow Tree logo and simplified accessible footer */
+nav.container-fluid{min-height:136px!important;padding:10px clamp(14px,3vw,48px)!important;gap:14px;}
+nav.container-fluid .brand{display:inline-flex!important;align-items:center;justify-content:center;max-width:130px!important;text-decoration:none;}
+nav.container-fluid .brand-logo{
+  display:block!important;width:124px!important;height:124px!important;
+  aspect-ratio:1 / 1;object-fit:contain!important;object-position:center!important;
+  background:#fff!important;border:1px solid rgba(215,177,109,.6);
+  border-radius:11px!important;padding:0!important;
+  box-shadow:0 4px 16px rgba(0,0,0,.14);
+}
+footer.container.site-footer{
+  position:relative;z-index:2;background:#f7f5f0!important;
+  color:#243c43!important;padding:52px 24px 25px!important;
+  border-top:1px solid #ddd2b9;
+}
+.site-footer .footer-clean{width:min(850px,100%);margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0;}
+.site-footer .footer-logo-link{display:inline-flex;border-radius:13px;padding:6px;background:#fff;border:1px solid #e2d4b8;box-shadow:0 10px 26px rgba(17,48,57,.09);}
+.site-footer .footer-logo{width:154px!important;height:154px!important;aspect-ratio:1 / 1;display:block;object-fit:contain!important;border-radius:9px;}
+.site-footer .footer-tagline{font:600 clamp(1rem,1.8vw,1.24rem)/1.35 "Playfair Display",Georgia,serif;color:#07594c!important;margin:20px 0 8px;}
+.site-footer .footer-message{font:400 .94rem/1.6 "DM Sans",sans-serif;max-width:550px;color:#496063;margin:0 0 24px;}
+.site-footer .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;padding:17px 10px;border-top:1px solid #dedbd4;border-bottom:1px solid #dedbd4;width:min(670px,100%);}
+.site-footer .footer-links a{color:#143c41!important;font-size:.88rem;font-weight:700;text-decoration:none;transition:color .2s;}
+.site-footer .footer-links a:hover,.site-footer .footer-links a:focus-visible{color:#99711f!important;text-decoration:underline;}
+.site-footer .footer-bottom{margin-top:23px;max-width:730px;}
+.site-footer .footer-copyright{margin:0 0 8px;color:#36555b;font-size:.82rem;font-weight:700;}
+.site-footer .footer-disclaimer{margin:0;color:#52656a;font-size:.76rem;line-height:1.7;}
+@media(max-width:1030px){nav.container-fluid{min-height:112px!important;}nav.container-fluid .brand-logo{width:98px!important;height:98px!important;}nav.container-fluid .brand{max-width:104px!important;}}
+@media(max-width:620px){nav.container-fluid{min-height:102px!important;padding:8px 16px!important;}nav.container-fluid .brand-logo{width:85px!important;height:85px!important;}nav.container-fluid .brand{max-width:90px!important;}footer.container.site-footer{padding:37px 18px 22px!important;}.site-footer .footer-logo{width:132px!important;height:132px!important;}.site-footer .footer-links{gap:12px 17px;}.site-footer .footer-message{font-size:.86rem;}}
+
 </style>
 </head>
 
@@ -911,8 +941,9 @@ footer .footer-signature{font-size:.86rem;}
   <ul>
     <li>
       <strong>
-        <a href="#home" class="brand" aria-label="Bridge the Wealth Financial Services home"><img class="brand-logo" src="data:image/webp;base64,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" alt="Bridge the Wealth Financial Services gold willow tree logo"></a>
-        <span class="brand-tagline">Rooted in Security, Designed to Shelter.</span>
+        <a href="#home" class="brand" aria-label="Bridge the Wealth Financial Services home">
+          <img class="brand-logo" src="assets/btw-square-logo.webp" alt="Bridge the Wealth Financial Services gold willow tree logo" width="280" height="280">
+        </a>
       </strong>
     </li>
   </ul>
@@ -1501,23 +1532,6 @@ footer .footer-signature{font-size:.86rem;}
 </div>
 
 
-<!-- PARTNER ORGANIZATIONS -->
-<section class="partners-section" aria-labelledby="partners-heading">
-  <div class="wrap">
-    <p class="partners-kicker">Strength &amp; Credibility</p>
-    <h2 id="partners-heading">A Few of Our Partners</h2>
-    <div class="partners-grid" aria-label="Partner organizations">
-      <div class="partner-wordmark partner-foresters" aria-label="Foresters Financial"><span>Foresters</span><small>Financial</small></div>
-      <div class="partner-wordmark partner-corebridge" aria-label="Corebridge Financial"><span>corebridge<span class="partner-dots" aria-hidden="true">∴</span></span><small>financial</small></div>
-      <div class="partner-wordmark partner-bmi" aria-label="BMI"><span>BMI</span></div>
-      <div class="partner-wordmark partner-american" aria-label="American National"><span>AMERICAN</span><small>NATIONAL</small></div>
-      <div class="partner-wordmark partner-ethos" aria-label="Ethos"><span>ETHOS</span></div>
-      <div class="partner-wordmark partner-national" aria-label="National Life Group"><span>◢</span><div><span>National Life</span><small>Group</small></div></div>
-    </div>
-    <p class="partners-fineprint">Carrier availability, product access, and applicable services may vary.</p>
-  </div>
-</section>
-
 <!-- FOOTER INQUIRY -->
 <section aria-label="Subscribe example" class="subscribe">
   <div class="wrap">
@@ -1542,20 +1556,41 @@ footer .footer-signature{font-size:.86rem;}
   </div>
 </section>
 
-<footer class="container">
+<!-- PARTNER ORGANIZATIONS -->
+<section class="partners-section" aria-labelledby="partners-heading">
   <div class="wrap">
-    <h3>Bridge the Wealth Financial Services</h3>
-    <p>Bridge the Wealth — Rooted in Security, Designed to Shelter.</p>
-    <p class="footer-mantra">Rooted in Stability. Building for Generations. &nbsp;•&nbsp; Anchored in Healing. Built for Wealth.</p>
-    <p class="footer-signature">Bridgette Reed | Financial Services Professional</p>
+    <p class="partners-kicker">Strength &amp; Credibility</p>
+    <h2 id="partners-heading">A Few of Our Partners</h2>
+    <div class="partners-grid" aria-label="Partner organizations">
+      <div class="partner-wordmark partner-foresters" aria-label="Foresters Financial"><span>Foresters</span><small>Financial</small></div>
+      <div class="partner-wordmark partner-corebridge" aria-label="Corebridge Financial"><span>corebridge<span class="partner-dots" aria-hidden="true">∴</span></span><small>financial</small></div>
+      <div class="partner-wordmark partner-bmi" aria-label="BMI"><span>BMI</span></div>
+      <div class="partner-wordmark partner-american" aria-label="American National"><span>AMERICAN</span><small>NATIONAL</small></div>
+      <div class="partner-wordmark partner-ethos" aria-label="Ethos"><span>ETHOS</span></div>
+      <div class="partner-wordmark partner-national" aria-label="National Life Group"><span>◢</span><div><span>National Life</span><small>Group</small></div></div>
+    </div>
+    <p class="partners-fineprint">Carrier availability, product access, and applicable services may vary.</p>
+  </div>
+</section>
 
-    <small>
-      <a href="#home">Home</a> •
-      <a href="#contact">Contact</a> •
-      <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Lifestyle photography via Unsplash and Nappy</a>
-    </small>
-
-    <p class="notice">Information on this website is educational and does not guarantee coverage or financial results. Appointment requests are not confirmed until Bridgette responds. Please do not submit sensitive financial or medical information in the contact forms.</p>
+<footer class="container site-footer" aria-label="Website footer">
+  <div class="wrap footer-clean">
+    <a href="#home" class="footer-logo-link" aria-label="Bridge the Wealth — Back to home">
+      <img src="assets/btw-square-logo.webp" alt="Bridge the Wealth Financial Services gold willow tree logo" class="footer-logo" width="280" height="280" loading="lazy">
+    </a>
+    <p class="footer-tagline">Rooted in Security. Designed to Shelter.</p>
+    <p class="footer-message">Financial education and protection conversations for your family's future.</p>
+    <div class="footer-links" aria-label="Quick links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#gift">17-Day Gift</a>
+      <a href="#book">Book Now</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 Bridge the Wealth Financial Services</p>
+      <p class="footer-disclaimer">Educational information only; no coverage or financial results are guaranteed. Consultation requests require confirmation. Do not share sensitive financial or medical information through website forms.</p>
+    </div>
   </div>
 </footer>
 
