@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#092b3b">
-  <meta name="description" content="Bridge the Wealth Financial Services: financial education, family protection and planning for future generations.">
+  <meta name="description" content="Bridge the Wealth Financial Services helps families explore wealth, protection, and multigenerational legacy planning.">
   <title>Bridge the Wealth Financial Services</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
@@ -1538,13 +1538,10 @@ footer.container.site-footer{
 
   <ul class="links" id="nav-links">
     <li><a href="#home">Home</a></li>
-    <li><a href="#iul">IUL Growth Explorer</a></li>
-    <li><a href="#baby">Million Dollar Baby Plan</a></li>
-    <li><a href="#education">Financial Education</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="#services">Legacy &amp; Wealth Plans</a></li>
+    <li><a href="#education">For CPAs &amp; Advisors</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#book" role="button">Book Now</a></li>
+    <li><a href="#book" role="button">Book a Consultation</a></li>
   </ul>
 </nav>
 
@@ -1560,25 +1557,16 @@ footer.container.site-footer{
       <p class="hero-tagline">Bridge the Wealth — Rooted in Security, Designed to Shelter.</p>
 
       <hgroup>
-        <h2>
-          We're not just building wealth.
-          <em>We're building a generation that understands it.</em>
-        </h2>
-        <h3>
-          Helping families learn, protect what matters,
-          and plan for the next generation.
-        </h3>
+        <h2>Bridge the Gap Between Building Wealth and <em>Passing It On Tax-Free.</em></h2>
+        <h3>We help families explore protection, reduce avoidable tax exposure, and plan for multigenerational legacies—from Million Dollar Baby Plans to private wealth strategies.</h3>
       </hgroup>
 
-      <p>
-        Financial education that makes sense, family-focused
-        conversations, and a thoughtful plan for tomorrow.
-      </p>
+      <p>Thoughtful guidance for the legacy you are building and the people you want it to reach.</p>
 
       <div class="home-actions">
         <div class="home-action-links">
-          <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
-          <a href="#book" class="button-link outline">Book a Consultation →</a>
+          <a href="#book" class="button-link gold">Schedule Your Private Wealth &amp; Legacy Blueprint →</a>
+          <a href="#contact" class="button-link outline">Request the Tax-Free Legacy Guide →</a>
         </div>
         <button class="btw-scroll-cue" type="button" data-scroll-to-explore aria-label="Scroll to explore more about Bridge the Wealth"><span>SCROLL TO EXPLORE</span><span class="btw-arrow" aria-hidden="true">↓</span></button>
       </div>
@@ -1753,32 +1741,31 @@ footer.container.site-footer{
   <div class="section wrap split" id="iul-growth-explorer">
     <div>
       <p class="eyebrow">Learn about possible growth — without guarantees</p>
-      <h2>IUL Growth Explorer</h2>
-      <p>Explore the potential effect of regular monthly amounts under an assumed compound-growth rate. This simplified educational scenario is <strong>not</strong> an indexed universal life (IUL) policy illustration or an estimate of actual policy cash value.</p>
-      <p>IUL premiums also pay for insurance coverage and policy charges. Actual credited interest depends on policy terms, including participation rates, caps, floors, and crediting methods, rather than a steady fixed return.</p>
+      <h2>How indexed universal life works</h2>
+      <p>Indexed universal life insurance is permanent life insurance with a death benefit and policy value that may receive interest credits linked to an external index, subject to the contract’s terms. The policy is not a direct investment in the index.</p>
+      <p>Depending on the policy and any available riders, potential features may include cash value and living benefits. Availability and eligibility vary, and policy value can be affected by premiums, cost of insurance, administrative charges, caps, participation rates, floors, and other terms.</p>
+      <p>Premiums must be sufficient to support coverage and charges. Loans and withdrawals can reduce policy value and death benefits; unpaid loan balances and charges may increase lapse risk. Review a current insurer-issued illustration and policy documents with a licensed professional.</p>
     </div>
     <div class="calculator iul-explorer">
       <h3>Explore Potential Growth</h3>
-      <p class="iul-explorer-intro">Illustrative mathematical scenario only, before policy costs; not a forecast or guarantee.</p>
-      <label for="monthly">Monthly amount <strong id="monthly-label">$200</strong></label>
-      <input id="monthly" type="range" min="50" max="1000" step="25" value="200">
+      <p class="iul-explorer-intro">A simplified, hypothetical compound-growth illustration in index units only. It is not a policy illustration, estimate, or forecast.</p>
       <label for="years">Years <strong id="years-label">18</strong></label>
       <input id="years" type="range" min="1" max="30" step="1" value="18">
-      <label for="rate">Assumed annual growth rate, compounded monthly <strong id="rate-label">6.00%</strong></label>
+      <label for="rate">Assumed annual growth rate, compounded annually <strong id="rate-label">6.00%</strong></label>
       <input id="rate" type="range" min="0" max="13" step="0.25" value="6">
       <div class="result iul-results" aria-live="polite" aria-atomic="true">
-        <div class="iul-metric"><span>Total amounts contributed in this example</span><strong id="total-paid">$43,200</strong></div>
-        <div class="iul-metric"><span>Potential illustrated accumulation before costs</span><strong id="future-value">—</strong></div>
-        <div class="iul-metric"><span>Potential illustrated growth before costs</span><strong id="growth-amount">—</strong></div>
+        <div class="iul-metric"><span>Hypothetical starting index value</span><strong>100 units</strong></div>
+        <div class="iul-metric"><span>Scenario value before costs or policy terms</span><strong id="future-value">—</strong></div>
+        <div class="iul-metric"><span>Illustrative change in index units</span><strong id="growth-amount">—</strong></div>
       </div>
-      <p class="notice iul-disclosure"><strong>Important:</strong> IUL is life insurance, not a savings or investment account. This simple calculation is <strong>not a policy illustration, quote, guarantee, or projection of IUL cash value</strong>. It excludes cost of insurance, policy fees, surrender charges, interest crediting restrictions, loans, withdrawals, and tax effects. The selectable rates, including 13%, do not represent expected or typical IUL crediting rates. Actual policy values may be lower, including zero. Ask Bridgette for an insurer-approved policy illustration.</p>
+      <p class="notice iul-disclosure"><strong>Important:</strong> IUL is life insurance, not a savings or investment account. This simple math exercise is <strong>not a policy illustration, quote, guarantee, or projection of IUL policy value</strong>. It does not model premiums, cost of insurance, policy fees, surrender charges, index-crediting restrictions, loans, withdrawals, or tax effects. The selectable rates, including 13%, do not represent expected or typical IUL crediting rates. Actual policy values may be lower, including zero. Ask for an insurer-approved illustration showing guaranteed and non-guaranteed values.</p>
     </div>
   </div>
 
   <div class="section wrap">
     <p class="eyebrow">Understanding IUL</p>
     <h2>An educational estimate is not a policy illustration.</h2>
-    <p>IUL premiums cover insurance protection and policy charges. Credited interest depends on the policy's particular caps, floors, participation rates, and index-crediting method. Only an insurer-issued illustration can show guaranteed and non-guaranteed policy values for a specific proposed contract.</p>
+    <p>Coverage, cash value, and possible tax treatment depend on the policy, how it is funded and maintained, and applicable law. Policy charges and surrender costs can be significant. Loans and withdrawals may reduce benefits or cause a policy to lapse; a lapse or surrender with loans may have tax consequences. Consult a licensed insurance professional and qualified tax advisor about a specific contract.</p>
     <a href="#baby" class="button-link gold">Explore the Million Dollar Baby Plan →</a>
     <a href="#book" class="button-link green">Book a Consultation →</a>
   </div>
@@ -1854,12 +1841,26 @@ footer.container.site-footer{
 
   <div class="page-header">
     <div class="wrap">
-      <h1>Financial Confidence Classroom.</h1>
-      <p>Practical education for families who want to understand their choices.</p>
+      <p class="eyebrow light">A Collaborative Resource</p>
+      <h1>For CPAs &amp; Advisors</h1>
+      <p>Thoughtful conversations about protection and legacy planning work best when they complement a client’s broader financial picture.</p>
     </div>
   </div>
 
+  <div class="section wrap advisor-intro">
+    <p class="eyebrow">Professional Collaboration</p>
+    <h2>One client. A connected plan.</h2>
+    <p>Bridge the Wealth welcomes coordination with the professionals already supporting a family. With the client’s direction and appropriate permissions, conversations can address protection goals, life insurance considerations, and how a proposed strategy fits alongside the client’s legal and tax planning.</p>
+    <div class="topic-grid">
+      <article class="topic"><h3>Shared context</h3><p>Clarify the family’s goals, time horizon, and existing planning before discussing a potential insurance solution.</p></article>
+      <article class="topic"><h3>Clear review</h3><p>Use insurer-provided policy materials and coordinate product, legal, and tax questions with the appropriate licensed professionals.</p></article>
+    </div>
+    <a href="#contact" class="button-link green">Start a Professional Conversation →</a>
+    <p class="notice">Bridge the Wealth does not provide legal or tax advice. Product access and services depend on licensing, eligibility, and applicable requirements.</p>
+  </div>
+
   <div class="section wrap">
+    <p class="eyebrow">Family Financial Education</p>
     <h2>Choose a lesson.</h2>
 
     <div class="tabs" role="tablist">
@@ -1902,15 +1903,28 @@ footer.container.site-footer{
 <section class="page" data-page="services">
   <div class="page-header">
     <div class="wrap">
-      <p class="eyebrow light">Guidance for Every Season of Life</p>
-      <h1>Our Financial Services</h1>
-      <p>Explore retirement strategies, family protection, and long-term wealth and legacy planning.</p>
+      <p class="eyebrow light">Rooted in Security. Designed to Shelter.</p>
+      <h1>Legacy &amp; Wealth Plans</h1>
+      <p>Explore thoughtful strategies for family legacy, private wealth, and business continuity.</p>
     </div>
   </div>
   <div class="section wrap btw-services-intro">
     <p class="eyebrow">Your Future. Your Goals.</p>
-    <h2>Thoughtful guidance starts with a conversation.</h2>
-    <p>Whether you're preparing for retirement, protecting loved ones, or exploring real estate, Bridgette can help you understand your options and build a plan around your goals.</p>
+    <h2>Build a legacy with intention.</h2>
+    <p>Explore protection, tax-aware wealth strategies, and planning for the people and organizations that matter to you. Recommendations depend on your circumstances, product terms, and professional review.</p>
+    <div class="tabs legacy-subtabs" role="group" aria-label="Legacy and wealth plan topics">
+      <a class="button-link gold" href="#iul">IUL Growth Explorer</a>
+      <a class="button-link green" href="#baby">Million Dollar Baby Plan</a>
+    </div>
+  </div>
+  <div class="section wrap legacy-signature">
+    <p class="eyebrow">Signature Conversations</p>
+    <h2>Three ways to begin</h2>
+    <div class="cards">
+      <article class="photo-card"><div class="content"><span class="eyebrow">Family Legacy</span><h3>Million Dollar Baby &amp; Grandparent Legacy Plan</h3><p>Explore early protection and a family-centered plan for future generations. The program name is aspirational; no particular outcome is guaranteed.</p><a href="#baby">Explore the plan →</a></div></article>
+      <article class="photo-card"><div class="content"><span class="eyebrow">Private Wealth</span><h3>Tax-Free Private Wealth</h3><p>Learn how life insurance under Internal Revenue Code Section 7702 may fit into a broader protection strategy. Policy charges, tax rules, and individual results vary.</p><a href="#iul">Learn about IUL →</a></div></article>
+      <article class="photo-card"><div class="content"><span class="eyebrow">Business Continuity</span><h3>Estate Liquidity &amp; Business Continuity</h3><p>Consider how protection planning may support liquidity needs and continuity goals, in coordination with your legal, tax, and financial professionals.</p><a href="#book">Discuss your goals →</a></div></article>
+    </div>
   </div>
 
   <div class="btw-service-band">
@@ -2002,6 +2016,21 @@ footer.container.site-footer{
     </div>
   </div>
 
+  <div class="section wrap willow-section">
+    <p class="eyebrow">A message from Bridgette</p>
+    <blockquote class="willow-quote">
+      “I am the Willow. My roots are grounded in somatic peace and unshakeable financial protection. My branches give me the flexibility to adapt and build across borders. And my canopy shelters my children and the families we serve so they can thrive safely beneath it.”
+      <cite>— Bridgette Reed, LMFT &amp; Financial Advocate</cite>
+    </blockquote>
+    <div class="willow-pillars">
+      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">✦</span><h3>The Roots | Grounded Stability</h3><p>Deep roots represent emotional peace and structural financial safety. We focus on strong foundations, including conversations about living benefits and asset protection, so families can prepare for life's unexpected changes.</p></article>
+      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">❧</span><h3>The Branches | Adaptability &amp; Freedom</h3><p>Willows bend with the wind rather than breaking. We value flexible approaches built around each family's priorities, circumstances, and possibilities across borders.</p></article>
+      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">✧</span><h3>The Canopy | Sheltering the Future</h3><p>A willow shelters what grows beneath it. We help families explore how early protection and education—including the Million Dollar Baby Plan—may strengthen the next generation's foundation.</p></article>
+    </div>
+    <a href="#baby" class="button-link gold">Discover the Million Dollar Baby Plan →</a>
+  </div>
+
+
   <div class="section wrap split btw-story-opening">
     <div>
       <p class="eyebrow">Welcome to My Story</p>
@@ -2053,19 +2082,6 @@ footer.container.site-footer{
     </div>
   </div>
 
-  <div class="section wrap willow-section">
-    <p class="eyebrow">A message from Bridgette</p>
-    <blockquote class="willow-quote">
-      “I am the Willow. My roots are grounded in somatic peace and unshakeable financial protection. My branches give me the flexibility to adapt and build across borders. And my canopy shelters my children and the families we serve so they can thrive safely beneath it.”
-      <cite>— Bridgette Reed, LMFT &amp; Financial Advocate</cite>
-    </blockquote>
-    <div class="willow-pillars">
-      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">✦</span><h3>The Roots | Grounded Stability</h3><p>Deep roots represent emotional peace and structural financial safety. We focus on strong foundations, including conversations about living benefits and asset protection, so families can prepare for life's unexpected changes.</p></article>
-      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">❧</span><h3>The Branches | Adaptability &amp; Freedom</h3><p>Willows bend with the wind rather than breaking. We value flexible approaches built around each family's priorities, circumstances, and possibilities across borders.</p></article>
-      <article class="willow-pillar"><span aria-hidden="true" class="willow-symbol">✧</span><h3>The Canopy | Sheltering the Future</h3><p>A willow shelters what grows beneath it. We help families explore how early protection and education—including the Million Dollar Baby Plan—may strengthen the next generation's foundation.</p></article>
-    </div>
-    <a href="#baby" class="button-link gold">Discover the Million Dollar Baby Plan →</a>
-  </div>
 </section>
 
 <!-- BOOK: Live appointment scheduling -->
@@ -2454,28 +2470,22 @@ footer.container.site-footer{
     });
   });
 
-  // Simplified compound-growth thought experiment; never an IUL policy illustration.
-  const monthly = document.getElementById("monthly");
+  // Normalized compound-growth thought experiment; never an IUL policy illustration.
   const years = document.getElementById("years");
   const rate = document.getElementById("rate");
-  const growthCurrency = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  const unitNumber = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 });
   function updateIULGrowth() {
-    if (!monthly || !years || !rate) return;
-    const amount = Number(monthly.value);
+    if (!years || !rate) return;
     const yearCount = Number(years.value);
     const annualAssumption = Number(rate.value);
-    const months = yearCount * 12;
-    const r = annualAssumption / 1200;
-    const contributions = amount * months;
-    const accumulated = r === 0 ? contributions : amount * ((Math.pow(1 + r, months) - 1) / r);
-    document.getElementById("monthly-label").textContent = growthCurrency.format(amount);
+    const startValue = 100;
+    const scenarioValue = startValue * Math.pow(1 + annualAssumption / 100, yearCount);
     document.getElementById("years-label").textContent = String(yearCount);
     document.getElementById("rate-label").textContent = annualAssumption.toFixed(2) + "%";
-    document.getElementById("total-paid").textContent = growthCurrency.format(contributions);
-    document.getElementById("future-value").textContent = growthCurrency.format(accumulated);
-    document.getElementById("growth-amount").textContent = growthCurrency.format(accumulated - contributions);
+    document.getElementById("future-value").textContent = unitNumber.format(scenarioValue) + " units";
+    document.getElementById("growth-amount").textContent = unitNumber.format(scenarioValue - startValue) + " units";
   }
-  [monthly, years, rate].forEach(el => el?.addEventListener("input", updateIULGrowth));
+  [years, rate].forEach(el => el?.addEventListener("input", updateIULGrowth));
   updateIULGrowth();
 
   // Appointments are booked through Bridgette's hosted scheduling page.
