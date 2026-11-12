@@ -1534,6 +1534,30 @@ footer.container.site-footer{
 .btw-comparison-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:16px;}
 @media(max-width:760px){.btw-comparison-grid{grid-template-columns:1fr;}.btw-comparison-heading{margin-bottom:24px;}}
 @media(prefers-reduced-motion:reduce){.btw-comparison-card{transition:none!important;}}
+
+/* IUL is a child page under Legacy & Wealth Plans in the five-item navigation. */
+nav ul.links>li{position:relative;}
+nav ul.nav-submenu{
+  display:none;position:absolute;top:calc(100% + 8px);left:-10px;z-index:110;
+  min-width:220px;align-items:stretch;gap:0;padding:8px;
+  background:rgba(6,31,45,.98);border:1px solid rgba(215,177,109,.48);
+  border-radius:8px;box-shadow:0 14px 32px rgba(0,20,30,.25);
+}
+nav li.nav-dropdown:hover>ul.nav-submenu,
+nav li.nav-dropdown:focus-within>ul.nav-submenu{display:flex;}
+nav ul.nav-submenu li{width:100%;}
+nav ul.nav-submenu a{display:block;padding:12px 14px;white-space:nowrap;border-radius:5px;}
+nav ul.nav-submenu a:hover,
+nav ul.nav-submenu a:focus-visible{background:rgba(215,177,109,.12);color:#f0d394;}
+nav .nav-caret{font-size:.8em;color:var(--gold);}
+@media(max-width:1030px){
+  nav ul.nav-submenu{
+    display:flex!important;position:static;min-width:0;width:100%;
+    padding:0 0 0 18px;margin:0;background:transparent;border:0;
+    border-radius:0;box-shadow:none;flex-direction:column;
+  }
+  nav ul.nav-submenu a{padding:8px 12px;font-size:11px;}
+}
 </style>
 </head>
 
@@ -1557,7 +1581,12 @@ footer.container.site-footer{
 
   <ul class="links" id="nav-links">
     <li><a href="#home">Home</a></li>
-    <li><a href="#services">Legacy &amp; Wealth Plans</a></li>
+    <li class="nav-dropdown">
+      <a href="#services" class="nav-dropdown-toggle">Legacy &amp; Wealth Plans <span class="nav-caret" aria-hidden="true">▾</span></a>
+      <ul class="nav-submenu" aria-label="Legacy &amp; Wealth Plans">
+        <li><a href="#iul">IUL Growth Explorer</a></li>
+      </ul>
+    </li>
     <li><a href="#education">For CPAs &amp; Advisors</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#book" role="button">Book a Consultation</a></li>
@@ -1631,48 +1660,6 @@ footer.container.site-footer{
     <div class="btw-comparison-actions">
       <a href="#iul" class="button-link gold">Explore the IUL page →</a>
       <a href="#book" class="button-link green">Schedule Your Private Wealth &amp; Legacy Blueprint →</a>
-    </div>
-  </div>
-
-  <div class="section cream-bg">
-    <div class="wrap">
-      <p class="eyebrow">Your Financial Confidence Classroom</p>
-      <h2>What we weren't taught, we can learn together.</h2>
-
-      <div class="cards">
-        <article class="photo-card">
-          <img
-            src="https://images.unsplash.com/photo-1551934262-db2d7dd517f4?auto=format&fit=crop&w=850&q=85"
-            alt="Black woman smiling">
-          <div class="content">
-            <h3>Life Insurance 101</h3>
-            <p>Learn what coverage does, common policy types, and important questions to ask.</p>
-            <a href="#education">Start Learning →</a>
-          </div>
-        </article>
-
-        <article class="photo-card">
-          <img
-            src="https://images.unsplash.com/photo-1656910962409-3963e280c7d2?auto=format&fit=crop&w=850&q=85"
-            alt="Graduates celebrating">
-          <div class="content">
-            <h3>Saving for Their Future</h3>
-            <p>Explore education goals, emergency funds, and consistent savings habits.</p>
-            <a href="#education">Explore Saving →</a>
-          </div>
-        </article>
-
-        <article class="photo-card">
-          <img
-            src="https://images.unsplash.com/photo-1627203030417-33b1129033d0?auto=format&fit=crop&w=850&q=85"
-            alt="Family and friends gathered together">
-          <div class="content">
-            <h3>Generational Wealth</h3>
-            <p>Learn about financial knowledge, meaningful family goals, and legacy planning.</p>
-            <a href="#education">Learn About Legacy →</a>
-          </div>
-        </article>
-      </div>
     </div>
   </div>
 
