@@ -1515,6 +1515,25 @@ footer.container.site-footer{
  .page[data-page="about"] .btw-about-babies{max-width:100%!important;}
 }
 
+
+/* Homepage education-and-legacy comparison cards */
+.btw-comparison-heading{max-width:850px;text-align:center;margin:0 auto 32px;}
+.btw-comparison-heading h2{max-width:780px;margin:8px auto 14px;}
+.btw-comparison-heading>p:last-child{max-width:760px;margin:0 auto;color:#536769;}
+.btw-comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+.btw-comparison-card{padding:clamp(23px,3vw,34px);background:#fffefa;border:1px solid #ded8c8;border-radius:15px;box-shadow:0 12px 32px rgba(5,31,47,.09);}
+.btw-comparison-card.traditional{border-top:5px solid #78918a;}
+.btw-comparison-card.legacy{border-top:5px solid #d7b16d;background:#fffdf7;}
+.btw-comparison-card h3{font-size:clamp(1.35rem,2.2vw,1.8rem);margin:6px 0 20px;}
+.btw-comparison-card ul{list-style:none;padding:0;margin:0;}
+.btw-comparison-card li{position:relative;padding:0 0 15px 24px;margin:0 0 14px;border-bottom:1px solid #e7e4dc;color:#536769;font-size:.9rem;line-height:1.65;}
+.btw-comparison-card li:last-child{padding-bottom:0;margin-bottom:0;border:0;}
+.btw-comparison-card li:before{content:"✦";position:absolute;left:0;top:1px;color:#a17d3f;font-size:.85rem;}
+.btw-comparison-card strong{color:#203942;}
+.btw-comparison-disclosure{max-width:990px;margin:26px auto 12px;text-align:center;font-size:.78rem;line-height:1.65;color:#596b6b;}
+.btw-comparison-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:16px;}
+@media(max-width:760px){.btw-comparison-grid{grid-template-columns:1fr;}.btw-comparison-heading{margin-bottom:24px;}}
+@media(prefers-reduced-motion:reduce){.btw-comparison-card{transition:none!important;}}
 </style>
 </head>
 
@@ -1577,40 +1596,41 @@ footer.container.site-footer{
     <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Learn today. <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Plan with purpose. <span class="btw-ribbon-dot" aria-hidden="true">✦</span> Inspire generations.
   </div>
 
-  <div class="section wrap split" id="home-explore">
-    <div>
-      <p class="eyebrow">Our Signature Family Conversation</p>
-      <h2>The Million Dollar Baby Plan.</h2>
-      <p>
-        Their big dreams deserve a thoughtful beginning.
-        Explore protection, education goals, emergency savings,
-        first-home aspirations, and longer-term family planning.
-      </p>
-
-      <div class="check-grid">
-        <span>Financial protection</span>
-        <span>Education milestones</span>
-        <span>Emergency savings</span>
-        <span>Family legacy</span>
-      </div>
-
-      <a href="#baby" class="button-link green">Discover the Plan →</a>
-
-
-      <p class="notice">
-        The program name is aspirational and does not guarantee
-        a million-dollar outcome or any particular financial result.
-      </p>
+  <div class="section wrap btw-comparison-section" id="home-explore">
+    <div class="btw-comparison-heading">
+      <p class="eyebrow">Planning for Education &amp; Legacy</p>
+      <h2>Different structures serve different goals.</h2>
+      <p>Compare common education savings approaches with life-insurance-based legacy planning. The right fit depends on your priorities, time horizon, costs, and personal circumstances.</p>
     </div>
 
-    <div class="photo-stack">
-      <img
-        src="https://src.nappy.co/photo/p6y_HcRPiLZyjEtvA6zhw"
-        alt="Black parents and children together outdoors">
-      <img
-        class="small"
-        src="https://images.unsplash.com/photo-1549231567-950cb741e796?auto=format&fit=crop&w=500&q=85"
-        alt="Family moment with a child">
+    <div class="btw-comparison-grid">
+      <article class="btw-comparison-card traditional">
+        <p class="eyebrow">Education &amp; Savings</p>
+        <h3>Traditional Savings &amp; 529 Plans</h3>
+        <ul>
+          <li><strong>Taxes:</strong> Interest in a taxable savings account is generally taxable. 529 earnings are generally federally tax-free when used for qualified expenses; nonqualified distributions may make the earnings portion taxable and subject to additional tax.</li>
+          <li><strong>Use:</strong> 529 tax advantages follow qualified-use rules, which are defined by current law and may cover more than college tuition.</li>
+          <li><strong>Financial aid:</strong> FAFSA treatment can depend on the account owner, student, beneficiary, and current rules. Some education savings accounts are reportable assets.</li>
+          <li><strong>Risk:</strong> Bank savings and 529 investment options have different risks. 529 portfolio values can fluctuate; deposit savings can lose purchasing power to inflation.</li>
+        </ul>
+      </article>
+
+      <article class="btw-comparison-card legacy">
+        <p class="eyebrow">Protection &amp; Legacy</p>
+        <h3>Bridge the Wealth Legacy Structures</h3>
+        <ul>
+          <li><strong>Policy value:</strong> Cash value in a qualifying life insurance policy may grow tax-deferred. Tax treatment of withdrawals or loans depends on policy terms, funding, and applicable law.</li>
+          <li><strong>Access:</strong> Policy loans or withdrawals may be available for needs beyond education, subject to contract rules, charges, and available value. Loans accrue interest, can reduce the death benefit, and may increase lapse and tax risk.</li>
+          <li><strong>Index crediting:</strong> Some indexed policies have a 0% floor for a specific index-crediting segment. Policy charges continue, so cash value can still decline.</li>
+          <li><strong>Legacy:</strong> A life insurance death benefit is generally income-tax-free to a named beneficiary, subject to exceptions. A valid beneficiary designation can generally keep proceeds outside probate; claim timing and exceptions vary.</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="btw-comparison-disclosure">This is a general educational comparison, not a guarantee that one strategy will outperform another. Life insurance is not a bank or investment account and is not a substitute for dedicated education planning. Policy values, costs, eligibility, benefits, and tax treatment vary by contract and circumstance. Review current plan and policy documents with qualified professionals.</p>
+    <div class="btw-comparison-actions">
+      <a href="#iul" class="button-link gold">Explore the IUL page →</a>
+      <a href="#book" class="button-link green">Schedule Your Private Wealth &amp; Legacy Blueprint →</a>
     </div>
   </div>
 
