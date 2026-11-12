@@ -2116,13 +2116,13 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
   <div class="section wrap booking-layout">
     <div>
       <h2>Let's start with a conversation.</h2>
-      <p>Interested in financial education, protection, or the Million Dollar Baby Plan? Share a general question.</p>
+      <p>Share a few details about the legacy or protection strategy you are exploring. Bridgette can follow up to discuss your goals and next steps.</p>
       <a href="#book" class="button-link green">Book a Consultation →</a>
-      <p class="notice">Please do not submit Social Security numbers, account numbers, passwords, or sensitive financial information.</p>
+      <p class="notice">The contribution selection is an approximate range only. Do not submit account numbers, tax IDs, passwords, exact account balances, or medical information.</p>
     </div>
 
     <div class="form-card">
-      <h3>Send a Message</h3>
+      <h3>Request a Conversation</h3>
 
       <form class="web3forms-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="09252574-bba9-40a6-b73d-762ccb94ab31">
@@ -2131,35 +2131,56 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <div class="form-grid">
           <div class="field">
-            <label for="contact-name">Name *</label>
-            <input id="contact-name" name="name" required>
+            <label for="contact-name">Full Name *</label>
+            <input id="contact-name" name="name" autocomplete="name" required>
           </div>
 
           <div class="field">
             <label for="contact-email">Email *</label>
-            <input id="contact-email" name="email" type="email" required>
-          </div>
-
-          <div class="field full">
-            <label for="contact-topic">Topic *</label>
-            <select id="contact-topic" name="topic" required>
-              <option value="">Select a topic</option>
-              <option>Million Dollar Baby Plan</option>
-              <option>Financial Education</option>
-              <option>Family Protection</option>
-              <option>General Financial Consultation</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label for="contact-message">Message *</label>
-            <textarea id="contact-message" name="message" required></textarea>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required>
           </div>
 
           <div class="field full">
             <label for="contact-phone">Phone (optional)</label>
             <input id="contact-phone" name="phone" type="tel" autocomplete="tel">
           </div>
+
+          <div class="field full">
+            <label for="contact-strategy">Which strategy are you exploring? *</label>
+            <select id="contact-strategy" name="strategy" required>
+              <option value="">Select a strategy</option>
+              <option>Million Dollar Baby / Child Legacy Plan</option>
+              <option>Grandparent Wealth Transfer</option>
+              <option>Tax-Free Retirement / High-Earner Strategy</option>
+              <option>Business Owner Protection</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="contact-contribution">Target Monthly Contribution or Lump-Sum Transfer *</label>
+            <select id="contact-contribution" name="target_contribution_range" required>
+              <option value="">Select an approximate range</option>
+              <option>$300–$750/mo</option>
+              <option>$750–$2,000/mo</option>
+              <option>$2,000–$5,000+/mo</option>
+              <option>$25,000+ Lump Sum</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="contact-referral">How did you hear about us? *</label>
+            <select id="contact-referral" name="referral_source" required>
+              <option value="">Select one</option>
+              <option>Referred by my CPA / Accountant</option>
+              <option>Referred by another financial professional</option>
+              <option>Friend or family member</option>
+              <option>Google or another search engine</option>
+              <option>Social media</option>
+              <option>Event or organization</option>
+              <option>Other</option>
+            </select>
+          </div>
+
           <div class="field full consent-field">
             <label for="contact-consent" class="consent-label">
               <input id="contact-consent" type="checkbox" name="contact_consent" value="yes" required>
@@ -2167,14 +2188,14 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
             </label>
           </div>
           <div class="field full">
-            <button type="submit">Send My Message →</button>
+            <button type="submit">Send My Request →</button>
           </div>
         </div>
 
         <p class="form-status" aria-live="polite"></p>
       </form>
 
-      <p class="notice">Your message is delivered through a third-party form service to Bridgette's business inbox. Please share only general questions and contact details. Do not include private financial or medical information.</p>
+      <p class="notice">Your contact details and selected ranges are delivered through a third-party form service to Bridgette's business inbox. The contribution amount is an approximate category, not an exact financial disclosure. Please do not include additional private financial, tax, or medical information.</p>
     </div>
   </div>
 </section>
@@ -2368,7 +2389,7 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
     </div>
     <div class="footer-bottom">
       <p class="footer-copyright">© 2026 Bridge the Wealth Financial Services</p>
-      <p class="footer-disclaimer">Educational information only; no coverage or financial results are guaranteed. Appointments are booked online; general inquiries use the contact forms. Do not share sensitive financial or medical information through website forms.</p>
+      <p class="footer-disclaimer">Educational information only; no coverage or financial results are guaranteed. Appointments are booked online; general inquiries use the contact forms. Do not include account numbers, tax IDs, passwords, exact account balances, or medical information in website forms.</p>
     </div>
   </div>
 </footer>
