@@ -522,17 +522,38 @@
       grid-column: 1 / -1;
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
+      width: 100%;
       color: #fff;
       font-size: 13px;
       line-height: 1.5;
+      cursor: pointer;
+      user-select: none;
     }
     .subscribe-consent input[type="checkbox"] {
-      width: auto;
-      flex: 0 0 auto;
-      margin: 3px 0 0;
-      accent-color: var(--gold);
+      display: inline-block !important;
+      appearance: auto !important;
+      -webkit-appearance: checkbox !important;
+      flex: 0 0 22px !important;
+      width: 22px !important;
+      min-width: 22px !important;
+      max-width: 22px !important;
+      height: 22px !important;
+      min-height: 22px !important;
+      padding: 0 !important;
+      margin: 1px 0 0 !important;
+      border: 2px solid #ffffff !important;
+      border-radius: 4px;
+      background: #fff !important;
+      box-shadow: none !important;
+      accent-color: #d7b16d;
+      cursor: pointer;
     }
+    .subscribe-consent:focus-within input[type="checkbox"] {
+      outline: 3px solid #f1d89e;
+      outline-offset: 3px;
+    }
+    .subscribe-consent span { flex: 1 1 auto; cursor: pointer; }
 
     .subscribe article {
       margin: 0;
@@ -2355,7 +2376,7 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
         <input type="text" id="updates-firstname" name="name" autocomplete="given-name" placeholder="First name" aria-label="First name" required>
         <input type="email" id="updates-email" name="email" autocomplete="email" placeholder="Email address" aria-label="Email address" required>
         <label class="subscribe-consent">
-          <input type="checkbox" name="email_updates_consent" value="Yes, I agree to receive email updates and educational information." required>
+          <input id="email-updates-consent" type="checkbox" name="email_updates_consent" value="Yes, I agree to receive email updates and educational information." required>
           <span>I agree to receive email updates and educational information. I can unsubscribe at any time.</span>
         </label>
         <button type="submit">Sign Me Up for Updates →</button>
