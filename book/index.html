@@ -518,6 +518,21 @@
     }
 
     .subscribe .container { max-width: 1160px; margin: auto; }
+    .subscribe-consent {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .subscribe-consent input[type="checkbox"] {
+      width: auto;
+      flex: 0 0 auto;
+      margin: 3px 0 0;
+      accent-color: var(--gold);
+    }
 
     .subscribe article {
       margin: 0;
@@ -2322,23 +2337,28 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
 
 
 <!-- FOOTER INQUIRY -->
-<section aria-label="Subscribe example" class="subscribe">
+<section aria-label="Email updates" class="subscribe">
   <div class="wrap">
     <article>
       <hgroup>
-        <h2>Let's talk about your family's future.</h2>
-        <h3>Financial education. Meaningful conversations. Generational possibility.</h3>
+        <h2>Stay informed about your family's financial future.</h2>
+        <h3>Sign up to receive educational information and updates from Bridgette.</h3>
       </hgroup>
 
-      <form class="grid web3forms-form" action="https://api.web3forms.com/submit" method="POST">
+      <form class="grid web3forms-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Sign up for email updates">
         <input type="hidden" name="access_key" value="09252574-bba9-40a6-b73d-762ccb94ab31">
-        <input type="hidden" name="subject" value="Bridge the Wealth - Footer Inquiry">
+        <input type="hidden" name="subject" value="Bridge the Wealth - Email Updates Signup">
         <input type="hidden" name="from_name" value="Bridge the Wealth Website">
-        <input type="hidden" name="topic" value="General Website Inquiry">
+        <input type="hidden" name="topic" value="Email Updates Signup">
+        <input type="hidden" name="signup_source" value="Book a Consultation page">
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-        <input type="text" id="firstname" name="name" autocomplete="given-name" placeholder="First name" aria-label="First name" required>
-        <input type="email" id="email" name="email" placeholder="Email address" aria-label="Email address" required>
-        <button type="submit">Let's Connect →</button>
+        <input type="text" id="updates-firstname" name="name" autocomplete="given-name" placeholder="First name" aria-label="First name" required>
+        <input type="email" id="updates-email" name="email" autocomplete="email" placeholder="Email address" aria-label="Email address" required>
+        <label class="subscribe-consent">
+          <input type="checkbox" name="email_updates_consent" value="Yes, I agree to receive email updates and educational information." required>
+          <span>I agree to receive email updates and educational information. I can unsubscribe at any time.</span>
+        </label>
+        <button type="submit">Sign Me Up for Updates →</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
     </article>
