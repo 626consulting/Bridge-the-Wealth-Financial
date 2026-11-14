@@ -2792,13 +2792,10 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
   });
   document.addEventListener("click", event => {
     const link = event.target.closest("a[href]");
-    if (!link || link.dataset.bookingDirect === "true") return;
-    const target = new URL(link.href, window.location.href);
-    if (target.origin === window.location.origin && target.pathname.replace(/\/+$/, "") === "/book") {
-      event.preventDefault();
-      if (typeof dialog.showModal === "function") dialog.showModal();
-      else dialog.setAttribute("open", "");
-    }
+    if (!link || link.dataset.bookingPdfPopup !== "true") return;
+    event.preventDefault();
+    if (typeof dialog.showModal === "function") dialog.showModal();
+    else dialog.setAttribute("open", "");
   });
 })();
 </script>
