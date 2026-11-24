@@ -1670,6 +1670,12 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
 }
 
 
+.home-resource-callout{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:900px;margin:30px auto 0;padding:24px 28px;border:1px solid rgba(184,145,42,.42);border-radius:16px;background:linear-gradient(115deg,rgba(238,233,217,.8),rgba(255,255,255,.96));box-shadow:0 12px 30px rgba(19,48,44,.08)}
+.home-resource-callout .eyebrow{margin:0 0 6px;color:#8a6a24}
+.home-resource-callout h3{margin:0 0 6px;color:#173b33;font-family:Georgia,serif;font-size:1.3rem}
+.home-resource-callout p:not(.eyebrow){margin:0;color:#475854}
+@media(max-width:700px){.home-resource-callout{align-items:stretch;flex-direction:column;padding:20px}.home-resource-callout .button-link{align-self:stretch;text-align:center}}
+
 /* Booking guide popup */
 .booking-pdf-dialog{width:min(1100px,calc(100% - 24px));max-width:none;max-height:calc(100vh - 24px);padding:0;border:1px solid #d9d2c3;border-radius:14px;background:#faf8f3;color:#203942;box-shadow:0 22px 70px rgba(3,22,30,.35);overflow:auto}
 .booking-pdf-dialog::backdrop{background:rgba(5,24,32,.74);backdrop-filter:blur(3px)}
@@ -1745,7 +1751,7 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
       <div class="home-actions">
         <div class="home-action-links">
           <a href="/book/" class="button-link gold">Book a Consultation →</a>
-          <a href="/assets/tax-free-legacy-blueprint.pdf" class="button-link outline" download="The_Tax-Free_Legacy_Blueprint.pdf">Download the Tax-Free Legacy Guide ↓</a>
+          <a href="https://gemini.google.com/share/d/1EuWABZ_Ka-YFhbAp7IR7O37EHvrolHSk?ts=6b05bde3:" class="button-link outline" target="_blank" rel="noopener noreferrer">Take the Tax-Free Quiz ↗</a>
         </div>
         <button class="btw-scroll-cue" type="button" data-scroll-to-explore aria-label="Scroll to explore more about Bridge the Wealth"><span>SCROLL TO EXPLORE</span><span class="btw-arrow" aria-hidden="true">↓</span></button>
       </div>
@@ -1838,6 +1844,14 @@ nav .nav-caret{font-size:.8em;color:var(--gold);}
         <h3>Plan</h3>
         <p>Explore next steps with care and clear information.</p>
       </div>
+    </div>
+    <div class="home-resource-callout">
+      <div>
+        <p class="eyebrow">Free Resource</p>
+        <h3>Want a deeper overview?</h3>
+        <p>Download the Tax-Free Legacy Guide to review at your own pace.</p>
+      </div>
+      <a href="/assets/tax-free-legacy-blueprint.pdf" class="button-link gold" download="The_Tax-Free_Legacy_Blueprint.pdf">Download the Guide ↓</a>
     </div>
   </div>
 
